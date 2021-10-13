@@ -1,0 +1,97 @@
+﻿.breadCrumbHolder
+    margin: 0 0 0 0
+
+//Float Clearing
+/// Download by http://www.codefans.net
+.module:after
+    clear: both
+    content: "."
+    display: block
+    height: 0
+    visibility: hidden
+
+//float clearing for IE6
+*
+    html .module
+        height: 1%
+        overflow: visible
+
+    //float clearing for IE7
+    + html .module
+        min-height: 1%
+
+//Breadcrumb Styles
+.breadCrumb
+    margin: 0
+    padding: 0
+    display: block
+    overflow: hidden
+    width: 100%
+    max-width: 1440px
+    padding: 20px 0
+    position: relative
+
+    ul
+        margin: 0
+        padding: 0
+        height: 21px
+        display: block
+
+        li
+            display: block
+            float: left
+            position: relative
+            height: 21px
+            overflow: hidden
+            line-height: 21px
+            margin: 0px 11px 0px 0
+            padding: 0px 15px 0px 0
+            font-size: 0.9167em
+            background: url("../images/icon/Chevron.gif") no-repeat 100% 0
+
+            div.chevronOverlay
+                position: absolute
+                right: 0
+                top: 0
+                z-index: 2
+
+            span
+                display: block
+                overflow: hidden
+
+            a
+                display: block
+                position: relative
+                height: 21px
+                line-height: 21px
+                overflow: hidden
+                float: left
+
+            &.first a
+                height: 12px !important
+                text-indent: -1000em
+                width: 12px
+                padding: 0
+                margin-top: 4px
+                overflow: hidden
+                background: url("../images/icon/index_link.svg") no-repeat 0 0
+                -webkit-background-size: cover
+                background-size: cover
+
+                &:hover
+                    opacity: 0.85
+
+            &.last
+                background: none
+                margin-right: 0
+                padding-right: 0
+
+.chevronOverlay
+    display: none
+    background: url("../images/icon/ChevronOverlay.png") no-repeat 100% 0
+    width: 13px
+    height: 20px
+
+.breadCrumbHolder .ctrl-right
+    position: absolute
+    margin-top: 16px

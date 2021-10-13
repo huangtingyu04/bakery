@@ -1,0 +1,133 @@
+@charset "utf-8"
+
+
+@import mixins/_rwd
+@import mixins/_font
+
+@import partials/_base
+
+// reset css
+body
+    padding: 0 !important 
+    margin: 0
+    height: auto
+
+a
+    text-decoration: none
+
+ul, ol
+    margin-left: 0
+    list-style: none
+
+// reset css end
+
+*[class*='card-']
+    width: 100%
+
+// public css start
+.wide-container
+    width: 1920px
+    padding-left: 140px
+    max-width: 100%
+    margin: auto
+
+    +breakpoint(mobile-landscape)
+        width: 100%
+        padding-left: 0
+
+    &.wide-1440-limmited
+        width: 1440px
+        padding-left: 140px
+
+.card-main-title
+    text-align: center
+    color: #000000
+    margin-bottom: 70px
+
+    +breakpoint(mobile-landscape)
+        margin-bottom: 40px
+
+    .cn
+        font-family: Noto Sans
+        font-weight: bold
+        font-size: 2.8rem
+        line-height: 48px
+        letter-spacing: 0.2em
+
+        +breakpoint(mobile-landscape)
+            font-size: 1.8rem
+            line-height: 28px
+
+        &::before,
+        &::after
+            content: ''
+            display: inline-block
+            width: 6px
+            height: 6px
+            border-radius: 50%
+            background: #000000
+            transform: translateY(-6px)
+
+            +breakpoint(mobile-landscape)
+                width: 4px
+                height: 4px
+                transform: translateY(-4px)
+
+
+        &::before
+            margin-right: 12px
+
+            +breakpoint(mobile-landscape)
+                margin-right: 10px
+
+        &::after
+            margin-left: 6px
+
+            +breakpoint(mobile-landscape)
+                margin-left: 5px
+
+    .en
+        font-family: Spartan
+        font-size: 2.1rem
+        line-height: 32px
+
+        +breakpoint(mobile-landscape)
+            font-size: 1.2rem
+            line-height: 18px
+
+.card-title
+    display: flex
+    align-items: baseline
+    color: #000000
+
+    .cn
+        font-family: Noto Sans
+        font-weight: bold
+        font-size: 3.6rem
+        line-height: 50px
+        letter-spacing: 0.2em
+
+        +breakpoint(mobile-landscape)
+            font-size: 2.4rem
+            line-height: 28px
+
+    .en
+        font-family: Spartan
+        font-size: 2.1rem
+        line-height: 32px
+        margin-left: 13px
+
+        +breakpoint(mobile-landscape)
+            font-size: 1.6rem
+            line-height: 32px
+
+// public css end
+
+body
+    &.index
+        .sidebar
+            padding-top: 240px
+
+
+            
+    

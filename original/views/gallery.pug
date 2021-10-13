@@ -1,0 +1,66 @@
+
+doctype html
+html(lang="zh-Hant-TW")
+    head
+        include ./includes/meta.pug
+        include ./includes/link.pug
+        include ./includes/script.pug
+        link(rel="stylesheet" href="./styles/gallery.css")
+        title Bakery 首頁
+    body 
+        -var breadtag = ['來點相簿']
+        //- header start
+        include ./includes/header.pug
+        
+        //- header end
+
+        .wide-container
+            //- breadcrumb start
+            include ./includes/breadcrumbs.pug
+            //- breadcrumb end
+            //- product start
+            .card-gallery(data-style="1") 
+                .gallery-outbox
+                    .card-title
+                        .cn 來點相簿
+                        .en Photos
+                    .gallery-box.image-waterfall 
+                        .item 
+                            img(src="./images/photo/photo01.png")
+                        .item 
+                            img(src="./images/photo/photo02.png")
+                        .item 
+                            img(src="./images/photo/photo03.png")
+                        .item 
+                            img(src="./images/photo/photo04.png")
+                        .item 
+                            img(src="./images/photo/photo06.png")
+                        .item 
+                            img(src="./images/photo/photo05.png")
+                        .item 
+                            img(src="./images/photo/photo09.png")
+                        .item 
+                            img(src="./images/photo/photo07.png")
+                        .item 
+                            img(src="./images/photo/photo08.png")
+                        
+                
+            //- product end
+
+            //- footer start
+            include ./includes/footer.pug
+            //- footer end
+
+
+    script(src="./script/mesonry/masonry.pkgd.min.js")
+    script.
+        $(function() {
+            $('.image-waterfall').masonry({
+                // options
+                itemSelector: '.item',
+                percentPosition: true,
+            });
+					
+
+        });
+        

@@ -1,0 +1,37 @@
+//-jquery主體
+script(src="./script/jquery/jquery-3.6.0.js")
+
+script(src="./script/jquery/jquery.easing.1.3.js")
+
+//- waypoint
+script(src="./script/waypoints/jquery.waypoints.js")
+
+//- aos
+script(src="./script/aos.js")
+
+//- sweetalert
+script(src="./script/sweetalert2.js")
+
+//- colorbox
+script(src="./script/colorbox/jquery.colorbox.js")
+
+//- swiper
+script(src="./script/swiper/swiper4.5.0.js")
+
+
+script.
+	$(document).ready(function () {
+
+		$("a.call-WITBN").colorbox({
+			oepn: true,
+			iframe: true,
+			//- innerWidth: 1205,
+			//- innerHeight: 467,
+			width: ($(window).width() <= 1024) ? "80%" : "1205px",
+			height: ($(window).width() <= 800) ? "50%" : "467px", 
+			maxWidth: '100%',
+			closeButton: true,
+			title: 'WITBN 世界原住民廣電聯盟',
+		});
+
+	});

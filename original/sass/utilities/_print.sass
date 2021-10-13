@@ -1,0 +1,16 @@
+﻿@media print
+    *
+        -webkit-print-color-adjust: exact !important
+
+    .noBreak
+        break-inside: avoid
+
+    .noPrint
+        display: none
+
+@page
+    size: A4 Landscape
+    //若順著向下排列時會切開此元素，則直接換頁
+    page-break-inside: avoid
+    //碰到此元素會直接換頁
+    page-break-after: always

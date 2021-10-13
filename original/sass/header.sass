@@ -1,0 +1,119 @@
+@charset "utf-8"
+
+
+@import mixins/_rwd
+@import mixins/_font
+
+@import partials/_base
+
+
+
+.card-header 
+    .mobile
+        position: relative
+        padding: 0 20px
+        display: none
+        align-items: center
+
+        +breakpoint(mobile-landscape)
+            display: flex
+
+        .mobile-logo
+            max-width: 90px
+            margin: auto
+
+        .burger,
+        .cart
+            position: absolute
+
+        .burger
+            cursor: pointer
+            left: 20px
+
+            img
+                max-width: 37px
+            
+        .cart
+            right: 20px
+            
+            img
+                max-width: 25px
+
+            .badge
+                position: absolute
+                top: -3px
+                right: -3px
+
+            .num
+                position: relative
+                font-family: Spartan
+                font-weight: 500
+                font-size: .8rem
+                line-height: 12px
+                text-align: center
+                color: #000000
+                z-index: 1
+
+                &::before
+                    content: ''
+                    position: absolute
+                    background-image: url('../images/badge.png')
+                    background-repeat: no-repeat
+                    background-size: contain
+                    width: 13px
+                    height: 13px
+                    z-index: -1
+
+    .sidebar
+        width: 140px
+        position: fixed
+        left: 0
+        top: 0
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding-top: 240px
+
+        &::after
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            height: 100vh
+            width: 1px
+            background: rgba(0, 0, 0, 0.1)
+        // border-right: 1px solid rgba(0, 0, 0, 0.1)
+
+        +breakpoint(mobile-landscape)
+            display: none
+
+        .logo
+            img
+                max-width: 120px
+
+        .logo-txt
+            margin-bottom: 50px
+
+            img
+                max-width: 26px
+
+        .burger
+            margin-bottom: 176px
+
+            img
+                max-width: 37px
+
+        .cart
+            padding: 50px 0
+            display: block
+            width: 100%
+            text-align: center
+            border-top: 1px solid rgba(0, 0, 0, 0.1)
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+
+            &:hover
+                opacity: .5
+
+            img
+                max-width: 34px
+

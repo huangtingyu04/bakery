@@ -1,0 +1,112 @@
+@charset "utf-8"
+
+
+@import mixins/_rwd
+@import mixins/_font
+
+@import partials/_base
+
+
+
+.card-footer
+    .footer-box
+        display: flex
+        border-top: 1px solid rgba(0, 0, 0, 0.1)
+
+        +breakpoint(mobile-landscape)
+            flex-wrap: wrap
+
+    .footer-logo
+        width: 50%
+        text-align: center
+        padding: 37px 0
+        border-right: 1px solid rgba(0, 0, 0, 0.1)
+
+        +breakpoint(mobile-landscape)
+            width: 100%
+            padding: 20px 0 0
+
+        img
+            max-width: 180px
+
+            +breakpoint(mobile-landscape)
+                max-width: 140px
+
+    .footer-info
+        width: calc(50% - 150px)
+        margin: 48px 0 48px 150px
+
+        +breakpoint(zone-nb-small)
+            width: calc(50% - 80px)
+            margin: 48px 30px 48px 50px
+
+        +breakpoint(mobile-landscape)
+            width: 100%
+            margin: 18px 0 30px
+            display: flex
+            flex-direction: column
+            align-items: center
+
+        .title 
+            margin-bottom: 20px
+
+            img
+                max-width: 97px
+
+        ul
+            li
+                margin-bottom: 10px
+                font-family: Roboto
+                font-weight: 400
+                font-size: 1.4rem
+                line-height: 21px
+                letter-spacing: 0.2em
+                color: #000000
+
+                +breakpoint(mobile-landscape)
+                    text-align: center
+
+        .social-box 
+            display: flex
+            margin-top: 20px
+
+            a
+                border: 1px solid rgba(0, 0, 0, 0.3)
+                border-radius: 50px
+                width: 34px
+                height: 34px
+                display: flex
+                justify-content: center
+                align-items: center
+                margin-right: 14px
+
+                &:last-child
+                    margin-right: 0
+
+            .social-icon
+                background-repeat: no-repeat
+                background-size: contain
+                
+                &.facebook-icon
+                    width: 10px
+                    height: 16px
+                    background-image: url('../images/fb-icon.png')
+
+                &.instagram-icon
+                    width: 18px
+                    height: 17px
+                    background-image: url('../images/ig-icon.png')
+
+    .footer-copyright
+        background: #000000
+        font-family: Roboto
+        font-size: 1rem
+        line-height: 18px
+        text-align: center
+        letter-spacing: 0.1em
+        color: #FFFFFF
+        padding: 7px 0
+
+    
+
+

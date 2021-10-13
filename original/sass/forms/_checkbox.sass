@@ -1,0 +1,512 @@
+// Checkboxes
+// extend
+$checkbox-margin: 0 4px 0 0
+
+%remove-default
+    position: absolute
+    // left: 0
+    opacity: 0
+    width: 18px
+    height: 18px
+
+%checkbox-width-base
+    width: 16px
+
+%checkbox-height-base
+    height: 16px
+
+%checkbox-label-before-after-base
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 0
+    border: 1px solid $radio-empty-color
+    border-radius: 0
+    margin: $checkbox-margin
+    transition: 0.2s
+
+%checkbox-label-before-after-filled-in
+    content: ""
+    left: 0
+    position: absolute
+
+    // .1s delay is for check animation
+    transition: border 0.25s, background-color 0.25s, width 0.2s 0.1s, height 0.2s 0.1s, top 0.2s 0.1s, left 0.2s 0.1s
+    z-index: 1
+
+%checkbox-with-item-transparent-base
+    line-height: 1
+    display: inline-block
+    margin: 0
+    background-color: transparent
+    font-size: 20px
+    // vertical-align: middle
+
+%checkbox-with-item-transparent-label
+    width: inherit
+    height: inherit
+    position: relative
+    display: inline-block
+    padding-bottom: 0
+
+%checkbox-with-item-transparent-label-before
+    width: 200%
+    height: 100%
+    left: -100%
+    top: 0
+    border: none
+    transform: rotate(0deg)
+
+%checkbox-with-item-transparent-checked-base
+    color: $input-focus-color
+
+%checkbox-with-item-transparent-checked-label-after
+    transform: scale(1)
+    background: color('grey','lighten-3')
+    z-index: -1
+    right: 0
+    bottom: 0
+    margin: auto
+    width: calc(100% + 17px)
+    height: 100%
+    left: -10px
+
+// Checkbox Styles
+[type="checkbox"]
+    ~ img, ~ i
+        width: 100px
+        max-height: 100px
+        line-height: 100px
+        display: block
+        margin: 0 auto
+        font-size: 45px
+        text-align: center
+
+    ~ i
+        background-color: #f2f2f2
+
+    // Text Label Style
+    ~ label
+        position: relative
+        padding-left: 24px
+        cursor: pointer
+        display: inline-block
+        height: 19px
+        color: $input-focus-color
+        line-height: 18px
+        font-size: $label-font-size
+        transition: 0.28s ease
+        -webkit-user-select: none
+        -moz-user-select: none
+        -khtml-user-select: none
+        -ms-user-select: none
+        user-select: none
+
+        // checkbox aspect
+        &::before
+            @extend %checkbox-label-before-after-base
+
+            @extend %checkbox-width-base
+
+            @extend %checkbox-height-base
+
+    &:not(.filled-in)
+        ~ label
+            &::after
+                @extend %checkbox-label-before-after-base
+
+                @extend %checkbox-width-base
+
+                @extend %checkbox-height-base
+
+                border: 0
+                transform: scale(0)
+
+    &:not(:checked)
+        @extend %remove-default
+
+        &:disabled
+            ~ label
+                &::before
+                    border-color: transparent
+                    background-color: $input-disabled-color
+
+    &:checked
+        @extend %remove-default
+
+        ~ i
+            background-color: #dedede
+
+        ~ label
+            &::before
+                top: -3px
+                left: -4px
+                width: 9px
+
+                @extend %checkbox-height-base
+
+                border-top: 2px solid transparent
+                border-left: 2px solid transparent
+                border-right: $radio-border
+                border-bottom: $radio-border
+                transform: rotate(40deg)
+                backface-visibility: hidden
+                transform-origin: 100% 100%
+
+        &:disabled
+            ~ label
+                &::before
+                    border-right: 1px solid $input-disabled-color
+                    border-bottom: 1px solid $input-disabled-color
+
+    // Disabled style
+    &:disabled
+        ~ label
+            color: $input-disabled-color
+
+    // Focused styles
+    &.tabbed
+        &:focus
+            ~ label
+                &::after
+                    transform: scale(1)
+                    border: 0
+                    border-radius: 50%
+                    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1)
+                    background-color: rgba(0, 0, 0, 0.1)
+
+    // Indeterminate checkbox
+    &:indeterminate
+        ~ label
+            &::before
+                top: -6px
+                left: 0px
+                width: 0px
+                height: 15px
+                border-top: none
+                border-left: none
+                border-right: $radio-border
+                border-bottom: none
+                transform: rotate(90deg)
+                backface-visibility: hidden
+                transform-origin: 100% 100%
+
+            &::after
+                border: 1px solid $radio-empty-color
+                transform: scale(1)
+
+        // Disabled indeterminate
+        &:disabled
+            ~ label
+                &::before
+                    border-right: 1px solid $input-disabled-color
+                    background-color: transparent
+
+    // Filled in Style
+    &.filled-in
+        // General
+        ~ label
+            &::before
+                @extend %checkbox-label-before-after-filled-in
+
+            &::after
+                border-radius: 0
+
+                @extend %checkbox-label-before-after-filled-in
+
+        // Unchecked style
+        &:not(:checked)
+            ~ label
+                &::before
+                    width: 0
+                    height: 0
+                    border: 1px solid transparent
+                    left: 10px
+                    top: 10px
+                    -webkit-transform: rotateZ(37deg)
+                    transform: rotateZ(37deg)
+                    -webkit-transform-origin: 20% 40%
+                    transform-origin: 100% 100%
+
+                &::after
+                    top: 0px
+
+                    @extend %checkbox-width-base
+
+                    @extend %checkbox-height-base
+
+                    background-color: transparent
+                    border: 1px solid $radio-empty-color
+                    z-index: 0
+                    margin: $checkbox-margin
+
+        // Checked style
+        &:checked
+            ~ label
+                &::before
+                    top: 0px
+                    left: -1px
+                    width: 5px
+                    height: 10px
+                    border-top: 2px solid transparent
+                    border-left: 2px solid transparent
+                    border-right: 2px solid $input-background
+                    border-bottom: 2px solid $input-background
+                    -webkit-transform: rotateZ(37deg)
+                    transform: rotateZ(37deg)
+                    -webkit-transform-origin: 100% 100%
+                    transform-origin: 100% 100%
+
+                &::after
+                    top: 0
+
+                    @extend %checkbox-width-base
+
+                    @extend %checkbox-height-base
+
+                    border: 1px solid $secondary-color
+                    background-color: $secondary-color
+                    z-index: 0
+                    margin: $checkbox-margin
+
+        // Focused styles
+        &.tabbed
+            &:focus
+                ~ label
+                    &::after
+                        border-radius: 0
+                        border-color: $radio-empty-color
+                        background-color: rgba(0, 0, 0, 0.1)
+
+        &.tabbed
+            &:checked
+                &:focus
+                    ~ label
+                        &::after
+                            border-radius: 0
+                            background-color: $secondary-color
+                            border-color: $secondary-color
+
+        // Disabled style
+        &:disabled
+            &:not(:checked)
+                ~ label
+                    &::before
+                        background-color: transparent
+                        border: 1px solid transparent
+
+                    &::after
+                        border-color: transparent
+                        background-color: $input-disabled-solid-color
+
+        &:disabled
+            &:checked
+                ~ label
+                    &::before
+                        background-color: transparent
+
+                    &::after
+                        background-color: $input-disabled-solid-color
+                        border-color: $input-disabled-solid-color
+
+    &.with-gap
+        ~ label
+            &::before
+                display: none
+
+        ~ label
+            &[data-color]
+                width: 17px
+                height: 17px
+                border-radius: 50%
+                padding-left: 0
+                vertical-align: top
+
+                &::after
+                    margin: 0
+                    width: 8px
+                    height: 8px
+                    top: 4px
+                    left: 0px
+                    border: transparent
+                    border-radius: 0
+                    transition: 0.2s
+                    background-color: transparent
+                    transform: rotate(0deg)
+
+        &:checked
+            ~ label
+                &::before
+                    border-radius: 50%
+                    border: $radio-border
+
+                &::after
+                    border-radius: 50%
+                    border: $radio-border
+                    background-color: $radio-fill-color
+                    transform: scale(0.5)
+
+                &[data-color]
+                    &::before
+                        border: transparent
+
+                    &::after
+                        border: transparent
+                        border-right: 1px solid #ffffff
+                        border-bottom: 1px solid #ffffff
+                        border-radius: 0
+                        background-color: transparent
+                        transform: rotate(40deg)
+                        backface-visibility: hidden
+                        transform-origin: 100% 100%
+
+        // Disabled Radio With gap
+        &:disabled
+            &:checked
+                ~ label
+                    &::before
+                        border: 1px solid $input-disabled-color
+
+                    &::after
+                        border: none
+                        background-color: $input-disabled-color
+
+    &.with-item
+        ~ i
+            ~ label
+                height: 100%
+
+        ~ label
+            width: 100%
+            height: calc(100% + 23px)
+            position: absolute
+            top: 0
+
+            @extend %border-box
+
+            @extend %flex
+
+            @extend %flex-row
+
+            @extend %justify-center
+
+            @extend %align-end
+
+            font-size: $label-font-size
+            color: $input-border-color
+            line-height: 1
+            padding-bottom: 5px
+            padding-left: 0
+
+            &::before
+                border: none
+                margin: 0
+                width: 12px
+                height: 22px
+                left: 4px
+                top: 6px
+                border-radius: 0
+                transition: 0.2s
+
+        &:not(:checked)
+            &:disabled
+                ~ label
+                    &::before
+                        background-color: transparent
+
+        &:checked
+            // ~ img
+            //     border: 1px solid $input-focus-color
+
+            ~ label
+                @extend %checkbox-with-item-transparent-checked-base
+
+                &::before
+                    border-right: $radio-border
+                    border-bottom: $radio-border
+                    background-color: transparent
+
+        &.transparent
+            ~ img
+                width: 32px
+                height: 32px
+                @extend %checkbox-with-item-transparent-base
+
+                ~ label
+                    @extend %checkbox-with-item-transparent-label
+                    height: 32px
+                    line-height: 30px
+                    vertical-align: middle
+
+                    &::before
+                        @extend %checkbox-with-item-transparent-label-before
+
+            ~ i
+                width: inherit
+                height: inherit
+                vertical-align: text-bottom
+                color: $input-border-color
+                @extend %checkbox-with-item-transparent-base
+
+                ~ label
+                    @extend %checkbox-with-item-transparent-label
+
+                    &::before
+                        @extend %checkbox-with-item-transparent-label-before
+
+            &:checked
+                ~ img
+                    @extend %checkbox-with-item-transparent-checked-base
+
+                    ~ label
+
+                        &::after
+                            @extend %checkbox-with-item-transparent-checked-label-after
+
+                ~ i
+                    @extend %checkbox-with-item-transparent-checked-base
+
+    &.with-chip
+        ~ label
+            height: 32px
+            line-height: 32px
+            margin-bottom: 7px
+
+            &::before
+                margin-top: 8px
+
+            > img
+                margin: (-6px) 5px 0px 3px
+                height: 32px
+                width: 32px
+                border-radius: 50%
+                overflow: hidden
+
+        &.transparent
+            ~ label
+                height: 28px
+                line-height: 28px
+                padding: 0 9px
+                background-color: color("grey", "lighten-3")
+
+                &::before
+                    border: none
+                    width: 0
+                    height: 0
+
+            &:checked
+                ~ label
+                    padding: 0 9px 0 31px
+
+                    &::before
+                        width: 9px
+                        left: 3px
+                        top: -5px
+
+                        @extend %checkbox-height-base
+
+                        border-top: 2px solid transparent
+                        border-left: 2px solid transparent
+                        border-right: $radio-border
+                        border-bottom: $radio-border

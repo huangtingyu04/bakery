@@ -1,0 +1,23 @@
+=border-radius($radius: $border-radius)
+    @if $enable-rounded
+        border-radius: $radius !important
+
+=border-top-radius($radius)
+    @if $enable-rounded
+        border-top-left-radius: $radius !important
+        border-top-right-radius: $radius !important
+
+=border-right-radius($radius)
+    @if $enable-rounded
+        border-top-right-radius: $radius !important
+        border-bottom-right-radius: $radius !important
+
+=border-bottom-radius($radius)
+    @if $enable-rounded
+        border-bottom-right-radius: $radius !important
+        border-bottom-left-radius: $radius !important
+
+=border-left-radius($radius)
+    @if $enable-rounded
+        border-top-left-radius: $radius !important
+        border-bottom-left-radius: $radius !important

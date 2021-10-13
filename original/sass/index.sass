@@ -1,0 +1,679 @@
+@charset "utf-8"
+
+
+@import mixins/_rwd
+@import mixins/_font
+
+@import partials/_base
+
+%bg-des-style
+    content: ''
+    position: absolute
+    width: 100%
+    z-index: -1
+    bottom: -90px
+    height: 300px
+
+    +breakpoint(zone-wide)
+        height: 341px
+
+    +breakpoint(zone-nb-small)
+        bottom: -50px
+        height: 280px
+
+    +breakpoint(mobile-landscape)  
+        bottom: -30px
+        height: 222px
+
+// reset css start
+body
+    padding-top: 0
+
+a
+    transition: .3s ease
+
+// reset css end
+
+.card-manvision 
+    position: relative
+
+    .bg-img
+        width: 100%
+        padding-bottom: 62.5%
+        // height: 100vh
+        // background-attachment: fixed
+        background-position: center
+        background-size: cover
+        background-repeat: no-repeat
+
+        +breakpoint(mobile-landscape)  
+            padding-bottom: 197.87%
+
+        &.desktop
+            +breakpoint(mobile-landscape)  
+                display: none
+
+        &.mobile
+            display: none
+
+            +breakpoint(mobile-landscape)  
+                display: block
+
+    .logo
+        position: absolute
+        top: 60px
+        left: 50%
+        transform: translateX(-50%)
+
+        +breakpoint(mobile-landscape)  
+            display: none
+
+
+// product start
+.card-product 
+    .product-outbox
+        position: relative
+        margin: 160px 0 157px 80px
+
+        +breakpoint(mobile-landscape) 
+            margin: 50px 0 80px 30px
+
+        &::before
+            content: ''
+            position: absolute
+            top: -30%
+            right: 10px
+            width: 63.36%
+            padding-bottom: calc(63.36% * 0.162)
+            background-image: url('../images/index/product-bg.png')
+            background-repeat: no-repeat
+            background-size: contain
+
+            +breakpoint(mobile-landscape) 
+                top: -35px
+                width: 78.36%
+                padding-bottom: calc(78.36% * 0.162)
+
+
+    .img-content
+        position: relative
+        display: block
+        width: 100%
+        border-radius: 50%
+        transition: .7s ease-in-out
+        overflow: hidden
+        
+        &:hover
+            transform: scale(0.95)
+            
+            .img
+                transform: scale(1.1)
+
+                &::before
+                    background-color: rgba(0, 0, 0, 0.2)
+            
+
+            .link
+                top: 50%
+
+        .img
+            width: 100%
+            padding-bottom: 100%
+            border-radius: 50%
+            background-repeat: no-repeat
+            background-size: cover
+            background-position: center
+            transition: .7s ease-in-out
+            overflow: hidden
+
+            &::before
+                content: ''
+                position: absolute
+                width: 100%
+                height: 100%
+                top: 0
+                left: 0
+                background-color: transparent
+                transition: .4s ease-in-out
+
+        .link
+            position: absolute
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+            height: 100%
+            top: 110%
+            left: 50%
+            transform: translate(-50%, -50%) 
+            transition: .4s ease-in-out
+
+            span
+                font-family: Noto Sans
+                font-weight: bold
+                font-size: 1.6rem
+                line-height: 22px
+                letter-spacing: 0.2em
+                color: #FFFFFF
+
+            img
+                position: absolute
+                bottom: 24px
+
+                +breakpoint(mobile-landscape) 
+                    bottom: 10px
+
+    .product-title
+        margin-top: 20px
+        font-family: Noto Sans
+        font-size: 1.6rem
+        line-height: 22px
+        text-align: center
+        letter-spacing: 0.2em
+        color: #000000
+
+        +breakpoint(mobile-landscape) 
+            margin-top: 11px
+            font-size: 1.2rem
+            line-height: 16px
+
+// product end
+
+// event start
+.card-event
+    .event-outbox
+        padding: 0 140px
+
+        +breakpoint(zone-base)  
+            padding: 0 80px
+
+        +breakpoint(pad-portrait-980)
+            padding: 0 30px
+
+        +breakpoint(mobile-landscape) 
+            padding: 0
+
+    .event-container
+        position: relative
+        padding: 0 130px 
+        margin-bottom: 160px
+
+        +breakpoint(zone-base)  
+            padding: 0 80px
+
+        +breakpoint(mobile-landscape) 
+            margin-bottom: 80px
+            padding: 0 0 0 68px
+
+        &::after
+            content: ''
+            position: absolute
+            width: 100%
+            padding-bottom: 33.33%
+            background: rgba(203, 192, 183, 0.2)
+            margin: auto
+            top: 0
+            bottom: 0
+            left: 0
+
+            +breakpoint(mobile-landscape) 
+                padding-bottom: 62.67%
+
+    .img-content 
+        position: relative
+        width: 100%
+        transition: .7s ease-in-out
+        overflow: hidden
+
+        &:hover
+            transform: scale(0.95)
+
+            .img
+                transform: scale(1.1)
+
+            .link
+                transform: translate(-50%, -50%) scale(1)
+
+        .link
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%) scale(0)
+            width: 120px
+            height: 120px
+            border-radius: 50%
+            display: flex
+            justify-content: center
+            align-items: center
+            background: #000000
+
+            +breakpoint(mobile-landscape) 
+                width: 90px
+                height: 90px
+
+            span
+                font-family: Roboto
+                font-weight: bold
+                font-size: 1.6rem
+                line-height: 22px
+                letter-spacing: 0.2em
+                color: #FFFFFF
+
+                +breakpoint(mobile-landscape) 
+                    font-size: 1.4rem
+                    line-height: 16px
+
+            img
+                position: absolute
+                bottom: 18px
+
+                +breakpoint(mobile-landscape) 
+                    bottom: 10px
+
+        .img
+            width: 100%
+            padding-bottom: 138.9%
+            background-repeat: no-repeat
+            background-size: cover
+            background-position: center
+            transition: .7s ease-in-out
+            overflow: hidden
+
+    .swiper-button
+        width: 34px
+        height: 82px
+        background-repeat: no-repeat
+        background-size: contain
+        margin-top: 0
+        transform: translateY(-50%)
+        transition: .4s ease-in-out
+
+        +breakpoint(mobile-landscape) 
+            display: none
+
+        &:hover
+            opacity: 0.5
+
+        &.swiper-button-disabled
+            opacity: 0.15
+
+        &.swiper-button-prev
+            background-image: url('../images/index/arrow-left.png')
+            left: 40px
+
+            +breakpoint(zone-base)  
+                left: 25px
+
+        &.swiper-button-next
+            background-image: url('../images/index/arrow-right.png')
+            right: 40px
+
+            +breakpoint(zone-base)  
+                right: 25px
+            
+// event end
+
+// card intro start
+.card-intro
+    .intro-box
+        .img
+            width: 100%
+            padding-bottom: 37.69%
+            background-repeat: no-repeat
+            background-size: cover
+            background-position: center
+
+    .intro-content
+        display: flex
+        padding: 0 140px
+        margin: 70px 0 157px
+
+        +breakpoint(zone-base)
+            padding: 0 80px
+
+        +breakpoint(pad-portrait)
+            display: block
+            padding: 0 30px
+            margin: 40px 0 80px
+
+        .intro-title 
+            width: 165px
+            position: relative
+
+            +breakpoint(mobile-landscape)  
+                width: 130px
+            
+            span
+                color: #000000
+                letter-spacing: 0.2em
+                line-height: 50px
+                font-family: Noto Sans
+                display: block
+                font-weight: bold
+
+                &:first-child
+                    font-size: 3.6rem
+
+                    +breakpoint(mobile-landscape)  
+                        font-size: 2.8rem
+
+                &:nth-child(2)
+                    font-size: 2.4rem
+                    text-align: right
+                    margin-top: 13px
+
+                    +breakpoint(mobile-landscape) 
+                        margin-top: 0 
+                        font-size: 1.6rem
+
+                    &::before
+                        content: ''
+                        position: absolute
+                        display: inline-block
+                        width: 1px
+                        height: 120px
+                        background-color: #000000
+                        transform: rotate(45deg)
+                        top: -6px
+                        left: 80px
+
+                        +breakpoint(mobile-landscape)  
+                            height: 100px
+                            top: -5px
+                            left: 70px
+                    
+        .intro-txt
+            flex: 1
+            margin-left: 115px
+
+            +breakpoint(zone-base)
+                margin-left: 80px
+
+            +breakpoint(pad-portrait)
+                margin-left: 0
+
+        p 
+            padding-top: 17px
+            font-family: Noto Sans
+            font-size: 1.4rem
+            line-height: 24px
+            letter-spacing: 0.2em
+            color: #000000
+
+            +breakpoint(mobile-landscape)  
+                font-size: 1.2rem
+
+        p ~ p
+            padding-top: 0
+
+// card intro end
+
+// popular product start
+.card-popular-product
+    .product-item 
+        display: flex
+        flex-wrap: wrap
+        margin-bottom: 160px
+
+        &:nth-child(4n+1)
+            .right
+                &::after
+                    background: #FFF8BB
+
+        &:nth-child(4n+2)
+            .left
+                &::after
+                    background: #EFE5E0
+        
+        &:nth-child(4n+3)
+            .right
+                &::after
+                    background: #FFEAEE
+
+        &:nth-child(4n+4)
+            .left
+                &::after
+                    background: #E9EFFF
+
+        &:nth-child(odd)
+            .left
+                width: 14.77%
+                align-items: flex-start
+
+                +breakpoint(pad-portrait-980)   
+                    width: 100%
+
+                .product-tag
+                    border-left: 8px solid #000000
+                    padding: 15px 40px 15px 16px
+
+                    +breakpoint(pad-portrait-980)   
+                        left: 0
+
+                    +breakpoint(mobile-landscape)  
+                        border-left: 6px solid #000000
+                        padding: 10px 40px 10px 14px
+
+                .product-main-title
+                    +breakpoint(pad-portrait-980)   
+                        margin-left: auto
+                        margin-right: 30px
+
+            .right
+                width: 85.23%
+                align-items: flex-end
+
+                +breakpoint(zone-nb-small)
+                    width: calc(85.23% - 30px)
+                    margin-left: 30px
+
+                +breakpoint(pad-portrait-980)   
+                    width: 100%
+                    margin-left: 0
+                
+                &::after
+                   right: 0
+
+                   @extend %bg-des-style
+
+                .product-img
+                    +breakpoint(pad-portrait-980)   
+                        order: 0
+                        width: calc(100% - 43px)
+                        margin-left: 43px
+
+                .product-des
+                    +breakpoint(pad-portrait-980)   
+                        order: 1
+
+            .more-link
+                margin-right: auto
+                margin-left: calc(14.77% + 100px)
+
+        &:nth-child(even)
+            .left
+                width: 85.23%
+                align-items: flex-end
+
+                +breakpoint(zone-nb-small)
+                    width: calc(85.23% - 50px)
+                    margin-right: 50px
+
+                +breakpoint(pad-portrait-980)   
+                    width: 100% 
+                    margin-right: 0
+                    order: 1
+
+                &::after
+                    left: 0
+                   
+                    @extend %bg-des-style
+
+                .product-img
+                    +breakpoint(pad-portrait-980)   
+                        width: calc(100% - 43px)
+                        margin-right: 43px
+            
+            .right
+                width: 14.77%
+                justify-content: flex-end
+                align-items: flex-start
+
+                +breakpoint(pad-portrait-980)   
+                    width: 100%
+                    order: 0
+
+                .product-tag
+                    border-right: 8px solid #000000
+                    padding: 15px 16px 15px 40px
+
+                    +breakpoint(pad-portrait-980)   
+                        right: 0
+
+                    +breakpoint(mobile-landscape)  
+                        border-right: 6px solid #000000
+                        padding: 10px 14px 10px 40px
+
+                .product-main-title
+                    +breakpoint(pad-portrait-980)   
+                        margin-left: 30px
+                        margin-right: auto
+
+            .more-link
+                margin-left: auto
+                margin-right: calc(14.77% + 100px)
+
+        .left,
+        .right
+            position: relative
+            display: flex
+            z-index: 1
+
+            +breakpoint(pad-portrait-980)   
+                flex-wrap: wrap
+
+            .product-des
+                width: 30.06%
+                padding: 0 50px 0 70px
+
+                +breakpoint(zone-nb-small)
+                    padding: 0 30px
+
+                +breakpoint(pad-portrait-980)   
+                    width: 100%
+                    margin-top: 60px
+
+                +breakpoint(mobile-landscape) 
+                    margin-top: 35px
+                
+            .product-img 
+                width: 69.94%
+
+                .img
+                    width: 100%
+                    padding-bottom: 54.2%
+                    background-repeat: no-repeat
+                    background-size: cover
+                    background-position: center
+
+        .product-tag
+            +breakpoint(pad-portrait-980)   
+                position: absolute
+
+            img
+                max-width: 14px
+
+        .product-main-title
+            max-width: 36px
+            font-family: Noto Serif TC
+            font-weight: bold
+            font-size: 3.6rem
+            line-height: 48px
+            letter-spacing: 0.2em
+            color: #000000
+            margin-top: 27px
+
+            +breakpoint(pad-portrait-980)   
+                max-width: 100%
+                margin-bottom: 30px
+                margin-top: 60px
+
+            +breakpoint(mobile-landscape) 
+                font-size: 2.8rem
+                margin-top: 45px
+
+        .product-title
+            position: relative
+            font-family: Spartan
+            font-size: 1.6rem
+            line-height: 24px
+            letter-spacing: 0.1em
+            color: #000000
+            margin-bottom: 40px
+
+            +breakpoint(zone-nb-small)
+                margin-bottom: 20px
+
+            &::after
+                content: ''
+                display: block
+                width: 40px
+                height: 2px
+                background: #000000
+                margin-top: 13px
+
+        .product-txt
+            font-family: Roboto
+            font-size: 1.4rem
+            line-height: 21px
+            text-align: justify
+            letter-spacing: 0.2em
+            color: #000000
+
+        .more-link 
+            margin-top: 140px
+            font-family: Noto Sans
+            font-style: normal
+            font-weight: bold
+            font-size: 1.6rem
+            line-height: 22px
+            letter-spacing: 0.2em
+            color: #000000
+            border: 1px solid #000000
+            width: 260px
+            padding: 25px 0
+            text-align: center
+            order: 2
+
+            +breakpoint(zone-nb-small)
+                margin-top: 100px
+
+            +breakpoint(mobile-landscape) 
+                font-size: 1.4rem
+
+// popular product end
+
+// card-photo end
+.card-photo 
+    padding: 0 80px
+    margin-bottom: 140px
+
+    +breakpoint(pad-portrait)
+        padding: 0 30px
+        margin-bottom: 60px
+
+    .swiper-slide-inner
+        position: relative
+        display: block
+
+        .img
+            width: 100%
+            padding-bottom: 100%
+            background-position: center
+            background-size: cover
+            background-repeat: no-repeat
+                
+// card-photo end
+
+
+

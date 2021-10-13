@@ -1,0 +1,32 @@
+{
+  "name": "ccworkv3",
+  "version": "1.0.0",
+  "description": "Jungle add this file 2019/11/1",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlabwork.kidtech.com.tw:8090/design/CCWorkV3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cached": "^1.1.1",
+    "gulp-changed": "^4.0.2",
+    "gulp-filter": "^6.0.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^5.0.1"
+  },
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001233",
+    "gulp-pug": "^4.0.1"
+  }
+}

@@ -1,0 +1,83 @@
+
+doctype html
+html(lang="zh-Hant-TW")
+    head
+        include ./includes/meta.pug
+        include ./includes/link.pug
+        include ./includes/script.pug
+        link(rel="stylesheet" href="./styles/product.css")
+        title Bakery 首頁
+    body 
+        -var breadtag = ['商品總覽']
+        //- header start
+        include ./includes/header.pug
+        
+        //- header end
+
+        .wide-container
+            //- breadcrumb start
+            include ./includes/breadcrumbs.pug
+            //- breadcrumb end
+            //- product start
+            .card-product-container(data-style="1") 
+                .product-outbox
+                    .card-title
+                        .cn 商品總覽
+                        .en Products
+                    .swiper-container.product-box 
+                        .swiper-wrapper 
+                            .swiper-slide 
+                                a.img-content(href="javascript:;") 
+                                    .img(style="background-image: url('./images/index/product01.png')")
+                                    .link
+                                        span MORE
+                                        img(src="./images/arrow-down.png")
+                                .product-title 可頌系列
+                            .swiper-slide 
+                                a.img-content(href="javascript:;") 
+                                    .img(style="background-image: url('./images/index/product02.png')")
+                                    .link
+                                        span MORE
+                                        img(src="./images/arrow-down.png")
+                                .product-title 瑪芬系列
+                            .swiper-slide 
+                                a.img-content(href="javascript:;") 
+                                    .img(style="background-image: url('./images/index/product03.png')")
+                                    .link
+                                        span MORE
+                                        img(src="./images/arrow-down.png")
+                                .product-title 馬卡龍系列
+                            .swiper-slide 
+                                a.img-content(href="javascript:;") 
+                                    .img(style="background-image: url('./images/index/product04.png')")
+                                    .link
+                                        span MORE
+                                        img(src="./images/arrow-down.png")
+                                .product-title 多拿滋系列
+                            .swiper-slide 
+                                a.img-content(href="javascript:;") 
+                                    .img(style="background-image: url('./images/index/product05.png')")
+                                    .link
+                                        span MORE
+                                        img(src="./images/arrow-down.png")
+                                .product-title 磅蛋糕系列
+                            .swiper-slide 
+                                a.img-content(href="javascript:;") 
+                                    .img(style="background-image: url('./images/index/product06.png')")
+                                    .link
+                                        span MORE
+                                        img(src="./images/arrow-down.png")
+                                .product-title 吐司系列
+            //- product end
+
+            //- footer start
+            include ./includes/footer.pug
+            //- footer end
+
+
+
+    script.
+        $(function() {
+
+        });
+        

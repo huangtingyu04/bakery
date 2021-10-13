@@ -1,0 +1,639 @@
+@charset "utf-8"
+
+@import variables
+@import mixins/rwd
+@import utilities
+@import extend
+
+// 10. Forms
+// ==========================================================================
+
+// Remove Focus Boxes
+select:focus
+    outline: $select-focus
+
+button:focus
+    outline: none
+    background-color: $button-background-focus
+
+label
+    font-size: $label-font-size
+    color: $input-border-color
+
+ul.forms
+    margin: 4rem 2rem 80px
+    padding: 0
+    list-style: none
+
+    > li
+        //update fay 20180410 margin: 0
+        margin: 0 0 1.2rem 0
+        padding: 0
+        list-style: none
+
+        [class*='col-']
+            padding-left: $input-margin-bottom / 2
+            padding-right: $input-margin-bottom / 2
+
+            +breakpoint(pad-portrait)
+                padding-left: $input-margin-bottom / 4
+                padding-right: $input-margin-bottom / 4
+
+
+            [class*='col-']
+                padding-left: 0
+
+                +breakpoint(pad-portrait)
+                    padding-left: 0
+
+        &.addBlock
+            position: relative
+            padding: 20px 20px 18px
+
+            // border: 1px solid $search-box-color
+            margin-top: 25px
+            margin-left: $input-margin-bottom / 2
+            margin-right: $input-margin-bottom / 2
+            background-color: color("grey", "lighten-3")
+
+            +breakpoint(pad-portrait)
+                margin-left: $input-margin-bottom / 4
+                margin-right: $input-margin-bottom / 4
+
+
+            ul.forms
+                margin: 0px
+
+            > [class*='btn-']
+                position: absolute
+                right: 0
+                top: 0
+
+                &:not(.btn-del)
+                    position: relative
+                    top: -20px
+                    left: -20px
+                    right: auto
+
+            .cke_contents
+                max-height: 250px
+
+            &.bg-transparent
+                margin-left: 0
+                margin-right: 0
+                background-color: color("shades", "white")
+                padding: 0
+                margin-top: 0
+
+                +breakpoint(pad-portrait)
+                    margin-left: 0
+                    margin-right: 0
+
+
+                .input-field
+                    > .cke_reset
+                        border: 1px solid color("grey", "base") !important
+
+            .num
+                font-size: 32px
+                line-height: 1
+                color: #cccccc
+                font-family: Arial
+                font-weight: bold
+                position: absolute
+                left: 20px
+                top: 20px
+
+            &.text-value
+                padding-top: 10px
+                padding-left: 40px
+
+    .info
+        display: inline-block
+        vertical-align: middle
+
+        // margin-right: 3px
+
+    //edit allForms fay 20180328
+    .inline
+        margin-top: 1.2rem
+
+    .title
+        font-size: $label-font-size
+        color: $input-focus-color
+        margin-bottom: 8px
+
+        ~ .info
+            vertical-align: inherit
+            margin-top: 3px
+
+        &.main
+            font-size: $input-font-size
+            margin: 35px 0 15px
+            text-align: center
+
+            > span
+                background-color: $white
+                display: inline-block
+                position: relative
+                padding: 0 13px
+                z-index: 3
+
+            &.border-middle
+                position: relative
+
+                &::before, &::after
+                    content: ""
+                    display: block
+                    width: 50%
+                    height: 1px
+                    background-color: #787878
+                    position: absolute
+                    top: 50%
+
+                    // margin-top: -1px
+
+                &::before
+                    left: 0
+
+                &::after
+                    right: 0
+
+        &.inline
+            // display: inline-block
+            // vertical-align: super
+            min-width: 80px
+            float: left
+            margin-bottom: 0
+            //edit allForms fay 20180328 margin-top: 2rem
+            margin-top: 1.6rem
+
+            +breakpoint(mobile)
+                min-width: auto
+                float: none
+
+
+            ~ .info
+                font-size: $label-font-size
+                vertical-align: super
+                margin: 0 0 0 3px
+
+            ~ .input-field
+                &.inline
+                    ~ .radio-box
+                        &.inline
+                            margin-left: 15px
+
+                            +breakpoint(mobile)
+                                margin-left: 0px
+                                margin-top: -20px
+
+                    &.full
+                        margin-left: 83px
+
+                        +breakpoint(mobile)
+                            margin-left: 0
+
+
+                        > input, > textarea
+                            margin-bottom: 0
+
+                            +breakpoint(mobile)
+                                margin-bottom: 25px
+
+                        ~ .radio-box
+                            // margin-top: -1.5rem
+
+                            &.inline
+                                margin-left: 83px
+
+                                +breakpoint(mobile)
+                                    margin-left: 0
+                                    margin-top: -20px
+
+                    ~ .input-field:not(.inline)
+                        .fileuploader
+                            margin-top: 0
+
+                .fileuploader
+                    margin-top: 2.2rem
+
+                // &.no-label
+                //  input
+                //      margin-bottom: 0
+
+                // ~ .tooltip
+                //  vertical-align: bottom
+
+            ~ .radio-box
+                &.inline
+                    margin-left: 5px
+                    //edit allForms fay 20180328 margin-top: 1.5rem
+
+                    +breakpoint(mobile)
+                        margin-left: 0
+
+
+                    &.with-img
+                        margin-top: 2rem
+
+                    &.full
+                        margin-left: 83px
+
+                        +breakpoint(mobile)
+                            margin-left: 0
+
+                > .input-field.inline
+                    margin-top: 0 !important
+
+                > .text-value
+                    margin-left: 0
+                    margin-top: 0
+
+            ~ .inline-follow
+                margin-left: 83px
+
+                +breakpoint(mobile)
+                    margin-left: 0
+
+            ~ .text-value
+                margin-top: 1.8rem
+                margin-left: 83px
+                margin-bottom: 0
+
+                +breakpoint(mobile)
+                    margin-left: 0
+
+        &.no-label
+            margin-bottom: 0
+
+            ~ .info
+                vertical-align: inherit
+                margin-top: 3px
+
+            ~ .input-field.no-label
+                //edit allForms fay 20180328margin-top: 0.5rem
+
+            ~ .info ~ .input-field.no-label
+                margin-top: 0
+
+            //edit allForms fay 20180328
+            // &.inline
+            //     ~ .input-field.no-label
+            //         margin-top: 1.5rem
+
+            //     ~ .inline-follow
+            //         .input-field.no-label
+            //             margin-top: 0
+
+    .required
+        margin-left: 5px
+        color: color("red", "accent-3")
+        font-size: 16px
+        line-height: 10px
+
+.input-field
+    &.inline
+        ~ .radio-box
+            margin-top: 0
+            margin-left: 15px
+
+            +breakpoint(mobile)
+                margin-left: 0
+                margin-top: -20px
+
+        &.full
+            display: block
+
+            ~ .radio-box
+                margin-top: 0
+                margin-left: 0
+
+                +breakpoint(mobile)
+                    margin-top: -20px
+
+    &.radio-box, .radio-box
+        [type="checkbox"]
+            ~ label
+                top: 0
+
+    .info
+        font-size: $label-font-size
+        vertical-align: super
+        margin: 0 0 0 3px
+
+.radio-box
+    //edit allForms fay 20180328 margin-top: 1.5rem
+    margin-top: 8px
+    margin-bottom: $input-margin-bottom - 5
+
+    > div
+        margin-bottom: 4px
+
+        &.half
+            width: size(50)
+            margin-right: 0
+
+    > .input-field
+        margin-top: 0
+
+        > input
+            margin-bottom: 0
+
+        &.inline
+            margin-top: 0
+
+    &.inline
+        display: inline-block
+
+        // margin-bottom: $input-margin-bottom - 15
+        margin-bottom: 0
+
+        &.full
+            display: block
+
+        > div
+            position: relative
+            display: inline-block
+            vertical-align: middle
+            box-sizing: border-box
+            margin-right: 13px
+
+            // margin-bottom: 10px
+            margin-bottom: 5px
+
+            &.half
+                margin-right: -4px
+
+            &.title.inline
+                margin-top: 0
+                float: none
+                margin-bottom: 5px
+
+.inline-follow
+    margin-bottom: $input-margin-bottom - 15
+
+    .input-field.inline
+        // update fay 20180409 margin-left: -2px
+        margin-left: -3px
+
+.checkInfocircle
+    position: absolute
+    right: 4px
+    top: 7px
+
+.checkInfo-box
+    margin-top: -25px
+
+.checkInfo
+    font-size: 13px
+    font-size: 1.3rem
+    display: inline-block
+
+    > i
+        margin-right: 2px
+
+.captcha
+    position: absolute
+    right: 0px
+    z-index: 2
+
+    a
+        @extend %reset
+
+        // margin-left: 10px
+        font-size: 20px
+        display: inline-block
+        vertical-align: middle
+
+        i
+            vertical-align: middle
+
+    img
+        -webkit-filter: grayscale(100%)
+        -moz-filter: grayscale(100%)
+        -ms-filter: grayscale(100%)
+        -o-filter: grayscale(100%)
+        filter: grayscale(100%)
+        filter: gray
+
+    ~ *
+        > input[type=text]
+            padding-right: 130px !important
+
+.treeview
+    position: relative
+    cursor: pointer
+    background-color: transparent
+    border: none
+    border-bottom: $input-border
+    outline: none
+    // fay 20180409 height: $input-height
+    // fay 20180409 line-height: $input-height
+    width: 100%
+    font-size: $input-font-size
+    margin: $input-margin
+    // fay 20180409 padding: 0
+    padding: 3px 0
+
+    &::after
+        content: "▼"
+        display: block
+        color: initial
+        position: absolute
+        right: 0
+        top: 0
+        bottom: 0
+        height: 10px
+        margin: auto 0
+        font-size: 10px
+        line-height: 10px
+
+    > span
+        display: block
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+        padding-right: 20px
+        box-sizing: border-box
+
+.treelist
+    position: absolute
+    list-style: none
+    margin: 0
+    padding: 0
+
+    &.dropdown-content
+        width: 200%
+        max-height: 300px
+        top: 0
+
+        li
+            list-style: none
+            margin: 0
+            padding: 0
+            background-color: $dropdown-bg-color
+            min-height: inherit
+
+            > span
+                background-color: $dropdown-bg-color
+
+            &:hover, &.active, &.selected
+                background-color: $dropdown-bg-color
+
+                > span
+                    background-color: $dropdown-bg-color
+
+                    &:hover, &.active, &.selected
+                        background-color: $dropdown-hover-bg-color
+
+            .dd-handle
+                padding: 12px 22px
+
+            .dd-list
+                .dd-list
+                    .dd-handle
+                        padding-left: 49px
+
+                        &::before, &::after
+                            left: 30px
+
+                    .dd-list
+                        .dd-handle
+                            padding-left: 76px
+
+                            &::before, &::after
+                                left: 56px
+
+        &.active
+            // display: block
+            opacity: 1
+
+.infoTipBox
+    border: 5px solid color("grey", "lighten-2")
+    padding: 30px 15px 20px 65px
+    position: relative
+
+    &::after
+        content: unquote('"\\ea3b"')
+        display: block
+        font-family: "FontCCwork"
+        line-height: 30px
+
+        //font-size: 30px
+        font-size: 50px
+        position: absolute
+
+        //top: 20px
+        //left: 20px
+        top: 19px
+        left: 6px
+        color: color("grey", "lighten-2")
+
+    ul.forms
+        margin: 0
+
+        ~ ul.forms
+            margin-top: 20px
+            padding-top: 20px
+            border-top: 1px solid color("grey", "lighten-2")
+
+        li ~ li
+            margin-top: 8px
+
+        .title.inline
+            &, & ~ .text-value
+                margin-top: 0
+
+.control-bar
+    position: fixed
+    bottom: 0
+    left: 0
+    width: size(100)
+    // text-align: center
+    text-align: right
+    background-color: #f7f7f7
+    border-top: 1px solid #e9e9e9
+    z-index: 100
+
+    @extend %border-box
+
+    > a.set-left
+        float: left
+
+    > .bar-item
+        text-align: left
+        border-bottom: 1px solid #dedede
+
+        @extend %transition-btn
+
+        &.float-L
+            padding: 9px 10px 0
+            border-bottom: none
+
+        ul.forms
+            margin: 12px 20px 25px
+
+        [type="checkbox"], [type="checkbox"] ~ label
+            margin-top: 3px
+
+            // .title.no-label.inline ~ .input-field.no-label
+            //     margin-bottom: 10px
+
+        > .input-field
+            max-width: 180px
+
+        input:not([type]), input[type=text]
+            margin-bottom: 0
+
+    > div > a[class*='btn-'], > a[class*='btn-']
+        padding: 12px 20px
+        border: none
+
+        // &:hover
+        //     color: #ffffff
+        //     background-color: color("red", "base")
+
+        &:not(.btn-del)
+            &:hover
+                color: #000000
+                background-color: color("shades", "white")
+
+        &.btn-bulid
+            color: #000000
+
+        &.btn-grey
+            color: #9e9e9e
+            background-color: transparent
+
+    &.flex
+        display: flex
+
+        > a
+            flex: 1
+
+.formError
+    +breakpoint(mobile)
+        right: 5% !important
+        left: auto !important
+
+        // margin-top: (-35px) !important
+
+@import forms/input
+@import forms/alert
+@import forms/select
+@import forms/radio
+@import forms/checkbox
+@import forms/flexdatalist
+@import forms/fileuploader
+@import forms/datetimepicker
+@import forms/dropdown
+@import forms/pagination
+
+//Stop chrome's autocomplete from making your input fields that nasty yellow.
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active
+    // -webkit-box-shadow: none;
+    transition: background-color 5000s ease-in-out 0s
+
+    // opacity
+    // -webkit-text-fill-color: #fff;
