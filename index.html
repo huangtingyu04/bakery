@@ -138,16 +138,16 @@
         <div class="intro-box swiper-container"> 
           <div class="swiper-wrapper"> 
             <div class="swiper-slide"> 
-              <div class="img" style="background-image: url('./images/index/about01.png')"></div>
+              <div class="img" style="background-image: url('./images/index/about01.jpg')"></div>
             </div>
             <div class="swiper-slide"> 
-              <div class="img" style="background-image: url('./images/index/about02.png')"></div>
+              <div class="img" style="background-image: url('./images/index/about02.jpg')"></div>
             </div>
             <div class="swiper-slide"> 
-              <div class="img" style="background-image: url('./images/index/about03.png')"></div>
+              <div class="img" style="background-image: url('./images/index/about03.jpg')"></div>
             </div>
             <div class="swiper-slide"> 
-              <div class="img" style="background-image: url('./images/index/about04.png')"></div>
+              <div class="img" style="background-image: url('./images/index/about04.jpg')"></div>
             </div>
           </div>
         </div>
@@ -323,9 +323,11 @@
             spaceBetween: 0,
             loop: true,
             loopAdditionalSlides: 5,
+            freeMode: true,
             speed: 5000,
             autoplay: {
                 delay: 0,
+                disableOnInteraction: true
             },
             breakpoints: {
                 580: {
@@ -348,7 +350,7 @@
             loop: true,
             speed: 100,
             autoplay: {
-                delay: 100,
+                delay: 300,
             },
         });
     });

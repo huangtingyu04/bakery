@@ -98,13 +98,13 @@ html(lang="zh-Hant-TW")
                 .intro-box.swiper-container 
                     .swiper-wrapper 
                         .swiper-slide 
-                            .img(style="background-image: url('./images/index/about01.png')")
+                            .img(style="background-image: url('./images/index/about01.jpg')")
                         .swiper-slide 
-                            .img(style="background-image: url('./images/index/about02.png')")
+                            .img(style="background-image: url('./images/index/about02.jpg')")
                         .swiper-slide 
-                            .img(style="background-image: url('./images/index/about03.png')")
+                            .img(style="background-image: url('./images/index/about03.jpg')")
                         .swiper-slide 
-                            .img(style="background-image: url('./images/index/about04.png')")
+                            .img(style="background-image: url('./images/index/about04.jpg')")
                 .intro-content
                     .intro-title 
                         span 來點
@@ -257,9 +257,11 @@ html(lang="zh-Hant-TW")
                 spaceBetween: 0,
                 loop: true,
                 loopAdditionalSlides: 5,
+                freeMode: true,
                 speed: 5000,
                 autoplay: {
                     delay: 0,
+                    disableOnInteraction: true
                 },
                 breakpoints: {
                     580: {
@@ -282,7 +284,7 @@ html(lang="zh-Hant-TW")
                 loop: true,
                 speed: 100,
                 autoplay: {
-                    delay: 100,
+                    delay: 300,
                 },
             });
         });
