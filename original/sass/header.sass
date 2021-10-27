@@ -72,32 +72,48 @@
         display: flex
         flex-direction: column
         align-items: center
-        padding-top: 240px
+        padding-top: 21vh
+        z-index: 1
 
-        &::after
-            content: ''
-            position: absolute
-            top: 0
-            right: 0
-            height: 100vh
-            width: 1px
-            background: rgba(0, 0, 0, 0.1)
+        // &::after
+        //     content: ''
+        //     position: absolute
+        //     top: 0
+        //     right: 0
+        //     height: 100vh
+        //     width: 1px
+        //     background: rgba(0, 0, 0, 0.1)
         // border-right: 1px solid rgba(0, 0, 0, 0.1)
 
         +breakpoint(mobile-landscape)
             display: none
 
+        .img
+            background-repeat: no-repeat
+            // background-size: contain
+
         .logo
+            .img
+                width: 120px
+                padding-bottom: 120px
+                background-image:  url('../images/sidebar_logo.png')
+
             img
                 max-width: 120px
 
         .logo-txt
             margin-bottom: 50px
 
+            .img
+                width: 26px
+                padding-bottom: 133px
+                background-image:  url('../images/sidebar-txt.png')
+
             img
                 max-width: 26px
 
         .burger
+            cursor: pointer
             margin-bottom: 176px
 
             img
@@ -117,3 +133,108 @@
             img
                 max-width: 34px
 
+            .img
+                width: 36px
+                padding-bottom: 41px
+                margin: auto
+                background-image:  url('../images/cart-icon.png')
+
+    .main-menu
+        display: none
+        position: fixed
+        width: calc(100% - 140px)
+        left: 140px
+        max-width: 100%
+        margin: auto
+        height: 100vh
+        background: rgba(255, 255, 255, 0.8)
+        backdrop-filter: blur(24px)
+        z-index: 100
+
+        +breakpoint(mobile-landscape)
+            width: 100%
+            left: 0
+
+        .menu-list
+            padding-top: 300px
+            display: flex
+            justify-content: space-between
+            width: 506px
+            margin: auto
+
+            li
+                width: 124px
+
+            a
+                display: flex
+
+                span
+                    display: block
+                    color: #000000
+
+                    &.cn
+                        width: 24px
+                        font-family: Noto Sans
+                        font-weight: bold
+                        font-size: 2.4rem
+                        line-height: 40px
+                        letter-spacing: 0.2em
+
+                    &.en
+                        font-family: Spartan
+                        font-size: 2.1rem
+                        line-height: 32px
+                        transform: translate(34px, 10px) rotate(90deg)
+                        transform-origin: 0 0
+
+        .menu-info
+            display: flex 
+            width: 100%
+            position: absolute
+            padding: 44px 52px 34px 100px
+            bottom: 0
+            border-top: 1px solid rgba(0, 0, 0, 0.3)
+
+            +breakpoint(mobile-landscape)
+                width: 100%
+
+            .info-box 
+                li
+                    margin-bottom: 10px
+                    font-family: Noto Sans
+                    font-size: 1.4rem
+                    line-height: 21px
+                    letter-spacing: 0.2em
+                    color: #000000
+
+            .social-box 
+                display: flex
+                margin-top: 20px
+                margin-left: auto
+
+                a
+                    border: 1px solid rgba(0, 0, 0, 1)
+                    background: #000000
+                    border-radius: 50px
+                    width: 34px
+                    height: 34px
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    margin-right: 14px
+
+                    &:last-child
+                        margin-right: 0
+
+                .social-icon
+                    background-repeat: no-repeat
+                    
+                    &.facebook-icon
+                        width: 10px
+                        height: 16px
+                        background-image: url('../images/fb-icon-white.png')
+
+                    &.instagram-icon
+                        width: 18px
+                        height: 17px
+                        background-image: url('../images/ig-icon-white.png')

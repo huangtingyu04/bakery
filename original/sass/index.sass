@@ -6,6 +6,17 @@
 
 @import partials/_base
 
+$sec: 's'
+
+@mixin slide($direction)
+    @for $i from 0 through 17 
+        &.slide#{$i} 
+            transition: $direction .7s ease 0s,opacity .7s ease #{$i*2/10}#{$sec}
+
+        &.slideT#{$i} 
+            transition: $direction .7s ease 0s,opacity .7s ease #{$i*2/20}#{$sec}
+        
+
 %bg-des-style
     content: ''
     position: absolute
@@ -36,19 +47,46 @@ a
 
 .card-manvision 
     position: relative
+    z-index: 999
 
     .bg-img
         width: 100%
-        padding-bottom: 62.5%
-        // height: 100vh
+        // padding-bottom: 62.5%
+        height: 100vh
         // background-attachment: fixed
         background-position: center
         background-size: cover
         background-repeat: no-repeat
+        position: relative
 
         +breakpoint(mobile-landscape)  
             padding-bottom: 197.87%
 
+        &::before,
+        &::after
+            content: ''
+            position: absolute
+            background-repeat: no-repeat
+            background-size: contain
+
+            +breakpoint(mobile-landscape)  
+                display: none
+            
+        &::before
+            background-image: url('../images/index/mask01.png')
+            top: 0 
+            left: 0
+            width: 37.3%
+            padding-bottom: calc(37.3% * 1.68)
+
+        &::after
+            top: 144px
+            right: 30px
+            background-image: url('../images/index/mask02.png')
+            width: 33.33%
+            padding-bottom: calc(33.3% * 1.02)
+
+        
         &.desktop
             +breakpoint(mobile-landscape)  
                 display: none
@@ -73,24 +111,26 @@ a
 .card-product 
     .product-outbox
         position: relative
-        margin: 160px 0 157px 80px
+        margin: 0 0 157px 80px
+        padding-top: 160px
 
         +breakpoint(mobile-landscape) 
-            margin: 50px 0 80px 30px
+            margin: 0 0 80px 30px
+            padding-top: 70px
 
         &::before
             content: ''
             position: absolute
-            top: -30%
+            top: 16%
             right: 10px
-            width: 63.36%
+            width: 61.36%
             padding-bottom: calc(63.36% * 0.162)
             background-image: url('../images/index/product-bg.png')
             background-repeat: no-repeat
             background-size: contain
 
             +breakpoint(mobile-landscape) 
-                top: -35px
+                top: 32px
                 width: 78.36%
                 padding-bottom: calc(78.36% * 0.162)
 
@@ -114,7 +154,14 @@ a
             
 
             .link
-                top: 50%
+                span
+                    opacity: 1
+
+                img
+                    bottom: 24px
+
+                    +breakpoint(mobile-landscape) 
+                        bottom: 10px
 
         .img
             width: 100%
@@ -143,25 +190,26 @@ a
             align-items: center
             width: 100%
             height: 100%
-            top: 110%
+            top: 50%
             left: 50%
             transform: translate(-50%, -50%) 
-            transition: .4s ease-in-out
+
+            span,
+            img
+                transition: .4s ease-in-out
 
             span
-                font-family: Noto Sans
+                font-family: 'Roboto'
                 font-weight: bold
                 font-size: 1.6rem
                 line-height: 22px
                 letter-spacing: 0.2em
                 color: #FFFFFF
+                opacity: 0
 
             img
                 position: absolute
-                bottom: 24px
-
-                +breakpoint(mobile-landscape) 
-                    bottom: 10px
+                bottom: -10px
 
     .product-title
         margin-top: 20px
@@ -413,7 +461,7 @@ a
     .product-item 
         display: flex
         flex-wrap: wrap
-        margin-bottom: 160px
+        padding-bottom: 160px
 
         &:nth-child(4n+1)
             .right
@@ -580,6 +628,21 @@ a
             +breakpoint(pad-portrait-980)   
                 position: absolute
 
+            span
+                display: inline-block
+                max-width: 14px
+                font-weight: bold
+                font-size: 1.4rem
+                line-height: 24px
+                letter-spacing: 0.2em
+                color: #000000
+
+                +breakpoint(mobile-landscape) 
+                    font-size: 1.2rem
+                    line-height: 20px
+                 
+
+
             img
                 max-width: 14px
 
@@ -679,4 +742,34 @@ a
 // card-photo end
 
 
+
+.swiper-slide-inner
+    position: relative
+    opacity: 0
+    transition: opacity 1s ease
+
+    &.slideLeft
+        left: 45px
+
+    &.slideUp
+        top: 35px
+            
+[data-aos^=fade][data-aos^=fade].aos-animate
+    .swiper-slide-inner
+        opacity: 1
+
+        &.slideLeft
+            left: 0
+
+            +slide(left)
+
+        &.slideUp
+            top: 0
+
+            +slide(top)
+
+
+
+
+        
 

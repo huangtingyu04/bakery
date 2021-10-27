@@ -14,63 +14,70 @@ html(lang="zh-Hant-TW")
 
         //- landing page start
         .zone
-            .card-manvision 
+            .card-manvision(data-aos="fade", data-aos-once="true") 
                 .bg-img.desktop(style="background-image: url('./images/index/landing-page.png')")
+                    img.logo(src="./images/logo.png")
                 .bg-img.mobile(style="background-image: url('./images/index/landing-page-mobile.png')")
-                img.logo(src="./images/logo.png")
+                    img.logo(src="./images/logo.png")
         //- landing page end
 
         .wide-container
             //- product start
-            .card-product 
+            .card-product(data-aos="fade", data-aos-once="true") 
                 .product-outbox
                     .swiper-container.product-box 
                         .swiper-wrapper 
                             .swiper-slide 
-                                a.img-content(href="javascript:;") 
-                                    .img(style="background-image: url('./images/index/product01.png')")
-                                    .link
-                                        span MORE
-                                        img(src="./images/arrow-down.png")
-                                .product-title 可頌系列
+                                .swiper-slide-inner
+                                    a.img-content(href="javascript:;") 
+                                        .img(style="background-image: url('./images/index/product01.png')")
+                                        .link
+                                            span MORE
+                                            img(src="./images/arrow-down.png")
+                                    .product-title 可頌系列
                             .swiper-slide 
-                                a.img-content(href="javascript:;") 
-                                    .img(style="background-image: url('./images/index/product02.png')")
-                                    .link
-                                        span MORE
-                                        img(src="./images/arrow-down.png")
-                                .product-title 瑪芬系列
+                                .swiper-slide-inner
+                                    a.img-content(href="javascript:;") 
+                                        .img(style="background-image: url('./images/index/product02.png')")
+                                        .link
+                                            span MORE
+                                            img(src="./images/arrow-down.png")
+                                    .product-title 瑪芬系列
+                            .swiper-slide
+                                .swiper-slide-inner
+                                    a.img-content(href="javascript:;") 
+                                        .img(style="background-image: url('./images/index/product03.png')")
+                                        .link
+                                            span MORE
+                                            img(src="./images/arrow-down.png")
+                                    .product-title 馬卡龍系列
                             .swiper-slide 
-                                a.img-content(href="javascript:;") 
-                                    .img(style="background-image: url('./images/index/product03.png')")
-                                    .link
-                                        span MORE
-                                        img(src="./images/arrow-down.png")
-                                .product-title 馬卡龍系列
+                                .swiper-slide-inner
+                                    a.img-content(href="javascript:;") 
+                                        .img(style="background-image: url('./images/index/product04.png')")
+                                        .link
+                                            span MORE
+                                            img(src="./images/arrow-down.png")
+                                    .product-title 多拿滋系列
                             .swiper-slide 
-                                a.img-content(href="javascript:;") 
-                                    .img(style="background-image: url('./images/index/product04.png')")
-                                    .link
-                                        span MORE
-                                        img(src="./images/arrow-down.png")
-                                .product-title 多拿滋系列
+                                .swiper-slide-inner
+                                    a.img-content(href="javascript:;") 
+                                        .img(style="background-image: url('./images/index/product05.png')")
+                                        .link
+                                            span MORE
+                                            img(src="./images/arrow-down.png")
+                                    .product-title 磅蛋糕系列
                             .swiper-slide 
-                                a.img-content(href="javascript:;") 
-                                    .img(style="background-image: url('./images/index/product05.png')")
-                                    .link
-                                        span MORE
-                                        img(src="./images/arrow-down.png")
-                                .product-title 磅蛋糕系列
-                            .swiper-slide 
-                                a.img-content(href="javascript:;") 
-                                    .img(style="background-image: url('./images/index/product06.png')")
-                                    .link
-                                        span MORE
-                                        img(src="./images/arrow-down.png")
-                                .product-title 吐司系列
+                                .swiper-slide-inner
+                                    a.img-content(href="javascript:;") 
+                                        .img(style="background-image: url('./images/index/product06.png')")
+                                        .link
+                                            span MORE
+                                            img(src="./images/arrow-down.png")
+                                    .product-title 吐司系列
             //- product end
             //- event start
-            .card-event 
+            .card-event(data-aos="fade", data-aos-once="true") 
                 .card-main-title
                     .cn 最新活動
                     .en Events
@@ -79,23 +86,25 @@ html(lang="zh-Hant-TW")
                         .event-box.swiper-container 
                             .swiper-wrapper 
                                 .swiper-slide 
-                                    .img-content 
-                                        .img(style="background-image: url('./images/index/event01.png')")
-                                        a.link(href="javascript:;")
-                                            span MORE
-                                            img(src="./images/arrow-down.png")
-                                .swiper-slide 
-                                    .img-content 
-                                        .img(style="background-image: url('./images/index/event02.png')")
-                                        a.link(href="javascript:;")
-                                            span MORE
-                                            img(src="./images/arrow-down.png")
+                                    .swiper-slide-inner
+                                        .img-content 
+                                            .img(style="background-image: url('./images/index/event01.png')")
+                                            a.link(href="javascript:;")
+                                                span MORE
+                                                img(src="./images/arrow-down.png")
+                                .swiper-slide
+                                    .swiper-slide-inner
+                                        .img-content 
+                                            .img(style="background-image: url('./images/index/event02.png')")
+                                            a.link(href="javascript:;")
+                                                span MORE
+                                                img(src="./images/arrow-down.png")
                         .swiper-button.swiper-button-prev
                         .swiper-button.swiper-button-next
             //- event end
             //- intro start
-            .card-intro
-                .intro-box.swiper-container 
+            .card-intro(data-aos="fade", data-aos-once="true") 
+                .intro-box.swiper-container
                     .swiper-wrapper 
                         .swiper-slide 
                             .img(style="background-image: url('./images/index/about01.jpg')")
@@ -116,10 +125,10 @@ html(lang="zh-Hant-TW")
 
             //- popular product start
             .card-popular-product
-                .product-item 
+                .product-item(data-aos="fade", data-aos-once="true") 
                     .left
                         .product-tag
-                            img(src="./images/product-img.png")
+                            span 人氣商品
                         .product-main-title 法式經典檸檬塔
                     .right
                         .product-des
@@ -129,7 +138,7 @@ html(lang="zh-Hant-TW")
                             .img(style="background-image: url('./images/index/popular01.png')")
                     .more-link 
                         a(href="javascript:;") MORE
-                .product-item 
+                .product-item(data-aos="fade", data-aos-once="true") 
                     .left
                         .product-img 
                             .img(style="background-image: url('./images/index/popular02.png')")
@@ -139,13 +148,13 @@ html(lang="zh-Hant-TW")
                     .right
                         .product-main-title 濃郁可可馬卡龍
                         .product-tag
-                            img(src="./images/product-img.png")
+                            span 人氣商品
                     .more-link 
                         a(href="javascript:;") MORE
-                .product-item 
+                .product-item(data-aos="fade", data-aos-once="true") 
                     .left
                         .product-tag
-                            img(src="./images/product-img.png")
+                            span 人氣商品
                         .product-main-title 花香多拿滋
                     .right
                         .product-des
@@ -155,7 +164,7 @@ html(lang="zh-Hant-TW")
                             .img(style="background-image: url('./images/index/popular03.png')")
                     .more-link 
                         a(href="javascript:;") MORE
-                .product-item 
+                .product-item(data-aos="fade", data-aos-once="true") 
                     .left
                         .product-img 
                             .img(style="background-image: url('./images/index/popular04.png')")
@@ -165,17 +174,17 @@ html(lang="zh-Hant-TW")
                     .right
                         .product-main-title 英式藍莓瑪芬
                         .product-tag
-                            img(src="./images/product-img.png")
+                            span 人氣商品
                     .more-link 
                         a(href="javascript:;") MORE
             //- popular product end
 
             //- photo start
-            .card-photo 
+            .card-photo
                 .card-main-title
                     .cn 來點相簿
                     .en Photos
-                .photo-list.swiper-container 
+                .photo-list.swiper-container(data-aos="fade", data-aos-once="true")  
                     .swiper-wrapper 
                         .swiper-slide 
                             a.swiper-slide-inner(href="javascript:;")
@@ -203,6 +212,18 @@ html(lang="zh-Hant-TW")
 
     script.
         $(function() {
+            var scrollTop
+            var sideBar = $('.card-header .sidebar')
+            $(window).on('scroll', function() {
+                scrollTop =  $(window).scrollTop();
+                sideBar.css('top', 'calc(100vh - '+scrollTop +'px)')
+            })
+
+            function updateClasses({ $el, slides, activeIndex }) {
+                slides.each(function(idx, slide) {
+                    $(slide).find('.swiper-slide-inner').addClass('slide'+idx+'')   
+                })
+            }
 
             new Swiper('.card-product .product-box', {
                 slidesPerView: 4.5,
@@ -224,6 +245,13 @@ html(lang="zh-Hant-TW")
                         slidesPerView: 3.5,
                         spaceBetween: 16,
                     },
+                },
+                on: {
+                    init() {
+                        this.slides.each(function(idx, slide) {
+                            $(slide).find('.swiper-slide-inner').addClass('slideLeft slide'+idx+'')   
+                        })
+                    }
                 },
             });
 
@@ -249,9 +277,16 @@ html(lang="zh-Hant-TW")
                         spaceBetween: 0,
                     },
                 },
+                on: {
+                    init() {
+                        this.slides.each(function(idx, slide) {
+                            $(slide).find('.swiper-slide-inner').addClass('slideLeft slide'+idx+'')   
+                        })
+                    }
+                },
             });
 
-            new Swiper('.card-photo  .photo-list', {
+            new Swiper('.card-photo .photo-list', {
                 slidesPerView: 'auto',
                 slidesPerView: 5.5,
                 spaceBetween: 0,
@@ -274,6 +309,13 @@ html(lang="zh-Hant-TW")
                         slidesPerView: 4.5,
                     },
                 },
+                on: {
+                    init() {
+                        this.slides.each(function(idx, slide) {
+                            $(slide).find('.swiper-slide-inner').addClass('slideUp slideT'+idx+'')   
+                        })
+                    }
+                },
             });
 
             new Swiper('.card-intro .intro-box', {
@@ -283,9 +325,13 @@ html(lang="zh-Hant-TW")
                 effect: 'fade',
                 loop: true,
                 speed: 100,
-                autoplay: {
-                    delay: 300,
-                },
+                //- autoplay: {
+                //-     delay: 300,
+                //- },
+            });
+
+            AOS.init({
+                duration: 1000
             });
         });
         

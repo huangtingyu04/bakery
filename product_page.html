@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="title" content="">
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="robots" content="none">
+    <script>// 共用參數</script>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/font-ccwork.css">
+    <link rel="stylesheet" href="./styles/spacing.css">
+    <link rel="stylesheet" href="./styles/vendor/swiper/swiper.css">
+    <link rel="stylesheet" href="./styles/vendor/colorbox/colorbox.css">
+    <link rel="stylesheet" href="./styles/ccwork.css">
+    <link rel="stylesheet" href="./styles/aos.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/breadcrumb.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/custom.css">
+    <script src="./script/jquery-3.6.0.js"></script>
+    <script src="./script/jquery.easing.1.3.js"></script>
+    <script src="./script/waypoints/jquery.waypoints.js"></script>
+    <script src="./script/aos.js"></script>
+    <script src="./script/sweetalert2.js"></script>
+    <script src="./script/colorbox/jquery.colorbox.js"></script>
+    <script src="./script/swiper/swiper4.5.0.js"></script>
+    <script>
+      $(document).ready(function () {
+      
+      	$('<div class="quantity-nav"><div class="quantity-button quantity-up"></div><div class="quantity-button quantity-down"></div></div>').insertAfter('.quantity input');
+      	$('.quantity').each(function() {
+      	var spinner = $(this),
+      		input = spinner.find('input[type="number"]'),
+      		btnUp = spinner.find('.quantity-up'),
+      		btnDown = spinner.find('.quantity-down'),
+      		min = input.attr('min'),
+      		max = input.attr('max');
+      
+      	btnUp.click(function() {
+      		var oldValue = parseFloat(input.val());
+      		if (oldValue >= max) {
+      		var newVal = oldValue;
+      		} else {
+      		var newVal = oldValue + 1;
+      		}
+      		spinner.find("input").val(newVal);
+      		spinner.find("input").trigger("change");
+      	});
+      
+      	btnDown.click(function() {
+      		var oldValue = parseFloat(input.val());
+      		if (oldValue <= min) {
+      		var newVal = oldValue;
+      		} else {
+      		var newVal = oldValue - 1;
+      		}
+      		spinner.find("input").val(newVal);
+      		spinner.find("input").trigger("change");
+      	});
+      
+      	});
+      
+      });
+    </script>
+    <link rel="stylesheet" href="./styles/product-list.css">
+    <title>Bakery ProductPage</title>
+  </head>
+  <body> 
+    <div class="zone"> 
+      <header class="card-header"> 
+        <div class="mobile"> 
+          <div class="burger"> <img src="./images/menu.png"></div><a class="mobile-logo" href="index.html"> <img src="./images/mobile-logo.png"></a><a class="cart" href="index.html"> <img src="./images/cart-icon.png"><span class="badge"><span class="num">3</span></span></a>
+        </div>
+        <div class="sidebar"><a class="logo" href="index.html"> 
+            <div class="img" src="./images/sidebar_logo.png"></div></a>
+          <div class="logo-txt">
+            <div class="img" src="./images/sidebar-txt.png"></div>
+          </div>
+          <div class="burger"> <img src="./images/menu.png"></div><a class="cart" href="index.html"> 
+            <div class="img" src="./images/cart-icon.png"></div><span class="badge"><span class="num">3</span></span></a>
+        </div>
+        <div class="main-menu">
+          <ul class="menu-list"> 
+            <li> <a href="index.html"> <span class="cn">首頁</span><span class="en">HOME</span></a></li>
+            <li> <a href="product.html"> <span class="cn">商品總覽</span><span class="en">PRODUCTS</span></a></li>
+            <li> <a href="javascript:;"> <span class="cn">最新活動</span><span class="en">EVENTS</span></a></li>
+            <li> <a href="javascript:;"> <span class="cn">來點相簿</span><span class="en">
+                   PHOTOS</span></a></li>
+          </ul>
+          <div class="menu-info"> 
+            <ul class="info-box"> 
+              <li>
+                 地址｜台北市大安區復興南路一段26號</li>
+              <li>
+                 電話｜02-2462121</li>
+            </ul>
+            <div class="social-box"> <a href="javascript:;"> 
+                <div class="social-icon facebook-icon"></div></a><a href="javascript:;"> 
+                <div class="social-icon instagram-icon"></div></a></div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="wide-container">
+      <div class="card-breadcrumbs">
+        <ul>
+          <li><a href="index.html">首頁</a></li>
+          <li class="breadcrumb-item"> <a href="javascript:;">來點相簿</a></li>
+          <li class="breadcrumb-item"> <a href="javascript:;">馬卡龍</a></li>
+        </ul>
+      </div>
+      <div class="card-productList" data-style="1">
+        <div class="product-img-box"> 
+          <div class="swiper-container swiper-full">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"> 
+                <div class="img" style="background-image: url('./images/product/product01.png')"></div>
+              </div>
+              <div class="swiper-slide"> 
+                <div class="img" style="background-image: url('./images/product/product01.png')"></div>
+              </div>
+              <div class="swiper-slide"> 
+                <div class="img" style="background-image: url('./images/product/product01.png')"></div>
+              </div>
+              <div class="swiper-slide"> 
+                <div class="img" style="background-image: url('./images/product/product01.png')"></div>
+              </div>
+              <div class="swiper-slide"> 
+                <div class="img" style="background-image: url('./images/product/product01.png')"></div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-thumbnail-box">
+            <div class="swiper-container swiper-thumbnail">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"> 
+                  <div class="img" style="background-image: url('./images/product/product01_1.png')"></div>
+                </div>
+                <div class="swiper-slide"> 
+                  <div class="img" style="background-image: url('./images/product/product01_2.png')"></div>
+                </div>
+                <div class="swiper-slide"> 
+                  <div class="img" style="background-image: url('./images/product/product01_3.png')"></div>
+                </div>
+                <div class="swiper-slide"> 
+                  <div class="img" style="background-image: url('./images/product/product01_4.png')"></div>
+                </div>
+                <div class="swiper-slide"> 
+                  <div class="img" style="background-image: url('./images/product/product01_5.png')"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-info-box">
+          <div class="swiper-nav">
+            <div class="swiper-button-prev"></div>
+            <div class="pagination-box">
+              <div class="pagination-title">選擇口味</div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-button-next"> </div>
+          </div>
+          <div class="product-intro-box active"> 
+            <div class="title cn">焦糖紫薯馬卡龍</div>
+            <div class="title en">Purple Potato Macaron</div>
+            <div class="product-intro">
+              <div class="porduct-price"> <span class="price">$480</span><span class="unit">8入/盒 </span></div>
+              <div class="product-content">酥脆的外殼吃得到滿滿的紫薯清香，搭配綿密的焦糖內餡，絕對能滿足你的味蕾。</div>
+            </div>
+          </div>
+          <div class="product-intro-box"> 
+            <div class="title cn">焦糖紫薯馬卡龍2</div>
+            <div class="title en">Purple Potato Macaron</div>
+            <div class="product-intro">
+              <div class="porduct-price"> <span class="price">$4802</span><span class="unit">8入/盒 </span></div>
+              <div class="product-content">酥脆的外殼吃得到滿滿的紫薯清香，搭配綿密的焦糖內餡，絕對能滿足你的味蕾。</div>
+            </div>
+          </div>
+          <div class="product-intro-box"> 
+            <div class="title cn">焦糖紫薯馬卡龍3</div>
+            <div class="title en">Purple Potato Macaron</div>
+            <div class="product-intro">
+              <div class="porduct-price"> <span class="price">$4803</span><span class="unit">8入/盒 </span></div>
+              <div class="product-content">酥脆的外殼吃得到滿滿的紫薯清香，搭配綿密的焦糖內餡，絕對能滿足你的味蕾。</div>
+            </div>
+          </div>
+          <div class="product-intro-box"> 
+            <div class="title cn">焦糖紫薯馬卡龍4</div>
+            <div class="title en">Purple Potato Macaron</div>
+            <div class="product-intro">
+              <div class="porduct-price"> <span class="price">$4804</span><span class="unit">8入/盒 </span></div>
+              <div class="product-content">酥脆的外殼吃得到滿滿的紫薯清香，搭配綿密的焦糖內餡，絕對能滿足你的味蕾。</div>
+            </div>
+          </div>
+          <div class="product-intro-box"> 
+            <div class="title cn">焦糖紫薯馬卡龍5</div>
+            <div class="title en">Purple Potato Macaron</div>
+            <div class="product-intro">
+              <div class="porduct-price"> <span class="price">$4805</span><span class="unit">8入/盒 </span></div>
+              <div class="product-content">酥脆的外殼吃得到滿滿的紫薯清香，搭配綿密的焦糖內餡，絕對能滿足你的味蕾。</div>
+            </div>
+          </div>
+          <div class="product-choice">
+            <div class="quantity">
+              <input type="number" min="1" step="1" value="1">
+            </div>
+            <div class="select-wrapper">
+              <select>
+                <option value="精緻">精緻</option>
+              </select>
+            </div>
+          </div><a class="cart-btn" href="javascript:;">加入購物車</a>
+        </div>
+      </div>
+      <div class="zone"> 
+        <footer class="card-footer"> 
+          <div class="footer-box">
+            <div class="footer-logo"><a href="index.html"><img src="./images/footer-logo.png"></a></div>
+            <div class="footer-info">
+              <div class="title"> <img src="./images/footer-txt.png"></div>
+              <ul> 
+                <li>地址｜台北市大安區復興南路一段26號</li>
+                <li>電話｜02-2462121</li>
+              </ul>
+              <div class="social-box"> <a href="javascript:;"> 
+                  <div class="social-icon facebook-icon"></div></a><a href="javascript:;"> 
+                  <div class="social-icon instagram-icon"></div></a></div>
+            </div>
+          </div>
+          <div class="footer-copyright">Copyright © 2021 JoyceHsu All Rights Reserved.</div>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <script src="./script/mesonry/masonry.pkgd.min.js"></script>
+  <script>
+    $(function() {
+       var swiperThumbnail = new Swiper(".swiper-thumbnail", {
+            spaceBetween: 10,
+            slidesPerView: 5,
+            freeMode: true,
+            loop: false,
+            watchSlidesProgress: true,
+            breakpoints: {
+                800: {
+                    slidesPerView: 5,
+                    spaceBetween: 8,
+                },
+            },
+        });
+    
+        var swiper = new Swiper(".swiper-full", {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            loop: false,
+            pagination: {
+                el: '.card-productList[data-style="1"] .swiper-pagination',
+                type: "fraction",
+            },
+            navigation: {
+                nextEl: '.card-productList[data-style="1"] .swiper-button-next',
+                prevEl: '.card-productList[data-style="1"] .swiper-button-prev',
+            },
+            thumbs: {
+                swiper: swiperThumbnail,
+            },
+            on:{
+                slideChange: function(){
+                    var index = swiper.realIndex
+                    $('.product-intro-box').removeClass('active').eq(index).addClass('active');
+                },
+            },
+        });
+    });
+  </script>
+</html>

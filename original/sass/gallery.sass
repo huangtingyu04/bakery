@@ -57,6 +57,11 @@
 // gallery end
 
 //colorbox css start
+#colorbox,
+#cboxOverlay, 
+#cboxWrapper
+    overflow: initial
+
 #cboxOverlay
     width: calc(100% - 140px)
     margin-left: 140px
@@ -64,9 +69,135 @@
     backdrop-filter: blur(24px)
     opacity: 1 !important
 
+    +breakpoint(mobile-landscape)
+        width: 100%
+        margin-left: 0
+
+
 #colorbox
     transform: translateX(70px)
 
+    +breakpoint(mobile-landscape)
+        transform: translateX(0)
+
+#cboxCurrent
+    display: none !important
+    
+#cboxPrevious,
+#cboxNext
+    width: 34px
+    height: 82px
+    background-repeat: no-repeat
+    top: 50%
+    transform: translateY(-50%)
+
+    &::before
+        display: none
+
+#cboxPrevious
+    background-image: url('../images/photo/arrow_left.png')
+    left: -70px
+
+    +breakpoint(pad-portrait)
+        left: -45px
+
+#cboxNext
+    background-image: url('../images/photo/arrow_right.png')
+    right: -70px
+
+    +breakpoint(pad-portrait)
+        right: -45px
+
+
+.gallery-colorbox
+    width: 100%
+    padding: 60px 50px 0
+
+    +breakpoint(pad-portrait)
+        padding: 30px 30px 0
+
+    +breakpoint(mobile-landscape)
+        padding: 0 30px 
+
+    .img-content
+        text-align: center
+        padding-bottom: 50px
+        margin-top: 36px
+        border-bottom: 0.5px solid #000000
+
+        +breakpoint(pad-portrait)
+            padding-bottom: 30px
+
+    .info-box
+        position: relative
+        margin: 36px 0 57px
+
+        +breakpoint(pad-portrait)
+            margin: 30px 0
+
+        .info
+            li
+                &:first-child
+                    margin-bottom: 20px
+
+                span
+                    display: block
+                    font-family: Noto Sans
+                    font-size: 1.4rem
+                    line-height: 19px
+                    letter-spacing: 0.2em
+                    color: #000000
+                    word-break: break-all
+
+                    &:first-child
+                        font-size: 1.2rem
+                        line-height: 16px
+                        color: rgba(0, 0, 0, 0.4)
+
+        .goto-btn
+            display: block
+            width: 33.33%
+            max-width: 260px
+            position: absolute
+            right: 0
+            bottom: 0
+            font-family: Noto Sans
+            font-weight: bold
+            font-size: 1.6rem
+            line-height: 22px
+            text-align: center
+            letter-spacing: 0.2em
+            color: #000000
+            border: 1px solid #000000
+            padding: 23px 0
+
+            +breakpoint(pad-portrait)
+                position: relative
+                margin-top: 30px
+                width: 260px
+
+            +breakpoint(mobile-landscape)
+                width: 100%
+
+            &::after
+                content: ''
+                position: absolute
+                width: 11px
+                height: 18px
+                top: 0
+                bottom: 0
+                margin: auto
+                right: 15px
+                background-repeat: no-repeat
+                background-image: url('../images/photo/arrow-right.png')
+
+
+                
+                   
+                         
+
 //colorbox css end
+
+        
 
 

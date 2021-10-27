@@ -1,0 +1,152 @@
+
+doctype html
+html(lang="zh-Hant-TW")
+    head
+        include ./includes/meta.pug
+        include ./includes/link.pug
+        include ./includes/script.pug
+        link(rel="stylesheet" href="./styles/product-list.css")
+        title Bakery ProductPage
+    body 
+        -var breadtag = ['來點相簿', '馬卡龍']
+        //- header start
+        include ./includes/header.pug
+        
+        //- header end
+
+        .wide-container
+            //- breadcrumb start
+            include ./includes/breadcrumbs.pug
+            //- breadcrumb end
+            //- product start
+            .card-productList(data-style="1")
+                .product-img-box 
+                    .swiper-container.swiper-full
+                        .swiper-wrapper
+                            .swiper-slide 
+                                .img(style="background-image: url('./images/product/product01.png')")
+                            .swiper-slide 
+                                .img(style="background-image: url('./images/product/product01.png')")
+                            .swiper-slide 
+                                .img(style="background-image: url('./images/product/product01.png')")
+                            .swiper-slide 
+                                .img(style="background-image: url('./images/product/product01.png')")
+                            .swiper-slide 
+                                .img(style="background-image: url('./images/product/product01.png')")
+                    .swiper-thumbnail-box
+                        .swiper-container.swiper-thumbnail
+                            .swiper-wrapper
+                                .swiper-slide 
+                                    .img(style="background-image: url('./images/product/product01_1.png')")
+                                .swiper-slide 
+                                    .img(style="background-image: url('./images/product/product01_2.png')")
+                                .swiper-slide 
+                                    .img(style="background-image: url('./images/product/product01_3.png')")
+                                .swiper-slide 
+                                    .img(style="background-image: url('./images/product/product01_4.png')")
+                                .swiper-slide 
+                                    .img(style="background-image: url('./images/product/product01_5.png')")
+                    
+                .product-info-box
+                    .swiper-nav
+                        .swiper-button-prev
+                        .pagination-box
+                            .pagination-title 選擇口味
+                            .swiper-pagination
+                        .swiper-button-next 
+                    .product-intro-box.active 
+                        .title.cn 焦糖紫薯馬卡龍
+                        .title.en Purple Potato Macaron
+                        .product-intro
+                            .porduct-price 
+                                span.price $480
+                                span.unit 8入/盒 
+                            .product-content 酥脆的外殼吃得到滿滿的紫薯清香，搭配綿密的焦糖內餡，絕對能滿足你的味蕾。
+                    .product-intro-box 
+                        .title.cn 焦糖紫薯馬卡龍2
+                        .title.en Purple Potato Macaron
+                        .product-intro
+                            .porduct-price 
+                                span.price $4802
+                                span.unit 8入/盒 
+                            .product-content 酥脆的外殼吃得到滿滿的紫薯清香，搭配綿密的焦糖內餡，絕對能滿足你的味蕾。
+                    .product-intro-box 
+                        .title.cn 焦糖紫薯馬卡龍3
+                        .title.en Purple Potato Macaron
+                        .product-intro
+                            .porduct-price 
+                                span.price $4803
+                                span.unit 8入/盒 
+                            .product-content 酥脆的外殼吃得到滿滿的紫薯清香，搭配綿密的焦糖內餡，絕對能滿足你的味蕾。
+                    .product-intro-box 
+                        .title.cn 焦糖紫薯馬卡龍4
+                        .title.en Purple Potato Macaron
+                        .product-intro
+                            .porduct-price 
+                                span.price $4804
+                                span.unit 8入/盒 
+                            .product-content 酥脆的外殼吃得到滿滿的紫薯清香，搭配綿密的焦糖內餡，絕對能滿足你的味蕾。
+                    .product-intro-box 
+                        .title.cn 焦糖紫薯馬卡龍5
+                        .title.en Purple Potato Macaron
+                        .product-intro
+                            .porduct-price 
+                                span.price $4805
+                                span.unit 8入/盒 
+                            .product-content 酥脆的外殼吃得到滿滿的紫薯清香，搭配綿密的焦糖內餡，絕對能滿足你的味蕾。
+                    .product-choice
+                        .quantity
+                            input(type="number" min="1" step="1" value="1")
+                        .select-wrapper
+                            select
+                                option(value="精緻") 精緻
+                    a.cart-btn(href="javascript:;") 加入購物車
+                
+            //- product end
+
+            //- footer start
+            include ./includes/footer.pug
+            //- footer end
+
+
+    script(src="./script/mesonry/masonry.pkgd.min.js")
+    script.
+        $(function() {
+           var swiperThumbnail = new Swiper(".swiper-thumbnail", {
+                spaceBetween: 10,
+                slidesPerView: 5,
+                freeMode: true,
+                loop: false,
+                watchSlidesProgress: true,
+                breakpoints: {
+                    800: {
+                        slidesPerView: 5,
+                        spaceBetween: 8,
+                    },
+                },
+            });
+
+            var swiper = new Swiper(".swiper-full", {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: false,
+                pagination: {
+                    el: '.card-productList[data-style="1"] .swiper-pagination',
+                    type: "fraction",
+                },
+                navigation: {
+                    nextEl: '.card-productList[data-style="1"] .swiper-button-next',
+                    prevEl: '.card-productList[data-style="1"] .swiper-button-prev',
+                },
+                thumbs: {
+                    swiper: swiperThumbnail,
+                },
+                on:{
+                    slideChange: function(){
+                        var index = swiper.realIndex
+                        $('.product-intro-box').removeClass('active').eq(index).addClass('active');
+                    },
+                },
+            });
+        });
+        

@@ -26,6 +26,7 @@ ul, ol
 
 // public css start
 .wide-container
+    position: relative
     width: 1920px
     padding-left: 140px
     max-width: 100%
@@ -34,6 +35,19 @@ ul, ol
     +breakpoint(mobile-landscape)
         width: 100%
         padding-left: 0
+
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 140px
+        height: 100%
+        width: 1px
+        background: rgba(0, 0, 0, 0.1)
+
+        +breakpoint(mobile-landscape)
+            display: none
+        
 
     &.wide-1440-limmited
         width: 1440px
@@ -121,12 +135,75 @@ ul, ol
             font-size: 1.6rem
             line-height: 32px
 
+input[type=number]
+    -moz-appearance: textfield
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button
+        -webkit-appearance: none
+        margin: 0
+
+.select-wrapper
+    position: relative
+
+    &:after
+        position: absolute
+        width: 17px
+        height: 9px
+        right: 16px
+        top: 2px
+        bottom: 0
+        margin: auto
+        background-repeat: no-repeat
+        background-image: url('../images/product/arrow_down.png')
+        pointer-events: none
+
+    select
+        -moz-appearance: none
+        -webkit-appearance: none
+        appearance: none
+
+.quantity 
+  position: relative
+
+  input
+    width: 45px
+    height: 42px
+    float: left
+    display: block
+    padding: 0
+    margin: 0
+    padding-left: 20px
+
+    &::focus
+        outline: 0
+
+.quantity-nav 
+    float: left
+    position: relative
+
+.quantity-button 
+    position: absolute
+    cursor: pointer
+    user-select: none
+    width: 17px
+    height: 9px
+    background-repeat: no-repeat
+    padding: 7px
+
+    &.quantity-up 
+        background-image: url('../images/product/arrow_up.png')
+
+    &.quantity-down 
+        background-image: url('../images/product/arrow_down.png')
+
 // public css end
 
 body
     &.index
         .sidebar
             padding-top: 240px
+            top: 100vh
 
 
             

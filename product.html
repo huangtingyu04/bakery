@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="./styles/vendor/swiper/swiper.css">
     <link rel="stylesheet" href="./styles/vendor/colorbox/colorbox.css">
     <link rel="stylesheet" href="./styles/ccwork.css">
-    <link rel="stylesheet" href="./styles/forms.css">
     <link rel="stylesheet" href="./styles/aos.css">
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/breadcrumb.css">
@@ -34,22 +33,43 @@
     <script>
       $(document).ready(function () {
       
-      	$("a.call-WITBN").colorbox({
-      		oepn: true,
-      		iframe: true,
-      		//- innerWidth: 1205,
-      		//- innerHeight: 467,
-      		width: ($(window).width() <= 1024) ? "80%" : "1205px",
-      		height: ($(window).width() <= 800) ? "50%" : "467px", 
-      		maxWidth: '100%',
-      		closeButton: true,
-      		title: 'WITBN 世界原住民廣電聯盟',
+      	$('<div class="quantity-nav"><div class="quantity-button quantity-up"></div><div class="quantity-button quantity-down"></div></div>').insertAfter('.quantity input');
+      	$('.quantity').each(function() {
+      	var spinner = $(this),
+      		input = spinner.find('input[type="number"]'),
+      		btnUp = spinner.find('.quantity-up'),
+      		btnDown = spinner.find('.quantity-down'),
+      		min = input.attr('min'),
+      		max = input.attr('max');
+      
+      	btnUp.click(function() {
+      		var oldValue = parseFloat(input.val());
+      		if (oldValue >= max) {
+      		var newVal = oldValue;
+      		} else {
+      		var newVal = oldValue + 1;
+      		}
+      		spinner.find("input").val(newVal);
+      		spinner.find("input").trigger("change");
+      	});
+      
+      	btnDown.click(function() {
+      		var oldValue = parseFloat(input.val());
+      		if (oldValue <= min) {
+      		var newVal = oldValue;
+      		} else {
+      		var newVal = oldValue - 1;
+      		}
+      		spinner.find("input").val(newVal);
+      		spinner.find("input").trigger("change");
+      	});
+      
       	});
       
       });
     </script>
     <link rel="stylesheet" href="./styles/product.css">
-    <title>Bakery 首頁</title>
+    <title>Bakery Product</title>
   </head>
   <body> 
     <div class="zone"> 
@@ -57,9 +77,33 @@
         <div class="mobile"> 
           <div class="burger"> <img src="./images/menu.png"></div><a class="mobile-logo" href="index.html"> <img src="./images/mobile-logo.png"></a><a class="cart" href="index.html"> <img src="./images/cart-icon.png"><span class="badge"><span class="num">3</span></span></a>
         </div>
-        <div class="sidebar"><a class="logo" href="index.html"> <img src="./images/sidebar_logo.png"></a>
-          <div class="logo-txt"><img src="./images/sidebar-txt.png"></div>
-          <div class="burger"> <img src="./images/menu.png"></div><a class="cart" href="index.html"> <img src="./images/cart-icon.png"><span class="badge"><span class="num">3</span></span></a>
+        <div class="sidebar"><a class="logo" href="index.html"> 
+            <div class="img" src="./images/sidebar_logo.png"></div></a>
+          <div class="logo-txt">
+            <div class="img" src="./images/sidebar-txt.png"></div>
+          </div>
+          <div class="burger"> <img src="./images/menu.png"></div><a class="cart" href="index.html"> 
+            <div class="img" src="./images/cart-icon.png"></div><span class="badge"><span class="num">3</span></span></a>
+        </div>
+        <div class="main-menu">
+          <ul class="menu-list"> 
+            <li> <a href="index.html"> <span class="cn">首頁</span><span class="en">HOME</span></a></li>
+            <li> <a href="product.html"> <span class="cn">商品總覽</span><span class="en">PRODUCTS</span></a></li>
+            <li> <a href="javascript:;"> <span class="cn">最新活動</span><span class="en">EVENTS</span></a></li>
+            <li> <a href="javascript:;"> <span class="cn">來點相簿</span><span class="en">
+                   PHOTOS</span></a></li>
+          </ul>
+          <div class="menu-info"> 
+            <ul class="info-box"> 
+              <li>
+                 地址｜台北市大安區復興南路一段26號</li>
+              <li>
+                 電話｜02-2462121</li>
+            </ul>
+            <div class="social-box"> <a href="javascript:;"> 
+                <div class="social-icon facebook-icon"></div></a><a href="javascript:;"> 
+                <div class="social-icon instagram-icon"></div></a></div>
+          </div>
         </div>
       </header>
     </div>

@@ -1,0 +1,408 @@
+@charset "utf-8"
+
+
+@import mixins/_rwd
+@import mixins/_font
+
+@import partials/_base
+
+// cart start
+.card-cart[data-style="1"]
+    width: calc(67.69% - 80px)
+    margin-left: 80px
+
+    +breakpoint(fixedSide)
+        width: calc(75% - 80px)
+
+    +breakpoint(zone-base)
+        width: calc(100% - 50px)
+        margin-left: 50px
+        padding: 0 30px
+
+    +breakpoint(mobile-landscape)
+        width: 100%
+        margin-left: 0
+
+    .card-title
+        margin-top: 60px
+        margin-left: 60px
+
+        +breakpoint(pad-portrait-980)
+            margin-left: 0
+            margin-top: 30px
+
+    #cart-list
+        margin: 80px 0
+
+        +breakpoint(pad-portrait-980)
+            margin: 0
+
+        .thead,
+        .tbody
+            .tr
+                display: flex
+                align-items: center
+
+                .td
+                    &.item
+                        width: calc(52.6% - 70px)
+                        margin-right: 70px
+
+                        +breakpoint(fixedSide)
+                            width: calc(52.6% - 20px)
+                            margin-right: 20px
+
+                        +breakpoint(pad-portrait-980)
+                            width: calc(100%  -  30px)
+                            margin-right: 30px   
+                            margin-bottom: 30px  
+
+                        +breakpoint(mobile-landscape)
+                            width: calc(100%  -  16px)
+                            margin-right: 16px 
+
+                    &.num,
+                    &.package,
+                    &.price
+                        width: calc(14.6% - 50px)
+                        margin-right: 50px
+
+                        +breakpoint(fixedSide)
+                            width: calc(14.6% - 30px)
+                            margin-right: 30px
+
+                        +breakpoint(pad-portrait-980)
+                            width: calc(19% - 20px)
+                            margin-right: 30px
+
+                        +breakpoint(mobile-landscape)
+                            width: calc(19% - 13.33px)
+                            margin-right: 20px
+
+                    &.num
+                        +breakpoint(pad-portrait-980)
+                            margin-left: calc(43% - 30px)
+
+                    &.package
+                        
+
+                    &.price
+                        +breakpoint(pad-portrait-980)
+                            margin-right: 0
+
+                    &.del
+                        width: 3.6%
+                        min-width: 26px
+
+        .thead
+            +breakpoint(pad-portrait-980)
+                display: none
+
+            .tr
+                padding: 0 30px 17px
+                border-bottom: 1.5px solid #000000
+
+                .td
+                    font-family: Noto Sans
+                    font-weight: bold
+                    font-size: 1.4rem
+                    line-height: 19px
+                    letter-spacing: 0.2em
+                    color: #000000
+
+        .tbody
+            margin-top: 16px
+
+            .tr
+                position: relative
+                padding: 20px 0
+                margin: 0 30px
+                border-bottom: 0.5px solid rgba(0, 0, 0, 0.2)
+
+                +breakpoint(pad-portrait-980)
+                    flex-wrap: wrap 
+                    padding: 16px 0
+                    margin: 0 
+
+                .td
+                    &.item
+                        display: flex
+                        align-items: center
+
+                        .item-img
+                            width: calc(43%  -  30px)
+                            margin-right: 30px
+
+                            +breakpoint(pad-portrait-980)
+                                width: calc(43%  -  22px)
+                                margin-right: 22px
+
+                            .img
+                                width: 100%
+                                padding-bottom: 100%
+                                background-position: center
+                                background-repeat: no-repeat
+                                background-size: cover
+
+                        .item-des
+                            width: 57%
+
+                            .title
+                                color: #000000
+                                letter-spacing: 0.1em
+
+                                &.cn
+                                    font-family: Noto Serif TC
+                                    font-weight: bold
+                                    font-size: 2.1rem
+                                    line-height: 28px
+
+                                    +breakpoint(mobile-landscape)
+                                        font-size: 1.6rem
+
+                                &.en
+                                    font-family: Spartan
+                                    font-size: 1.2rem
+                                    line-height: 14px
+                                    margin-top: 7px
+
+                                    +breakpoint(mobile-landscape)
+                                        font-size: 1rem
+
+                    &.num
+                        .quantity
+                            input
+                                width: 100%
+                                border: none
+                                padding-left: 12px
+                                font-family: Noto Sans
+                                font-size: 1.6rem
+                                line-height: 22px
+                                letter-spacing: 0.2em
+                                color: #000000
+
+                                +breakpoint(mobile-landscape)
+                                    font-size: 1.2rem
+                                    line-height: 16px
+
+                                &:focus
+                                    outline: none
+
+                        .quantity-button
+                            right: 0
+
+                            +breakpoint(pad-portrait)
+                                width: 12px
+                                height: 7px
+
+                            &.quantity-up
+                                top: 3px
+                                +breakpoint(pad-portrait)
+                                    top: 5px
+                                    background-image: url('../images/product/arrow_up_mobile.png')
+                            
+                            &.quantity-down
+                                top: 33px
+
+                                +breakpoint(pad-portrait)
+                                    top: 30px
+                                    background-image: url('../images/product/arrow_down_mobile.png')
+
+                    &.package
+                        .select-wrapper
+                            &:after
+                                top: 0
+                                right: 0
+
+                                +breakpoint(pad-portrait)
+                                    width: 12px
+                                    height: 7px
+                                    background-image: url('../images/product/arrow_down_mobile.png')
+
+                        select
+                            width: 100%
+                            border: none
+                            font-family: Roboto
+                            font-weight: 500
+                            font-size: 1.6rem
+                            line-height: 19px
+                            letter-spacing: 0.2em
+                            color: #000000
+
+                            +breakpoint(mobile-landscape)
+                                font-size: 1.2rem
+                                line-height: 14px
+
+                            &:focus
+                                outline: none
+
+                    &.price
+                        font-family: Roboto
+                        font-weight: 500
+                        font-size: 1.6rem
+                        line-height: 19px
+                        letter-spacing: 0.2em
+                        color: #000000
+
+                        +breakpoint(mobile-landscape)
+                            font-size: 1.2rem
+                            line-height: 16px
+
+                    &.del
+                        cursor: pointer
+                        height: 26px
+                        background-image: url('../images/cart/delete.png')
+                        background-repeat: no-repeat
+                        background-size: contain
+
+                        +breakpoint(pad-portrait-980)
+                            position: absolute
+                            top: 30px
+                            right: 0
+
+                        +breakpoint(mobile-landscape)
+                            height: 16px
+                            background-position: right
+
+    .seek-btn
+        position: relative
+        display: block
+        width: 33.33%
+        max-width: 260px
+        font-family: Noto Sans
+        font-weight: bold
+        font-size: 1.6rem
+        line-height: 19px
+        text-align: center
+        letter-spacing: 0.2em
+        color: #000000
+        border: 1px solid #000000
+        padding: 23px 0
+        margin: 0 auto 140px
+
+        +breakpoint(zone-base)
+            margin: 0 0 80px
+
+        +breakpoint(pad-portrait-980)
+            position: relative
+            margin: 30px 0 60px
+            width: 260px
+
+        +breakpoint(mobile-landscape)
+            width: 280px
+            margin: 40px auto 52px
+            font-size: 1.4rem
+            line-height: 16px
+            padding: 21px 0
+
+        &::after
+            content: ''
+            position: absolute
+            width: 11px
+            height: 18px
+            top: 0
+            bottom: 0
+            margin: auto
+            right: 15px
+            background-repeat: no-repeat
+            background-image: url('../images/photo/arrow-right.png')
+
+
+#confirm-box
+    position: absolute
+    width: calc(32.31% - 45px)
+    padding: 210px 60px 0 
+    right: 0
+    top: 0
+    height: calc(100% - 282px)
+    display: flex
+    flex-direction: column
+
+    +breakpoint(fixedSide)
+        width: calc(25% - 35px)
+        padding: 0 30px
+        justify-content: center
+
+    +breakpoint(zone-base)
+        position: relative
+        width: 400px
+        margin: 50px 0 80px 50px
+
+    +breakpoint(mobile-landscape)
+        width: 100%
+        margin: 50px 0 80px 0
+
+    &::before
+        content: ''
+        position: absolute
+        width: 1px
+        height: 100%
+        left: 0
+        top: 0
+        background: rgba(0, 0, 0, 0.2)
+        // border-left: 0.5px solid rgba(0, 0, 0, 0.2)
+
+        +breakpoint(zone-base)
+            display: none
+
+    .confirm-title
+        font-family: Noto Sans
+        font-weight: bold
+        font-size: 2.4rem
+        line-height: 33px
+        letter-spacing: 0.2em
+        color: #000000
+
+    ul
+        &.list
+            margin: 40px 0 14px
+
+        li
+            display: flex
+            justify-content: space-between
+            font-family: Noto Sans
+            letter-spacing: 0.2em
+
+        &.list,
+        &.fee
+            li
+                font-size: 1.2rem
+                line-height: 14px
+                color: rgba(0, 0, 0, 0.4)
+                margin-bottom: 20px
+
+        &.total
+            li
+                font-size: 1.4rem
+                line-height: 19px
+                color: #000000
+                margin: 14px 0 0
+
+    .confirm-btn
+        margin-top: 210px
+        display: block
+        width: 100%
+        background: #000000
+        font-family: Noto Sans
+        font-weight: bold
+        font-size: 1.6rem
+        line-height: 22px
+        text-align: center
+        padding: 24px 0
+        letter-spacing: 0.2em
+        color: #FFFFFF
+        max-width: 339px
+
+        +breakpoint(fixedSide)
+            margin-top: 60px
+
+        +breakpoint(mobile-landscape)
+            max-width: initial
+
+
+
+// cart end
+
+
+
+

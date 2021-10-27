@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="./styles/vendor/swiper/swiper.css">
     <link rel="stylesheet" href="./styles/vendor/colorbox/colorbox.css">
     <link rel="stylesheet" href="./styles/ccwork.css">
-    <link rel="stylesheet" href="./styles/forms.css">
     <link rel="stylesheet" href="./styles/aos.css">
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/breadcrumb.css">
@@ -34,22 +33,43 @@
     <script>
       $(document).ready(function () {
       
-      	$("a.call-WITBN").colorbox({
-      		oepn: true,
-      		iframe: true,
-      		//- innerWidth: 1205,
-      		//- innerHeight: 467,
-      		width: ($(window).width() <= 1024) ? "80%" : "1205px",
-      		height: ($(window).width() <= 800) ? "50%" : "467px", 
-      		maxWidth: '100%',
-      		closeButton: true,
-      		title: 'WITBN 世界原住民廣電聯盟',
+      	$('<div class="quantity-nav"><div class="quantity-button quantity-up"></div><div class="quantity-button quantity-down"></div></div>').insertAfter('.quantity input');
+      	$('.quantity').each(function() {
+      	var spinner = $(this),
+      		input = spinner.find('input[type="number"]'),
+      		btnUp = spinner.find('.quantity-up'),
+      		btnDown = spinner.find('.quantity-down'),
+      		min = input.attr('min'),
+      		max = input.attr('max');
+      
+      	btnUp.click(function() {
+      		var oldValue = parseFloat(input.val());
+      		if (oldValue >= max) {
+      		var newVal = oldValue;
+      		} else {
+      		var newVal = oldValue + 1;
+      		}
+      		spinner.find("input").val(newVal);
+      		spinner.find("input").trigger("change");
+      	});
+      
+      	btnDown.click(function() {
+      		var oldValue = parseFloat(input.val());
+      		if (oldValue <= min) {
+      		var newVal = oldValue;
+      		} else {
+      		var newVal = oldValue - 1;
+      		}
+      		spinner.find("input").val(newVal);
+      		spinner.find("input").trigger("change");
+      	});
+      
       	});
       
       });
     </script>
     <link rel="stylesheet" href="./styles/gallery.css">
-    <title>Bakery 首頁</title>
+    <title>Bakery Gallery</title>
   </head>
   <body> 
     <div class="zone"> 
@@ -57,9 +77,33 @@
         <div class="mobile"> 
           <div class="burger"> <img src="./images/menu.png"></div><a class="mobile-logo" href="index.html"> <img src="./images/mobile-logo.png"></a><a class="cart" href="index.html"> <img src="./images/cart-icon.png"><span class="badge"><span class="num">3</span></span></a>
         </div>
-        <div class="sidebar"><a class="logo" href="index.html"> <img src="./images/sidebar_logo.png"></a>
-          <div class="logo-txt"><img src="./images/sidebar-txt.png"></div>
-          <div class="burger"> <img src="./images/menu.png"></div><a class="cart" href="index.html"> <img src="./images/cart-icon.png"><span class="badge"><span class="num">3</span></span></a>
+        <div class="sidebar"><a class="logo" href="index.html"> 
+            <div class="img" src="./images/sidebar_logo.png"></div></a>
+          <div class="logo-txt">
+            <div class="img" src="./images/sidebar-txt.png"></div>
+          </div>
+          <div class="burger"> <img src="./images/menu.png"></div><a class="cart" href="index.html"> 
+            <div class="img" src="./images/cart-icon.png"></div><span class="badge"><span class="num">3</span></span></a>
+        </div>
+        <div class="main-menu">
+          <ul class="menu-list"> 
+            <li> <a href="index.html"> <span class="cn">首頁</span><span class="en">HOME</span></a></li>
+            <li> <a href="product.html"> <span class="cn">商品總覽</span><span class="en">PRODUCTS</span></a></li>
+            <li> <a href="javascript:;"> <span class="cn">最新活動</span><span class="en">EVENTS</span></a></li>
+            <li> <a href="javascript:;"> <span class="cn">來點相簿</span><span class="en">
+                   PHOTOS</span></a></li>
+          </ul>
+          <div class="menu-info"> 
+            <ul class="info-box"> 
+              <li>
+                 地址｜台北市大安區復興南路一段26號</li>
+              <li>
+                 電話｜02-2462121</li>
+            </ul>
+            <div class="social-box"> <a href="javascript:;"> 
+                <div class="social-icon facebook-icon"></div></a><a href="javascript:;"> 
+                <div class="social-icon instagram-icon"></div></a></div>
+          </div>
         </div>
       </header>
     </div>
@@ -76,7 +120,125 @@
             <div class="cn">來點相簿</div>
             <div class="en">Photos</div>
           </div>
-          <div class="gallery-box image-waterfall"> <a class="item openImg" href="./images/photo/photo01.png"><img src="./images/photo/photo01.png"></a><a class="item openImg" href="./images/photo/photo02.png"> <img src="./images/photo/photo02.png"></a><a class="item openImg" href="./images/photo/photo03.png"> <img src="./images/photo/photo03.png"></a><a class="item openImg" href="./images/photo/photo04.png"> <img src="./images/photo/photo04.png"></a><a class="item openImg" href="./images/photo/photo06.png"><img src="./images/photo/photo06.png"></a><a class="item openImg" href="./images/photo/photo05.png"> <img src="./images/photo/photo05.png"></a><a class="item openImg" href="./images/photo/photo09.png"><img src="./images/photo/photo09.png"></a><a class="item openImg" href="./images/photo/photo07.png"> <img src="./images/photo/photo07.png"></a><a class="item openImg" href="./images/photo/photo08.png"> <img src="./images/photo/photo08.png"></a></div>
+          <div class="gallery-box image-waterfall"> <a class="item openInfo" href="#item-01"><img src="./images/photo/photo01.png"></a>
+            <div class="popup-content d-none">
+              <div class="gallery-colorbox" id="item-01">
+                <div class="img-content"><img src="https://fakeimg.pl/800x400/"></div>
+                <div class="info-box"> 
+                  <div class="info"> 
+                    <ul> 
+                      <li><span> 攝影者</span><span> 珊蒂</span></li>
+                      <li><span> 來源出處</span><span> https://www.instagram.com/sandy</span></li>
+                    </ul>
+                  </div><a class="goto-btn" href="javascript:;">前往商品</a>
+                </div>
+              </div>
+            </div><a class="item openInfo" href="#item-02"> <img src="./images/photo/photo02.png"></a>
+            <div class="popup-content d-none">
+              <div class="gallery-colorbox" id="item-02">
+                <div class="img-content"><img src="./images/photo/photo02.png"></div>
+                <div class="info-box"> 
+                  <div class="info"> 
+                    <ul> 
+                      <li><span> 攝影者</span><span> 珊蒂</span></li>
+                      <li><span> 來源出處</span><span> https://www.instagram.com/sandy</span></li>
+                    </ul>
+                  </div><a class="goto-btn" href="javascript:;">前往商品</a>
+                </div>
+              </div>
+            </div><a class="item openInfo" href="#item-03"> <img src="./images/photo/photo03.png"></a>
+            <div class="popup-content d-none">
+              <div class="gallery-colorbox" id="item-03">
+                <div class="img-content"><img src="./images/photo/photo03.png"></div>
+                <div class="info-box"> 
+                  <div class="info"> 
+                    <ul> 
+                      <li><span> 攝影者</span><span> 珊蒂</span></li>
+                      <li><span> 來源出處</span><span> https://www.instagram.com/sandy</span></li>
+                    </ul>
+                  </div><a class="goto-btn" href="javascript:;">前往商品</a>
+                </div>
+              </div>
+            </div><a class="item openInfo" href="#item-04"> <img src="./images/photo/photo04.png"></a>
+            <div class="popup-content d-none">
+              <div class="gallery-colorbox" id="item-04">
+                <div class="img-content"><img src="./images/photo/photo04.png"></div>
+                <div class="info-box"> 
+                  <div class="info"> 
+                    <ul> 
+                      <li><span> 攝影者</span><span> 珊蒂</span></li>
+                      <li><span> 來源出處</span><span> https://www.instagram.com/sandy</span></li>
+                    </ul>
+                  </div><a class="goto-btn" href="javascript:;">前往商品</a>
+                </div>
+              </div>
+            </div><a class="item openInfo" href="#item-06"><img src="./images/photo/photo06.png"></a>
+            <div class="popup-content d-none">
+              <div class="gallery-colorbox" id="item-06">
+                <div class="img-content"><img src="./images/photo/photo06.png"></div>
+                <div class="info-box"> 
+                  <div class="info"> 
+                    <ul> 
+                      <li><span> 攝影者</span><span> 珊蒂</span></li>
+                      <li><span> 來源出處</span><span> https://www.instagram.com/sandy</span></li>
+                    </ul>
+                  </div><a class="goto-btn" href="javascript:;">前往商品</a>
+                </div>
+              </div>
+            </div><a class="item openInfo" href="#item-05"> <img src="./images/photo/photo05.png"></a>
+            <div class="popup-content d-none">
+              <div class="gallery-colorbox" id="item-05">
+                <div class="img-content"><img src="./images/photo/photo05.png"></div>
+                <div class="info-box"> 
+                  <div class="info"> 
+                    <ul> 
+                      <li><span> 攝影者</span><span> 珊蒂</span></li>
+                      <li><span> 來源出處</span><span> https://www.instagram.com/sandy</span></li>
+                    </ul>
+                  </div><a class="goto-btn" href="javascript:;">前往商品</a>
+                </div>
+              </div>
+            </div><a class="item openInfo" href="#item-09"><img src="./images/photo/photo09.png"></a>
+            <div class="popup-content d-none">
+              <div class="gallery-colorbox" id="item-09">
+                <div class="img-content"><img src="./images/photo/photo09.png"></div>
+                <div class="info-box"> 
+                  <div class="info"> 
+                    <ul> 
+                      <li><span> 攝影者</span><span> 珊蒂</span></li>
+                      <li><span> 來源出處</span><span> https://www.instagram.com/sandy</span></li>
+                    </ul>
+                  </div><a class="goto-btn" href="javascript:;">前往商品</a>
+                </div>
+              </div>
+            </div><a class="item openInfo" href="#item-07"> <img src="./images/photo/photo07.png"></a>
+            <div class="popup-content d-none">
+              <div class="gallery-colorbox" id="item-07">
+                <div class="img-content"><img src="./images/photo/photo07.png"></div>
+                <div class="info-box"> 
+                  <div class="info"> 
+                    <ul> 
+                      <li><span> 攝影者</span><span> 珊蒂</span></li>
+                      <li><span> 來源出處</span><span> https://www.instagram.com/sandy</span></li>
+                    </ul>
+                  </div><a class="goto-btn" href="javascript:;">前往商品</a>
+                </div>
+              </div>
+            </div><a class="item openInfo" href="#item-08"> <img src="./images/photo/photo08.png"></a>
+            <div class="popup-content d-none">
+              <div class="gallery-colorbox" id="item-08">
+                <div class="img-content"><img src="./images/photo/photo08.png"></div>
+                <div class="info-box"> 
+                  <div class="info"> 
+                    <ul> 
+                      <li><span> 攝影者</span><span> 珊蒂</span></li>
+                      <li><span> 來源出處</span><span> https://www.instagram.com/sandy</span></li>
+                    </ul>
+                  </div><a class="goto-btn" href="javascript:;">前往商品</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="zone"> 
@@ -109,11 +271,13 @@
             percentPosition: true,
         });
     
-        $(".openImg").colorbox({
-            rel: 'group1',
-            maxWidth: "90%",
-            maxHeight: "90%",
-            closeButton: true,
+        $(".openInfo").colorbox({
+            inline: true,
+            rel: 'gallery',
+            width: '100%',
+            height: '100%',
+            maxWidth: "69.23%",
+            maxHeight: (ww > 430) ?  "900px" : "550px",
             fadeOut: 100,
             closeButton: false,
             onOpen: function() {

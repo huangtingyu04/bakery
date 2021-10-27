@@ -1,0 +1,117 @@
+
+doctype html
+html(lang="zh-Hant-TW")
+    head
+        include ./includes/meta.pug
+        include ./includes/link.pug
+        include ./includes/script.pug
+        link(rel="stylesheet" href="./styles/cart.css")
+        title Bakery Cart
+    body 
+        -var breadtag = ['購物袋']
+        //- header start
+        include ./includes/header.pug
+        
+        //- header end
+
+        .wide-container
+            //- breadcrumb start
+            include ./includes/breadcrumbs.pug
+            //- breadcrumb end
+            //- cart start
+            .card-cart(data-style="1")
+                .card-title
+                    .cn 購物袋
+                    .en Shopping Bag
+                #cart-list
+                    .thead 
+                        .tr 
+                            .td.item 商品
+                            .td.num 數量
+                            .td.package 包裝
+                            .td.price 價格
+                            .td.del
+                    .tbody 
+                        .tr 
+                            .td.item 
+                                .item-img 
+                                    .img(style="background-image: url('./images/cart/cart01.png')")
+                                .item-des 
+                                    .title.cn 焦糖紫薯馬卡龍
+                                    .title.en Purple Potato Macaron
+                            .td.num 
+                                .quantity
+                                    input(type="number" min="1" step="1" value="1")
+                            .td.package 
+                                .select-wrapper
+                                    select
+                                        option(value="精緻") 精緻
+                            .td.price ＄480
+                            .td.del
+                        .tr 
+                            .td.item 
+                                .item-img 
+                                    .img(style="background-image: url('./images/cart/cart02.png')")
+                                .item-des 
+                                    .title.cn 法式經典檸檬塔
+                                    .title.en Lemon Curd Tarts
+                            .td.num 
+                                .quantity
+                                    input(type="number" min="1" step="1" value="1")
+                            .td.package 
+                                .select-wrapper
+                                    select
+                                        option(value="一般") 一般
+                            .td.price ＄600
+                            .td.del
+                        .tr 
+                            .td.item 
+                                .item-img 
+                                    .img(style="background-image: url('./images/cart/cart03.png')")
+                                .item-des 
+                                    .title.cn 法式經典檸檬塔
+                                    .title.en Lemon Curd Tarts
+                            .td.num 
+                                .quantity
+                                    input(type="number" min="1" step="1" value="1")
+                            .td.package 
+                                .select-wrapper
+                                    select
+                                        option(value="精緻") 精緻
+                            .td.price ＄360
+                            .td.del
+                a.seek-btn(href="javascript:;") 看看其他商品             
+            #confirm-box 
+                .confirm-title 確認訂單
+                ul.list
+                    li 
+                        span 焦糖紫薯馬卡龍 X1
+                        span ＄480
+                    li 
+                        span 法式經典檸檬塔 X2
+                        span ＄600
+                    li 
+                        span 英式藍莓馬芬 X1
+                        span ＄360
+                ul.fee 
+                    li
+                        span 運費
+                        span ＄0
+                ul.total
+                    li
+                        span 總額
+                        span ＄1440
+                a.confirm-btn(href="javascript:;") 確認付款
+            //- cart end
+
+            //- footer start
+            include ./includes/footer.pug
+            //- footer end
+
+
+    script(src="./script/mesonry/masonry.pkgd.min.js")
+    script.
+        $(function() {
+        
+        });
+        

@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="./styles/vendor/swiper/swiper.css">
     <link rel="stylesheet" href="./styles/vendor/colorbox/colorbox.css">
     <link rel="stylesheet" href="./styles/ccwork.css">
-    <link rel="stylesheet" href="./styles/forms.css">
     <link rel="stylesheet" href="./styles/aos.css">
     <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/breadcrumb.css">
@@ -34,16 +33,37 @@
     <script>
       $(document).ready(function () {
       
-      	$("a.call-WITBN").colorbox({
-      		oepn: true,
-      		iframe: true,
-      		//- innerWidth: 1205,
-      		//- innerHeight: 467,
-      		width: ($(window).width() <= 1024) ? "80%" : "1205px",
-      		height: ($(window).width() <= 800) ? "50%" : "467px", 
-      		maxWidth: '100%',
-      		closeButton: true,
-      		title: 'WITBN 世界原住民廣電聯盟',
+      	$('<div class="quantity-nav"><div class="quantity-button quantity-up"></div><div class="quantity-button quantity-down"></div></div>').insertAfter('.quantity input');
+      	$('.quantity').each(function() {
+      	var spinner = $(this),
+      		input = spinner.find('input[type="number"]'),
+      		btnUp = spinner.find('.quantity-up'),
+      		btnDown = spinner.find('.quantity-down'),
+      		min = input.attr('min'),
+      		max = input.attr('max');
+      
+      	btnUp.click(function() {
+      		var oldValue = parseFloat(input.val());
+      		if (oldValue >= max) {
+      		var newVal = oldValue;
+      		} else {
+      		var newVal = oldValue + 1;
+      		}
+      		spinner.find("input").val(newVal);
+      		spinner.find("input").trigger("change");
+      	});
+      
+      	btnDown.click(function() {
+      		var oldValue = parseFloat(input.val());
+      		if (oldValue <= min) {
+      		var newVal = oldValue;
+      		} else {
+      		var newVal = oldValue - 1;
+      		}
+      		spinner.find("input").val(newVal);
+      		spinner.find("input").trigger("change");
+      	});
+      
       	});
       
       });
@@ -57,58 +77,94 @@
         <div class="mobile"> 
           <div class="burger"> <img src="./images/menu.png"></div><a class="mobile-logo" href="index.html"> <img src="./images/mobile-logo.png"></a><a class="cart" href="index.html"> <img src="./images/cart-icon.png"><span class="badge"><span class="num">3</span></span></a>
         </div>
-        <div class="sidebar"><a class="logo" href="index.html"> <img src="./images/sidebar_logo.png"></a>
-          <div class="logo-txt"><img src="./images/sidebar-txt.png"></div>
-          <div class="burger"> <img src="./images/menu.png"></div><a class="cart" href="index.html"> <img src="./images/cart-icon.png"><span class="badge"><span class="num">3</span></span></a>
+        <div class="sidebar"><a class="logo" href="index.html"> 
+            <div class="img" src="./images/sidebar_logo.png"></div></a>
+          <div class="logo-txt">
+            <div class="img" src="./images/sidebar-txt.png"></div>
+          </div>
+          <div class="burger"> <img src="./images/menu.png"></div><a class="cart" href="index.html"> 
+            <div class="img" src="./images/cart-icon.png"></div><span class="badge"><span class="num">3</span></span></a>
+        </div>
+        <div class="main-menu">
+          <ul class="menu-list"> 
+            <li> <a href="index.html"> <span class="cn">首頁</span><span class="en">HOME</span></a></li>
+            <li> <a href="product.html"> <span class="cn">商品總覽</span><span class="en">PRODUCTS</span></a></li>
+            <li> <a href="javascript:;"> <span class="cn">最新活動</span><span class="en">EVENTS</span></a></li>
+            <li> <a href="javascript:;"> <span class="cn">來點相簿</span><span class="en">
+                   PHOTOS</span></a></li>
+          </ul>
+          <div class="menu-info"> 
+            <ul class="info-box"> 
+              <li>
+                 地址｜台北市大安區復興南路一段26號</li>
+              <li>
+                 電話｜02-2462121</li>
+            </ul>
+            <div class="social-box"> <a href="javascript:;"> 
+                <div class="social-icon facebook-icon"></div></a><a href="javascript:;"> 
+                <div class="social-icon instagram-icon"></div></a></div>
+          </div>
         </div>
       </header>
     </div>
     <div class="zone">
-      <div class="card-manvision"> 
-        <div class="bg-img desktop" style="background-image: url('./images/index/landing-page.png')"></div>
-        <div class="bg-img mobile" style="background-image: url('./images/index/landing-page-mobile.png')"></div><img class="logo" src="./images/logo.png">
+      <div class="card-manvision" data-aos="fade" data-aos-once="true"> 
+        <div class="bg-img desktop" style="background-image: url('./images/index/landing-page.png')"><img class="logo" src="./images/logo.png"></div>
+        <div class="bg-img mobile" style="background-image: url('./images/index/landing-page-mobile.png')"><img class="logo" src="./images/logo.png"></div>
       </div>
     </div>
     <div class="wide-container">
-      <div class="card-product"> 
+      <div class="card-product" data-aos="fade" data-aos-once="true"> 
         <div class="product-outbox">
           <div class="swiper-container product-box"> 
             <div class="swiper-wrapper"> 
-              <div class="swiper-slide"> <a class="img-content" href="javascript:;"> 
-                  <div class="img" style="background-image: url('./images/index/product01.png')"></div>
-                  <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
-                <div class="product-title">可頌系列</div>
+              <div class="swiper-slide"> 
+                <div class="swiper-slide-inner"><a class="img-content" href="javascript:;"> 
+                    <div class="img" style="background-image: url('./images/index/product01.png')"></div>
+                    <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
+                  <div class="product-title">可頌系列</div>
+                </div>
               </div>
-              <div class="swiper-slide"> <a class="img-content" href="javascript:;"> 
-                  <div class="img" style="background-image: url('./images/index/product02.png')"></div>
-                  <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
-                <div class="product-title">瑪芬系列</div>
+              <div class="swiper-slide"> 
+                <div class="swiper-slide-inner"><a class="img-content" href="javascript:;"> 
+                    <div class="img" style="background-image: url('./images/index/product02.png')"></div>
+                    <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
+                  <div class="product-title">瑪芬系列</div>
+                </div>
               </div>
-              <div class="swiper-slide"> <a class="img-content" href="javascript:;"> 
-                  <div class="img" style="background-image: url('./images/index/product03.png')"></div>
-                  <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
-                <div class="product-title">馬卡龍系列</div>
+              <div class="swiper-slide">
+                <div class="swiper-slide-inner"><a class="img-content" href="javascript:;"> 
+                    <div class="img" style="background-image: url('./images/index/product03.png')"></div>
+                    <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
+                  <div class="product-title">馬卡龍系列</div>
+                </div>
               </div>
-              <div class="swiper-slide"> <a class="img-content" href="javascript:;"> 
-                  <div class="img" style="background-image: url('./images/index/product04.png')"></div>
-                  <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
-                <div class="product-title">多拿滋系列</div>
+              <div class="swiper-slide"> 
+                <div class="swiper-slide-inner"><a class="img-content" href="javascript:;"> 
+                    <div class="img" style="background-image: url('./images/index/product04.png')"></div>
+                    <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
+                  <div class="product-title">多拿滋系列</div>
+                </div>
               </div>
-              <div class="swiper-slide"> <a class="img-content" href="javascript:;"> 
-                  <div class="img" style="background-image: url('./images/index/product05.png')"></div>
-                  <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
-                <div class="product-title">磅蛋糕系列</div>
+              <div class="swiper-slide"> 
+                <div class="swiper-slide-inner"><a class="img-content" href="javascript:;"> 
+                    <div class="img" style="background-image: url('./images/index/product05.png')"></div>
+                    <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
+                  <div class="product-title">磅蛋糕系列</div>
+                </div>
               </div>
-              <div class="swiper-slide"> <a class="img-content" href="javascript:;"> 
-                  <div class="img" style="background-image: url('./images/index/product06.png')"></div>
-                  <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
-                <div class="product-title">吐司系列</div>
+              <div class="swiper-slide"> 
+                <div class="swiper-slide-inner"><a class="img-content" href="javascript:;"> 
+                    <div class="img" style="background-image: url('./images/index/product06.png')"></div>
+                    <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
+                  <div class="product-title">吐司系列</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="card-event"> 
+      <div class="card-event" data-aos="fade" data-aos-once="true"> 
         <div class="card-main-title">
           <div class="cn">最新活動</div>
           <div class="en">Events</div>
@@ -118,13 +174,17 @@
             <div class="event-box swiper-container"> 
               <div class="swiper-wrapper"> 
                 <div class="swiper-slide"> 
-                  <div class="img-content"> 
-                    <div class="img" style="background-image: url('./images/index/event01.png')"></div><a class="link" href="javascript:;"><span>MORE</span><img src="./images/arrow-down.png"></a>
+                  <div class="swiper-slide-inner">
+                    <div class="img-content"> 
+                      <div class="img" style="background-image: url('./images/index/event01.png')"></div><a class="link" href="javascript:;"><span>MORE</span><img src="./images/arrow-down.png"></a>
+                    </div>
                   </div>
                 </div>
-                <div class="swiper-slide"> 
-                  <div class="img-content"> 
-                    <div class="img" style="background-image: url('./images/index/event02.png')"></div><a class="link" href="javascript:;"><span>MORE</span><img src="./images/arrow-down.png"></a>
+                <div class="swiper-slide">
+                  <div class="swiper-slide-inner">
+                    <div class="img-content"> 
+                      <div class="img" style="background-image: url('./images/index/event02.png')"></div><a class="link" href="javascript:;"><span>MORE</span><img src="./images/arrow-down.png"></a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -134,8 +194,8 @@
           </div>
         </div>
       </div>
-      <div class="card-intro">
-        <div class="intro-box swiper-container"> 
+      <div class="card-intro" data-aos="fade" data-aos-once="true"> 
+        <div class="intro-box swiper-container">
           <div class="swiper-wrapper"> 
             <div class="swiper-slide"> 
               <div class="img" style="background-image: url('./images/index/about01.jpg')"></div>
@@ -160,9 +220,9 @@
         </div>
       </div>
       <div class="card-popular-product">
-        <div class="product-item"> 
+        <div class="product-item" data-aos="fade" data-aos-once="true"> 
           <div class="left">
-            <div class="product-tag"><img src="./images/product-img.png"></div>
+            <div class="product-tag"><span>人氣商品</span></div>
             <div class="product-main-title">法式經典檸檬塔</div>
           </div>
           <div class="right">
@@ -176,7 +236,7 @@
           </div>
           <div class="more-link"> <a href="javascript:;">MORE</a></div>
         </div>
-        <div class="product-item"> 
+        <div class="product-item" data-aos="fade" data-aos-once="true"> 
           <div class="left">
             <div class="product-img"> 
               <div class="img" style="background-image: url('./images/index/popular02.png')"></div>
@@ -188,13 +248,13 @@
           </div>
           <div class="right">
             <div class="product-main-title">濃郁可可馬卡龍</div>
-            <div class="product-tag"><img src="./images/product-img.png"></div>
+            <div class="product-tag"><span>人氣商品</span></div>
           </div>
           <div class="more-link"> <a href="javascript:;">MORE</a></div>
         </div>
-        <div class="product-item"> 
+        <div class="product-item" data-aos="fade" data-aos-once="true"> 
           <div class="left">
-            <div class="product-tag"><img src="./images/product-img.png"></div>
+            <div class="product-tag"><span>人氣商品</span></div>
             <div class="product-main-title">花香多拿滋</div>
           </div>
           <div class="right">
@@ -208,7 +268,7 @@
           </div>
           <div class="more-link"> <a href="javascript:;">MORE</a></div>
         </div>
-        <div class="product-item"> 
+        <div class="product-item" data-aos="fade" data-aos-once="true"> 
           <div class="left">
             <div class="product-img"> 
               <div class="img" style="background-image: url('./images/index/popular04.png')"></div>
@@ -220,17 +280,17 @@
           </div>
           <div class="right">
             <div class="product-main-title">英式藍莓瑪芬</div>
-            <div class="product-tag"><img src="./images/product-img.png"></div>
+            <div class="product-tag"><span>人氣商品</span></div>
           </div>
           <div class="more-link"> <a href="javascript:;">MORE</a></div>
         </div>
       </div>
-      <div class="card-photo"> 
+      <div class="card-photo">
         <div class="card-main-title">
           <div class="cn">來點相簿</div>
           <div class="en">Photos</div>
         </div>
-        <div class="photo-list swiper-container"> 
+        <div class="photo-list swiper-container" data-aos="fade" data-aos-once="true"> 
           <div class="swiper-wrapper"> 
             <div class="swiper-slide"> <a class="swiper-slide-inner" href="javascript:;">
                 <div class="img" style="background-image: url('./images/index/photo01.png')"></div></a></div>
@@ -269,6 +329,18 @@
   </body>
   <script>
     $(function() {
+        var scrollTop
+        var sideBar = $('.card-header .sidebar')
+        $(window).on('scroll', function() {
+            scrollTop =  $(window).scrollTop();
+            sideBar.css('top', 'calc(100vh - '+scrollTop +'px)')
+        })
+    
+        function updateClasses({ $el, slides, activeIndex }) {
+            slides.each(function(idx, slide) {
+                $(slide).find('.swiper-slide-inner').addClass('slide'+idx+'')   
+            })
+        }
     
         new Swiper('.card-product .product-box', {
             slidesPerView: 4.5,
@@ -290,6 +362,13 @@
                     slidesPerView: 3.5,
                     spaceBetween: 16,
                 },
+            },
+            on: {
+                init() {
+                    this.slides.each(function(idx, slide) {
+                        $(slide).find('.swiper-slide-inner').addClass('slideLeft slide'+idx+'')   
+                    })
+                }
             },
         });
     
@@ -315,9 +394,16 @@
                     spaceBetween: 0,
                 },
             },
+            on: {
+                init() {
+                    this.slides.each(function(idx, slide) {
+                        $(slide).find('.swiper-slide-inner').addClass('slideLeft slide'+idx+'')   
+                    })
+                }
+            },
         });
     
-        new Swiper('.card-photo  .photo-list', {
+        new Swiper('.card-photo .photo-list', {
             slidesPerView: 'auto',
             slidesPerView: 5.5,
             spaceBetween: 0,
@@ -340,6 +426,13 @@
                     slidesPerView: 4.5,
                 },
             },
+            on: {
+                init() {
+                    this.slides.each(function(idx, slide) {
+                        $(slide).find('.swiper-slide-inner').addClass('slideUp slideT'+idx+'')   
+                    })
+                }
+            },
         });
     
         new Swiper('.card-intro .intro-box', {
@@ -349,9 +442,13 @@
             effect: 'fade',
             loop: true,
             speed: 100,
-            autoplay: {
-                delay: 300,
-            },
+            //- autoplay: {
+            //-     delay: 300,
+            //- },
+        });
+    
+        AOS.init({
+            duration: 1000
         });
     });
   </script>
