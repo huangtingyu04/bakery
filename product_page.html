@@ -66,6 +66,13 @@
       
       	});
       
+      	$('.js-block').on('mouseleave', function() {
+      		$(this).attr('data-state', 'leave') 
+      		
+      		setTimeout(function() {
+      			$('.js-block').attr('data-state', '')
+      		}, 500)
+      	})
       });
     </script>
     <link rel="stylesheet" href="./styles/product-list.css">
@@ -75,15 +82,19 @@
     <div class="zone"> 
       <header class="card-header"> 
         <div class="mobile"> 
-          <div class="burger"> <img src="./images/menu.png"></div><a class="mobile-logo" href="index.html"> <img src="./images/mobile-logo.png"></a><a class="cart" href="index.html"> <img src="./images/cart-icon.png"><span class="badge"><span class="num">3</span></span></a>
+          <div class="burger"> <span class="txt"> </span>
+            <div class="site-header__menu-btn"><span class="ll-at-background-prevent"></span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span></div>
+          </div><a class="mobile-logo" href="index.html"> 
+            <div class="img"></div></a><a class="cart" href="index.html"> 
+            <div class="img"></div></a>
         </div>
-        <div class="sidebar"><a class="logo" href="index.html"> 
-            <div class="img" src="./images/sidebar_logo.png"></div></a>
+        <div class="sidebar"><a id="anchor" href="javascript:;"></a><a class="logo" href="index.html"> 
+            <div class="img"></div></a>
           <div class="logo-txt">
-            <div class="img" src="./images/sidebar-txt.png"></div>
-          </div>
-          <div class="burger"> <img src="./images/menu.png"></div><a class="cart" href="index.html"> 
-            <div class="img" src="./images/cart-icon.png"></div><span class="badge"><span class="num">3</span></span></a>
+            <div class="img"></div>
+          </div><a class="burger" href="#anchor"> <span class="txt"> </span>
+            <div class="site-header__menu-btn"><span class="ll-at-background-prevent"></span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span></div></a><a class="cart" href="index.html"> 
+            <div class="img"></div></a>
         </div>
         <div class="main-menu">
           <ul class="menu-list"> 
@@ -106,12 +117,37 @@
           </div>
         </div>
       </header>
+      <script>
+        $(function() {
+            var burger = $('.burger')
+        
+            burger.mouseenter(function () {
+                $(this).find('.site-header__menu-btn').addClass('hover')
+            }).mouseleave(function() {
+                $(this).find('.site-header__menu-btn').removeClass('hover')
+            })
+        
+            burger.on('click', function() {
+                var hasClass =  $(this).find('.site-header__menu-btn').hasClass('open')
+                if (!hasClass) {
+                    $(this).find('.site-header__menu-btn').addClass('open')
+                    $('.main-menu, .sidebar, .mobile').addClass('open')
+                    $('body').css({ 'overflow-y': 'hidden' })
+                }
+                else {
+                    $(this).find('.site-header__menu-btn').removeClass('open')
+                    $('.main-menu, .sidebar, .mobile').removeClass('open')
+                    $('body').css({ 'overflow-y': '' })
+                }
+            })
+        });
+      </script>
     </div>
     <div class="wide-container">
       <div class="card-breadcrumbs">
         <ul>
           <li><a href="index.html">首頁</a></li>
-          <li class="breadcrumb-item"> <a href="javascript:;">來點相簿</a></li>
+          <li class="breadcrumb-item"> <a href="javascript:;">商品總覽</a></li>
           <li class="breadcrumb-item"> <a href="javascript:;">馬卡龍</a></li>
         </ul>
       </div>
@@ -123,16 +159,16 @@
                 <div class="img" style="background-image: url('./images/product/product01.png')"></div>
               </div>
               <div class="swiper-slide"> 
-                <div class="img" style="background-image: url('./images/product/product01.png')"></div>
+                <div class="img" style="background-image: url('./images/product/product02.png')"></div>
               </div>
               <div class="swiper-slide"> 
-                <div class="img" style="background-image: url('./images/product/product01.png')"></div>
+                <div class="img" style="background-image: url('./images/product/product03.png')"></div>
               </div>
               <div class="swiper-slide"> 
-                <div class="img" style="background-image: url('./images/product/product01.png')"></div>
+                <div class="img" style="background-image: url('./images/product/product04.png')"></div>
               </div>
               <div class="swiper-slide"> 
-                <div class="img" style="background-image: url('./images/product/product01.png')"></div>
+                <div class="img" style="background-image: url('./images/product/product05.png')"></div>
               </div>
             </div>
           </div>
@@ -176,34 +212,34 @@
             </div>
           </div>
           <div class="product-intro-box"> 
-            <div class="title cn">焦糖紫薯馬卡龍2</div>
+            <div class="title cn">薄荷萊姆馬卡龍</div>
             <div class="title en">Purple Potato Macaron</div>
             <div class="product-intro">
-              <div class="porduct-price"> <span class="price">$4802</span><span class="unit">8入/盒 </span></div>
+              <div class="porduct-price"> <span class="price">$480</span><span class="unit">8入/盒 </span></div>
               <div class="product-content">酥脆的外殼吃得到滿滿的紫薯清香，搭配綿密的焦糖內餡，絕對能滿足你的味蕾。</div>
             </div>
           </div>
           <div class="product-intro-box"> 
-            <div class="title cn">焦糖紫薯馬卡龍3</div>
+            <div class="title cn">濃郁可可馬卡龍</div>
             <div class="title en">Purple Potato Macaron</div>
             <div class="product-intro">
-              <div class="porduct-price"> <span class="price">$4803</span><span class="unit">8入/盒 </span></div>
+              <div class="porduct-price"> <span class="price">$480</span><span class="unit">8入/盒 </span></div>
               <div class="product-content">酥脆的外殼吃得到滿滿的紫薯清香，搭配綿密的焦糖內餡，絕對能滿足你的味蕾。</div>
             </div>
           </div>
           <div class="product-intro-box"> 
-            <div class="title cn">焦糖紫薯馬卡龍4</div>
+            <div class="title cn">莓果馬卡龍</div>
             <div class="title en">Purple Potato Macaron</div>
             <div class="product-intro">
-              <div class="porduct-price"> <span class="price">$4804</span><span class="unit">8入/盒 </span></div>
+              <div class="porduct-price"> <span class="price">$480</span><span class="unit">8入/盒 </span></div>
               <div class="product-content">酥脆的外殼吃得到滿滿的紫薯清香，搭配綿密的焦糖內餡，絕對能滿足你的味蕾。</div>
             </div>
           </div>
           <div class="product-intro-box"> 
-            <div class="title cn">焦糖紫薯馬卡龍5</div>
+            <div class="title cn">綜合馬卡龍</div>
             <div class="title en">Purple Potato Macaron</div>
             <div class="product-intro">
-              <div class="porduct-price"> <span class="price">$4805</span><span class="unit">8入/盒 </span></div>
+              <div class="porduct-price"> <span class="price">$480</span><span class="unit">8入/盒 </span></div>
               <div class="product-content">酥脆的外殼吃得到滿滿的紫薯清香，搭配綿密的焦糖內餡，絕對能滿足你的味蕾。</div>
             </div>
           </div>
@@ -216,7 +252,7 @@
                 <option value="精緻">精緻</option>
               </select>
             </div>
-          </div><a class="cart-btn" href="javascript:;">加入購物車</a>
+          </div><a class="cart-btn" href="cart.html">加入購物車</a>
         </div>
       </div>
       <div class="zone"> 
@@ -224,7 +260,7 @@
           <div class="footer-box">
             <div class="footer-logo"><a href="index.html"><img src="./images/footer-logo.png"></a></div>
             <div class="footer-info">
-              <div class="title"> <img src="./images/footer-txt.png"></div>
+              <div class="title"> <span>來點西點</span></div>
               <ul> 
                 <li>地址｜台北市大安區復興南路一段26號</li>
                 <li>電話｜02-2462121</li>

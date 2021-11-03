@@ -20,54 +20,60 @@ html(lang="zh-Hant-TW")
             //- breadcrumb end
             //- product start
             .card-product-container(data-style="1") 
-                .product-outbox
+                .product-outbox(data-aos="fade", data-aos-once="true")
                     .card-title
                         .cn 商品總覽
                         .en Products
                     .swiper-container.product-box 
                         .swiper-wrapper 
                             .swiper-slide 
-                                a.img-content(href="javascript:;") 
-                                    .img(style="background-image: url('./images/index/product01.png')")
-                                    .link
-                                        span MORE
-                                        img(src="./images/arrow-down.png")
-                                .product-title 可頌系列
+                                .swiper-slide-inner.slideUp.slideT0
+                                    a.img-content(href="product_page.html") 
+                                        .img(style="background-image: url('./images/index/product01.png')")
+                                        .link
+                                            span MORE
+                                            img(src="./images/arrow-down.png")
+                                    .product-title 可頌系列
                             .swiper-slide 
-                                a.img-content(href="javascript:;") 
-                                    .img(style="background-image: url('./images/index/product02.png')")
-                                    .link
-                                        span MORE
-                                        img(src="./images/arrow-down.png")
-                                .product-title 瑪芬系列
+                                .swiper-slide-inner.slideUp.slideT1
+                                    a.img-content(href="product_page.html") 
+                                        .img(style="background-image: url('./images/index/product02.png')")
+                                        .link
+                                            span MORE
+                                            img(src="./images/arrow-down.png")
+                                    .product-title 瑪芬系列
                             .swiper-slide 
-                                a.img-content(href="javascript:;") 
-                                    .img(style="background-image: url('./images/index/product03.png')")
-                                    .link
-                                        span MORE
-                                        img(src="./images/arrow-down.png")
-                                .product-title 馬卡龍系列
+                                .swiper-slide-inner.slideUp.slideT2
+                                    a.img-content(href="product_page.html") 
+                                        .img(style="background-image: url('./images/index/product03.png')")
+                                        .link
+                                            span MORE
+                                            img(src="./images/arrow-down.png")
+                                    .product-title 馬卡龍系列
                             .swiper-slide 
-                                a.img-content(href="javascript:;") 
-                                    .img(style="background-image: url('./images/index/product04.png')")
-                                    .link
-                                        span MORE
-                                        img(src="./images/arrow-down.png")
-                                .product-title 多拿滋系列
+                                .swiper-slide-inner.slideUp.slideT3
+                                    a.img-content(href="product_page.html") 
+                                        .img(style="background-image: url('./images/index/product04.png')")
+                                        .link
+                                            span MORE
+                                            img(src="./images/arrow-down.png")
+                                    .product-title 多拿滋系列
                             .swiper-slide 
-                                a.img-content(href="javascript:;") 
-                                    .img(style="background-image: url('./images/index/product05.png')")
-                                    .link
-                                        span MORE
-                                        img(src="./images/arrow-down.png")
-                                .product-title 磅蛋糕系列
+                                .swiper-slide-inner.slideUp.slideT4
+                                    a.img-content(href="product_page.html") 
+                                        .img(style="background-image: url('./images/index/product05.png')")
+                                        .link
+                                            span MORE
+                                            img(src="./images/arrow-down.png")
+                                    .product-title 磅蛋糕系列
                             .swiper-slide 
-                                a.img-content(href="javascript:;") 
-                                    .img(style="background-image: url('./images/index/product06.png')")
-                                    .link
-                                        span MORE
-                                        img(src="./images/arrow-down.png")
-                                .product-title 吐司系列
+                                .swiper-slide-inner.slideUp.slideT5
+                                    a.img-content(href="product_page.html") 
+                                        .img(style="background-image: url('./images/index/product06.png')")
+                                        .link
+                                            span MORE
+                                            img(src="./images/arrow-down.png")
+                                    .product-title 吐司系列
             //- product end
 
             //- footer start
@@ -78,6 +84,8 @@ html(lang="zh-Hant-TW")
 
     script.
         $(function() {
-
+            AOS.init({
+                duration: 1000
+            });
         });
         

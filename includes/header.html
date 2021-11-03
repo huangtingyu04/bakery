@@ -2,15 +2,19 @@
 <div class="zone"> 
   <header class="card-header"> 
     <div class="mobile"> 
-      <div class="burger"> <img src="./images/menu.png"/></div><a class="mobile-logo" href="index.html"> <img src="./images/mobile-logo.png"/></a><a class="cart" href="index.html"> <img src="./images/cart-icon.png"/><span class="badge"><span class="num">3</span></span></a>
+      <div class="burger"> <span class="txt"> </span>
+        <div class="site-header__menu-btn"><span class="ll-at-background-prevent"></span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span></div>
+      </div><a class="mobile-logo" href="index.html"> 
+        <div class="img"></div></a><a class="cart" href="index.html"> 
+        <div class="img"></div></a>
     </div>
-    <div class="sidebar"><a class="logo" href="index.html"> 
-        <div class="img" src="./images/sidebar_logo.png"></div></a>
+    <div class="sidebar"><a id="anchor" href="javascript:;"></a><a class="logo" href="index.html"> 
+        <div class="img"></div></a>
       <div class="logo-txt">
-        <div class="img" src="./images/sidebar-txt.png"></div>
-      </div>
-      <div class="burger"> <img src="./images/menu.png"/></div><a class="cart" href="index.html"> 
-        <div class="img" src="./images/cart-icon.png"></div><span class="badge"><span class="num">3</span></span></a>
+        <div class="img"></div>
+      </div><a class="burger" href="#anchor"> <span class="txt"> </span>
+        <div class="site-header__menu-btn"><span class="ll-at-background-prevent"></span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span></div></a><a class="cart" href="index.html"> 
+        <div class="img"></div></a>
     </div>
     <div class="main-menu">
       <ul class="menu-list"> 
@@ -33,4 +37,29 @@
       </div>
     </div>
   </header>
+  <script>
+    $(function() {
+        var burger = $('.burger')
+    
+        burger.mouseenter(function () {
+            $(this).find('.site-header__menu-btn').addClass('hover')
+        }).mouseleave(function() {
+            $(this).find('.site-header__menu-btn').removeClass('hover')
+        })
+    
+        burger.on('click', function() {
+            var hasClass =  $(this).find('.site-header__menu-btn').hasClass('open')
+            if (!hasClass) {
+                $(this).find('.site-header__menu-btn').addClass('open')
+                $('.main-menu, .sidebar, .mobile').addClass('open')
+                $('body').css({ 'overflow-y': 'hidden' })
+            }
+            else {
+                $(this).find('.site-header__menu-btn').removeClass('open')
+                $('.main-menu, .sidebar, .mobile').removeClass('open')
+                $('body').css({ 'overflow-y': '' })
+            }
+        })
+    });
+  </script>
 </div>

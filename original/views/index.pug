@@ -20,7 +20,7 @@ html(lang="zh-Hant-TW")
                 .bg-img.mobile(style="background-image: url('./images/index/landing-page-mobile.png')")
                     img.logo(src="./images/logo.png")
         //- landing page end
-
+        
         .wide-container
             //- product start
             .card-product(data-aos="fade", data-aos-once="true") 
@@ -29,7 +29,7 @@ html(lang="zh-Hant-TW")
                         .swiper-wrapper 
                             .swiper-slide 
                                 .swiper-slide-inner
-                                    a.img-content(href="javascript:;") 
+                                    a.img-content(href="product.html") 
                                         .img(style="background-image: url('./images/index/product01.png')")
                                         .link
                                             span MORE
@@ -37,7 +37,7 @@ html(lang="zh-Hant-TW")
                                     .product-title 可頌系列
                             .swiper-slide 
                                 .swiper-slide-inner
-                                    a.img-content(href="javascript:;") 
+                                    a.img-content(href="product.html") 
                                         .img(style="background-image: url('./images/index/product02.png')")
                                         .link
                                             span MORE
@@ -45,7 +45,7 @@ html(lang="zh-Hant-TW")
                                     .product-title 瑪芬系列
                             .swiper-slide
                                 .swiper-slide-inner
-                                    a.img-content(href="javascript:;") 
+                                    a.img-content(href="product.html") 
                                         .img(style="background-image: url('./images/index/product03.png')")
                                         .link
                                             span MORE
@@ -53,7 +53,7 @@ html(lang="zh-Hant-TW")
                                     .product-title 馬卡龍系列
                             .swiper-slide 
                                 .swiper-slide-inner
-                                    a.img-content(href="javascript:;") 
+                                    a.img-content(href="product.html") 
                                         .img(style="background-image: url('./images/index/product04.png')")
                                         .link
                                             span MORE
@@ -61,7 +61,7 @@ html(lang="zh-Hant-TW")
                                     .product-title 多拿滋系列
                             .swiper-slide 
                                 .swiper-slide-inner
-                                    a.img-content(href="javascript:;") 
+                                    a.img-content(href="product.html") 
                                         .img(style="background-image: url('./images/index/product05.png')")
                                         .link
                                             span MORE
@@ -69,7 +69,7 @@ html(lang="zh-Hant-TW")
                                     .product-title 磅蛋糕系列
                             .swiper-slide 
                                 .swiper-slide-inner
-                                    a.img-content(href="javascript:;") 
+                                    a.img-content(href="product.html") 
                                         .img(style="background-image: url('./images/index/product06.png')")
                                         .link
                                             span MORE
@@ -119,64 +119,104 @@ html(lang="zh-Hant-TW")
                         span 來點
                         span 小故事
                     .intro-txt
-                        p 關於我們介紹文字關於我們介紹文字關於我們介紹文字關於我們介紹文字關於我們介紹文字關於我們介紹文字關於我們介紹文字關於我們介紹文字關於我們介紹。
-                        p 關於我們介紹文字關於我們介紹文字關於我們介紹文字關於我們介紹文字。
+                        p 自2020年8月，我們以線上商城提供各式美味西點，不僅堅持使用最新鮮的食材，也研發出眾多獨特口味，給您一次次驚喜。
+                        p 我們的堅持與用心不僅讓您吃得安心，也帶來視覺與味覺的饗宴，不妨在生活中來點Bread time!
             //- intro end
 
             //- popular product start
             .card-popular-product
                 .product-item(data-aos="fade", data-aos-once="true") 
-                    .left
+                    .left(data-aos="fade-up", data-aos-once="true") 
                         .product-tag
                             span 人氣商品
                         .product-main-title 法式經典檸檬塔
-                    .right
+                    .right(data-aos="fade-left", data-aos-once="true") 
                         .product-des
                             .product-title Lemon Curd Tarts
                             .product-txt 滑順的檸檬奶醬，與香酥的手工塔皮搭配在一起，帶來酸甜清爽的風味，讓你每天都想來一顆。
                         .product-img 
                             .img(style="background-image: url('./images/index/popular01.png')")
                     .more-link 
-                        a(href="javascript:;") MORE
+                        a.js-block(href="javascript:;" data-state="") 
+                            span 
+                                span M
+                                span O
+                                span R
+                                span E
+                            span 
+                                span M
+                                span O
+                                span R
+                                span E
                 .product-item(data-aos="fade", data-aos-once="true") 
-                    .left
+                    .left(data-aos="fade-up", data-aos-once="true") 
                         .product-img 
                             .img(style="background-image: url('./images/index/popular02.png')")
                         .product-des
                             .product-title Ｃocoa Macaron
                             .product-txt 由酥脆的外殼、綿密Q實的內餡，達到層次堆疊的口感，濃郁的巧克力餡入口時將有滿滿的幸福感。
-                    .right
+                    .right(data-aos="fade-right", data-aos-once="true") 
                         .product-main-title 濃郁可可馬卡龍
                         .product-tag
                             span 人氣商品
                     .more-link 
-                        a(href="javascript:;") MORE
+                        a.js-block(href="javascript:;" data-state="") 
+                            span 
+                                span M
+                                span O
+                                span R
+                                span E
+                            span 
+                                span M
+                                span O
+                                span R
+                                span E
                 .product-item(data-aos="fade", data-aos-once="true") 
-                    .left
+                    .left(data-aos="fade-up", data-aos-once="true") 
                         .product-tag
                             span 人氣商品
                         .product-main-title 花香多拿滋
-                    .right
+                    .right(data-aos="fade-left", data-aos-once="true") 
                         .product-des
                             .product-title Baked glazed donuts with floral garnish
                             .product-txt 淡淡的花香與甜味，加上迷人的外型，帶給大家兼具味覺與視覺的雙重享受。
                         .product-img 
                             .img(style="background-image: url('./images/index/popular03.png')")
                     .more-link 
-                        a(href="javascript:;") MORE
+                        a.js-block(href="javascript:;" data-state="") 
+                            span 
+                                span M
+                                span O
+                                span R
+                                span E
+                            span 
+                                span M
+                                span O
+                                span R
+                                span E
                 .product-item(data-aos="fade", data-aos-once="true") 
-                    .left
+                    .left(data-aos="fade-up", data-aos-once="true") 
                         .product-img 
                             .img(style="background-image: url('./images/index/popular04.png')")
                         .product-des
                             .product-title Blueberry Muffins
                             .product-txt 介於麵包與蛋糕之間，口感紮實、結構卻相當鬆軟，酸甜的藍莓香氣在咬下去的煞那瞬間溢出。
-                    .right
+                    .right(data-aos="fade-right", data-aos-once="true") 
                         .product-main-title 英式藍莓瑪芬
                         .product-tag
                             span 人氣商品
                     .more-link 
-                        a(href="javascript:;") MORE
+                        a.js-block(href="javascript:;" data-state="") 
+                            span 
+                                span M
+                                span O
+                                span R
+                                span E
+                            span 
+                                span M
+                                span O
+                                span R
+                                span E
             //- popular product end
 
             //- photo start
@@ -187,22 +227,22 @@ html(lang="zh-Hant-TW")
                 .photo-list.swiper-container(data-aos="fade", data-aos-once="true")  
                     .swiper-wrapper 
                         .swiper-slide 
-                            a.swiper-slide-inner(href="javascript:;")
+                            a.swiper-slide-inner(href="gallery.html")
                                 .img(style="background-image: url('./images/index/photo01.png')")
                         .swiper-slide 
-                            a.swiper-slide-inner(href="javascript:;")
+                            a.swiper-slide-inner(href="gallery.html")
                                 .img(style="background-image: url('./images/index/photo02.png')")
                         .swiper-slide                             
-                            a.swiper-slide-inner(href="javascript:;")
+                            a.swiper-slide-inner(href="gallery.html")
                                 .img(style="background-image: url('./images/index/photo03.png')")
                         .swiper-slide     
-                            a.swiper-slide-inner(href="javascript:;")
+                            a.swiper-slide-inner(href="gallery.html")
                                 .img(style="background-image: url('./images/index/photo04.png')")
                         .swiper-slide     
-                            a.swiper-slide-inner(href="javascript:;")
+                            a.swiper-slide-inner(href="gallery.html")
                                 .img(style="background-image: url('./images/index/photo05.png')")
                         .swiper-slide    
-                            a.swiper-slide-inner(href="javascript:;")
+                            a.swiper-slide-inner(href="gallery.html")
                                 .img(style="background-image: url('./images/index/photo06.png')")
             //- photo end
 
@@ -214,10 +254,24 @@ html(lang="zh-Hant-TW")
         $(function() {
             var scrollTop
             var sideBar = $('.card-header .sidebar')
-            $(window).on('scroll', function() {
-                scrollTop =  $(window).scrollTop();
-                sideBar.css('top', 'calc(100vh - '+scrollTop +'px)')
-            })
+            var cart = sideBar.find('.cart')
+            var manvisionEleHeight = $('.card-manvision').height()
+            var ww = $(window).width()
+
+            if (ww >= 580 ) {
+                $(window).on('scroll', function() {
+                    scrollTop =  $(window).scrollTop();
+                    if (scrollTop >= manvisionEleHeight) {
+                        sideBar.css({'top': '0', 'position': 'fixed'})
+                        cart.css({'position': 'fixed'})
+                        return
+                    }
+                    sideBar.css({'top': '100vh', 'position': 'absolute'})
+                    cart.css({'position': 'relative'})
+
+                })
+            }
+            
 
             function updateClasses({ $el, slides, activeIndex }) {
                 slides.each(function(idx, slide) {
@@ -294,6 +348,7 @@ html(lang="zh-Hant-TW")
                 loopAdditionalSlides: 5,
                 freeMode: true,
                 speed: 5000,
+                touchMoveStopPropagation: true,
                 autoplay: {
                     delay: 0,
                     disableOnInteraction: true

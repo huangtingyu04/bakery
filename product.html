@@ -66,6 +66,13 @@
       
       	});
       
+      	$('.js-block').on('mouseleave', function() {
+      		$(this).attr('data-state', 'leave') 
+      		
+      		setTimeout(function() {
+      			$('.js-block').attr('data-state', '')
+      		}, 500)
+      	})
       });
     </script>
     <link rel="stylesheet" href="./styles/product.css">
@@ -75,15 +82,19 @@
     <div class="zone"> 
       <header class="card-header"> 
         <div class="mobile"> 
-          <div class="burger"> <img src="./images/menu.png"></div><a class="mobile-logo" href="index.html"> <img src="./images/mobile-logo.png"></a><a class="cart" href="index.html"> <img src="./images/cart-icon.png"><span class="badge"><span class="num">3</span></span></a>
+          <div class="burger"> <span class="txt"> </span>
+            <div class="site-header__menu-btn"><span class="ll-at-background-prevent"></span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span></div>
+          </div><a class="mobile-logo" href="index.html"> 
+            <div class="img"></div></a><a class="cart" href="index.html"> 
+            <div class="img"></div></a>
         </div>
-        <div class="sidebar"><a class="logo" href="index.html"> 
-            <div class="img" src="./images/sidebar_logo.png"></div></a>
+        <div class="sidebar"><a id="anchor" href="javascript:;"></a><a class="logo" href="index.html"> 
+            <div class="img"></div></a>
           <div class="logo-txt">
-            <div class="img" src="./images/sidebar-txt.png"></div>
-          </div>
-          <div class="burger"> <img src="./images/menu.png"></div><a class="cart" href="index.html"> 
-            <div class="img" src="./images/cart-icon.png"></div><span class="badge"><span class="num">3</span></span></a>
+            <div class="img"></div>
+          </div><a class="burger" href="#anchor"> <span class="txt"> </span>
+            <div class="site-header__menu-btn"><span class="ll-at-background-prevent"></span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span></div></a><a class="cart" href="index.html"> 
+            <div class="img"></div></a>
         </div>
         <div class="main-menu">
           <ul class="menu-list"> 
@@ -106,6 +117,31 @@
           </div>
         </div>
       </header>
+      <script>
+        $(function() {
+            var burger = $('.burger')
+        
+            burger.mouseenter(function () {
+                $(this).find('.site-header__menu-btn').addClass('hover')
+            }).mouseleave(function() {
+                $(this).find('.site-header__menu-btn').removeClass('hover')
+            })
+        
+            burger.on('click', function() {
+                var hasClass =  $(this).find('.site-header__menu-btn').hasClass('open')
+                if (!hasClass) {
+                    $(this).find('.site-header__menu-btn').addClass('open')
+                    $('.main-menu, .sidebar, .mobile').addClass('open')
+                    $('body').css({ 'overflow-y': 'hidden' })
+                }
+                else {
+                    $(this).find('.site-header__menu-btn').removeClass('open')
+                    $('.main-menu, .sidebar, .mobile').removeClass('open')
+                    $('body').css({ 'overflow-y': '' })
+                }
+            })
+        });
+      </script>
     </div>
     <div class="wide-container">
       <div class="card-breadcrumbs">
@@ -115,42 +151,54 @@
         </ul>
       </div>
       <div class="card-product-container" data-style="1"> 
-        <div class="product-outbox">
+        <div class="product-outbox" data-aos="fade" data-aos-once="true">
           <div class="card-title">
             <div class="cn">商品總覽</div>
             <div class="en">Products</div>
           </div>
           <div class="swiper-container product-box"> 
             <div class="swiper-wrapper"> 
-              <div class="swiper-slide"> <a class="img-content" href="javascript:;"> 
-                  <div class="img" style="background-image: url('./images/index/product01.png')"></div>
-                  <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
-                <div class="product-title">可頌系列</div>
+              <div class="swiper-slide"> 
+                <div class="swiper-slide-inner slideUp slideT0"><a class="img-content" href="product_page.html"> 
+                    <div class="img" style="background-image: url('./images/index/product01.png')"></div>
+                    <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
+                  <div class="product-title">可頌系列</div>
+                </div>
               </div>
-              <div class="swiper-slide"> <a class="img-content" href="javascript:;"> 
-                  <div class="img" style="background-image: url('./images/index/product02.png')"></div>
-                  <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
-                <div class="product-title">瑪芬系列</div>
+              <div class="swiper-slide"> 
+                <div class="swiper-slide-inner slideUp slideT1"><a class="img-content" href="product_page.html"> 
+                    <div class="img" style="background-image: url('./images/index/product02.png')"></div>
+                    <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
+                  <div class="product-title">瑪芬系列</div>
+                </div>
               </div>
-              <div class="swiper-slide"> <a class="img-content" href="javascript:;"> 
-                  <div class="img" style="background-image: url('./images/index/product03.png')"></div>
-                  <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
-                <div class="product-title">馬卡龍系列</div>
+              <div class="swiper-slide"> 
+                <div class="swiper-slide-inner slideUp slideT2"><a class="img-content" href="product_page.html"> 
+                    <div class="img" style="background-image: url('./images/index/product03.png')"></div>
+                    <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
+                  <div class="product-title">馬卡龍系列</div>
+                </div>
               </div>
-              <div class="swiper-slide"> <a class="img-content" href="javascript:;"> 
-                  <div class="img" style="background-image: url('./images/index/product04.png')"></div>
-                  <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
-                <div class="product-title">多拿滋系列</div>
+              <div class="swiper-slide"> 
+                <div class="swiper-slide-inner slideUp slideT3"><a class="img-content" href="product_page.html"> 
+                    <div class="img" style="background-image: url('./images/index/product04.png')"></div>
+                    <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
+                  <div class="product-title">多拿滋系列</div>
+                </div>
               </div>
-              <div class="swiper-slide"> <a class="img-content" href="javascript:;"> 
-                  <div class="img" style="background-image: url('./images/index/product05.png')"></div>
-                  <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
-                <div class="product-title">磅蛋糕系列</div>
+              <div class="swiper-slide"> 
+                <div class="swiper-slide-inner slideUp slideT4"><a class="img-content" href="product_page.html"> 
+                    <div class="img" style="background-image: url('./images/index/product05.png')"></div>
+                    <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
+                  <div class="product-title">磅蛋糕系列</div>
+                </div>
               </div>
-              <div class="swiper-slide"> <a class="img-content" href="javascript:;"> 
-                  <div class="img" style="background-image: url('./images/index/product06.png')"></div>
-                  <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
-                <div class="product-title">吐司系列</div>
+              <div class="swiper-slide"> 
+                <div class="swiper-slide-inner slideUp slideT5"><a class="img-content" href="product_page.html"> 
+                    <div class="img" style="background-image: url('./images/index/product06.png')"></div>
+                    <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
+                  <div class="product-title">吐司系列</div>
+                </div>
               </div>
             </div>
           </div>
@@ -161,7 +209,7 @@
           <div class="footer-box">
             <div class="footer-logo"><a href="index.html"><img src="./images/footer-logo.png"></a></div>
             <div class="footer-info">
-              <div class="title"> <img src="./images/footer-txt.png"></div>
+              <div class="title"> <span>來點西點</span></div>
               <ul> 
                 <li>地址｜台北市大安區復興南路一段26號</li>
                 <li>電話｜02-2462121</li>
@@ -178,7 +226,9 @@
   </body>
   <script>
     $(function() {
-    
+        AOS.init({
+            duration: 1000
+        });
     });
   </script>
 </html>

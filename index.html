@@ -66,6 +66,13 @@
       
       	});
       
+      	$('.js-block').on('mouseleave', function() {
+      		$(this).attr('data-state', 'leave') 
+      		
+      		setTimeout(function() {
+      			$('.js-block').attr('data-state', '')
+      		}, 500)
+      	})
       });
     </script>
     <link rel="stylesheet" href="./styles/index.css">
@@ -75,15 +82,19 @@
     <div class="zone"> 
       <header class="card-header"> 
         <div class="mobile"> 
-          <div class="burger"> <img src="./images/menu.png"></div><a class="mobile-logo" href="index.html"> <img src="./images/mobile-logo.png"></a><a class="cart" href="index.html"> <img src="./images/cart-icon.png"><span class="badge"><span class="num">3</span></span></a>
+          <div class="burger"> <span class="txt"> </span>
+            <div class="site-header__menu-btn"><span class="ll-at-background-prevent"></span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span></div>
+          </div><a class="mobile-logo" href="index.html"> 
+            <div class="img"></div></a><a class="cart" href="index.html"> 
+            <div class="img"></div></a>
         </div>
-        <div class="sidebar"><a class="logo" href="index.html"> 
-            <div class="img" src="./images/sidebar_logo.png"></div></a>
+        <div class="sidebar"><a id="anchor" href="javascript:;"></a><a class="logo" href="index.html"> 
+            <div class="img"></div></a>
           <div class="logo-txt">
-            <div class="img" src="./images/sidebar-txt.png"></div>
-          </div>
-          <div class="burger"> <img src="./images/menu.png"></div><a class="cart" href="index.html"> 
-            <div class="img" src="./images/cart-icon.png"></div><span class="badge"><span class="num">3</span></span></a>
+            <div class="img"></div>
+          </div><a class="burger" href="#anchor"> <span class="txt"> </span>
+            <div class="site-header__menu-btn"><span class="ll-at-background-prevent"></span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span><span class="ll-at-background-prevent"> </span></div></a><a class="cart" href="index.html"> 
+            <div class="img"></div></a>
         </div>
         <div class="main-menu">
           <ul class="menu-list"> 
@@ -106,6 +117,31 @@
           </div>
         </div>
       </header>
+      <script>
+        $(function() {
+            var burger = $('.burger')
+        
+            burger.mouseenter(function () {
+                $(this).find('.site-header__menu-btn').addClass('hover')
+            }).mouseleave(function() {
+                $(this).find('.site-header__menu-btn').removeClass('hover')
+            })
+        
+            burger.on('click', function() {
+                var hasClass =  $(this).find('.site-header__menu-btn').hasClass('open')
+                if (!hasClass) {
+                    $(this).find('.site-header__menu-btn').addClass('open')
+                    $('.main-menu, .sidebar, .mobile').addClass('open')
+                    $('body').css({ 'overflow-y': 'hidden' })
+                }
+                else {
+                    $(this).find('.site-header__menu-btn').removeClass('open')
+                    $('.main-menu, .sidebar, .mobile').removeClass('open')
+                    $('body').css({ 'overflow-y': '' })
+                }
+            })
+        });
+      </script>
     </div>
     <div class="zone">
       <div class="card-manvision" data-aos="fade" data-aos-once="true"> 
@@ -119,42 +155,42 @@
           <div class="swiper-container product-box"> 
             <div class="swiper-wrapper"> 
               <div class="swiper-slide"> 
-                <div class="swiper-slide-inner"><a class="img-content" href="javascript:;"> 
+                <div class="swiper-slide-inner"><a class="img-content" href="product.html"> 
                     <div class="img" style="background-image: url('./images/index/product01.png')"></div>
                     <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
                   <div class="product-title">可頌系列</div>
                 </div>
               </div>
               <div class="swiper-slide"> 
-                <div class="swiper-slide-inner"><a class="img-content" href="javascript:;"> 
+                <div class="swiper-slide-inner"><a class="img-content" href="product.html"> 
                     <div class="img" style="background-image: url('./images/index/product02.png')"></div>
                     <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
                   <div class="product-title">瑪芬系列</div>
                 </div>
               </div>
               <div class="swiper-slide">
-                <div class="swiper-slide-inner"><a class="img-content" href="javascript:;"> 
+                <div class="swiper-slide-inner"><a class="img-content" href="product.html"> 
                     <div class="img" style="background-image: url('./images/index/product03.png')"></div>
                     <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
                   <div class="product-title">馬卡龍系列</div>
                 </div>
               </div>
               <div class="swiper-slide"> 
-                <div class="swiper-slide-inner"><a class="img-content" href="javascript:;"> 
+                <div class="swiper-slide-inner"><a class="img-content" href="product.html"> 
                     <div class="img" style="background-image: url('./images/index/product04.png')"></div>
                     <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
                   <div class="product-title">多拿滋系列</div>
                 </div>
               </div>
               <div class="swiper-slide"> 
-                <div class="swiper-slide-inner"><a class="img-content" href="javascript:;"> 
+                <div class="swiper-slide-inner"><a class="img-content" href="product.html"> 
                     <div class="img" style="background-image: url('./images/index/product05.png')"></div>
                     <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
                   <div class="product-title">磅蛋糕系列</div>
                 </div>
               </div>
               <div class="swiper-slide"> 
-                <div class="swiper-slide-inner"><a class="img-content" href="javascript:;"> 
+                <div class="swiper-slide-inner"><a class="img-content" href="product.html"> 
                     <div class="img" style="background-image: url('./images/index/product06.png')"></div>
                     <div class="link"><span>MORE</span><img src="./images/arrow-down.png"></div></a>
                   <div class="product-title">吐司系列</div>
@@ -214,18 +250,18 @@
         <div class="intro-content">
           <div class="intro-title"> <span>來點</span><span>小故事</span></div>
           <div class="intro-txt">
-            <p>關於我們介紹文字關於我們介紹文字關於我們介紹文字關於我們介紹文字關於我們介紹文字關於我們介紹文字關於我們介紹文字關於我們介紹文字關於我們介紹。</p>
-            <p>關於我們介紹文字關於我們介紹文字關於我們介紹文字關於我們介紹文字。</p>
+            <p>自2020年8月，我們以線上商城提供各式美味西點，不僅堅持使用最新鮮的食材，也研發出眾多獨特口味，給您一次次驚喜。</p>
+            <p>我們的堅持與用心不僅讓您吃得安心，也帶來視覺與味覺的饗宴，不妨在生活中來點Bread time!</p>
           </div>
         </div>
       </div>
       <div class="card-popular-product">
         <div class="product-item" data-aos="fade" data-aos-once="true"> 
-          <div class="left">
+          <div class="left" data-aos="fade-up" data-aos-once="true"> 
             <div class="product-tag"><span>人氣商品</span></div>
             <div class="product-main-title">法式經典檸檬塔</div>
           </div>
-          <div class="right">
+          <div class="right" data-aos="fade-left" data-aos-once="true"> 
             <div class="product-des">
               <div class="product-title">Lemon Curd Tarts</div>
               <div class="product-txt">滑順的檸檬奶醬，與香酥的手工塔皮搭配在一起，帶來酸甜清爽的風味，讓你每天都想來一顆。</div>
@@ -234,10 +270,10 @@
               <div class="img" style="background-image: url('./images/index/popular01.png')"></div>
             </div>
           </div>
-          <div class="more-link"> <a href="javascript:;">MORE</a></div>
+          <div class="more-link"> <a class="js-block" href="javascript:;" data-state=""> <span> <span>M</span><span>O</span><span>R</span><span>E</span></span><span> <span>M</span><span>O</span><span>R</span><span>E</span></span></a></div>
         </div>
         <div class="product-item" data-aos="fade" data-aos-once="true"> 
-          <div class="left">
+          <div class="left" data-aos="fade-up" data-aos-once="true"> 
             <div class="product-img"> 
               <div class="img" style="background-image: url('./images/index/popular02.png')"></div>
             </div>
@@ -246,18 +282,18 @@
               <div class="product-txt">由酥脆的外殼、綿密Q實的內餡，達到層次堆疊的口感，濃郁的巧克力餡入口時將有滿滿的幸福感。</div>
             </div>
           </div>
-          <div class="right">
+          <div class="right" data-aos="fade-right" data-aos-once="true"> 
             <div class="product-main-title">濃郁可可馬卡龍</div>
             <div class="product-tag"><span>人氣商品</span></div>
           </div>
-          <div class="more-link"> <a href="javascript:;">MORE</a></div>
+          <div class="more-link"> <a class="js-block" href="javascript:;" data-state=""> <span> <span>M</span><span>O</span><span>R</span><span>E</span></span><span> <span>M</span><span>O</span><span>R</span><span>E</span></span></a></div>
         </div>
         <div class="product-item" data-aos="fade" data-aos-once="true"> 
-          <div class="left">
+          <div class="left" data-aos="fade-up" data-aos-once="true"> 
             <div class="product-tag"><span>人氣商品</span></div>
             <div class="product-main-title">花香多拿滋</div>
           </div>
-          <div class="right">
+          <div class="right" data-aos="fade-left" data-aos-once="true"> 
             <div class="product-des">
               <div class="product-title">Baked glazed donuts with floral garnish</div>
               <div class="product-txt">淡淡的花香與甜味，加上迷人的外型，帶給大家兼具味覺與視覺的雙重享受。</div>
@@ -266,10 +302,10 @@
               <div class="img" style="background-image: url('./images/index/popular03.png')"></div>
             </div>
           </div>
-          <div class="more-link"> <a href="javascript:;">MORE</a></div>
+          <div class="more-link"> <a class="js-block" href="javascript:;" data-state=""> <span> <span>M</span><span>O</span><span>R</span><span>E</span></span><span> <span>M</span><span>O</span><span>R</span><span>E</span></span></a></div>
         </div>
         <div class="product-item" data-aos="fade" data-aos-once="true"> 
-          <div class="left">
+          <div class="left" data-aos="fade-up" data-aos-once="true"> 
             <div class="product-img"> 
               <div class="img" style="background-image: url('./images/index/popular04.png')"></div>
             </div>
@@ -278,11 +314,11 @@
               <div class="product-txt">介於麵包與蛋糕之間，口感紮實、結構卻相當鬆軟，酸甜的藍莓香氣在咬下去的煞那瞬間溢出。</div>
             </div>
           </div>
-          <div class="right">
+          <div class="right" data-aos="fade-right" data-aos-once="true"> 
             <div class="product-main-title">英式藍莓瑪芬</div>
             <div class="product-tag"><span>人氣商品</span></div>
           </div>
-          <div class="more-link"> <a href="javascript:;">MORE</a></div>
+          <div class="more-link"> <a class="js-block" href="javascript:;" data-state=""> <span> <span>M</span><span>O</span><span>R</span><span>E</span></span><span> <span>M</span><span>O</span><span>R</span><span>E</span></span></a></div>
         </div>
       </div>
       <div class="card-photo">
@@ -292,17 +328,17 @@
         </div>
         <div class="photo-list swiper-container" data-aos="fade" data-aos-once="true"> 
           <div class="swiper-wrapper"> 
-            <div class="swiper-slide"> <a class="swiper-slide-inner" href="javascript:;">
+            <div class="swiper-slide"> <a class="swiper-slide-inner" href="gallery.html">
                 <div class="img" style="background-image: url('./images/index/photo01.png')"></div></a></div>
-            <div class="swiper-slide"> <a class="swiper-slide-inner" href="javascript:;">
+            <div class="swiper-slide"> <a class="swiper-slide-inner" href="gallery.html">
                 <div class="img" style="background-image: url('./images/index/photo02.png')"></div></a></div>
-            <div class="swiper-slide">                            <a class="swiper-slide-inner" href="javascript:;">
+            <div class="swiper-slide">                            <a class="swiper-slide-inner" href="gallery.html">
                 <div class="img" style="background-image: url('./images/index/photo03.png')"></div></a></div>
-            <div class="swiper-slide">    <a class="swiper-slide-inner" href="javascript:;">
+            <div class="swiper-slide">    <a class="swiper-slide-inner" href="gallery.html">
                 <div class="img" style="background-image: url('./images/index/photo04.png')"></div></a></div>
-            <div class="swiper-slide">    <a class="swiper-slide-inner" href="javascript:;">
+            <div class="swiper-slide">    <a class="swiper-slide-inner" href="gallery.html">
                 <div class="img" style="background-image: url('./images/index/photo05.png')"></div></a></div>
-            <div class="swiper-slide">   <a class="swiper-slide-inner" href="javascript:;">
+            <div class="swiper-slide">   <a class="swiper-slide-inner" href="gallery.html">
                 <div class="img" style="background-image: url('./images/index/photo06.png')"></div></a></div>
           </div>
         </div>
@@ -312,7 +348,7 @@
           <div class="footer-box">
             <div class="footer-logo"><a href="index.html"><img src="./images/footer-logo.png"></a></div>
             <div class="footer-info">
-              <div class="title"> <img src="./images/footer-txt.png"></div>
+              <div class="title"> <span>來點西點</span></div>
               <ul> 
                 <li>地址｜台北市大安區復興南路一段26號</li>
                 <li>電話｜02-2462121</li>
@@ -331,10 +367,24 @@
     $(function() {
         var scrollTop
         var sideBar = $('.card-header .sidebar')
-        $(window).on('scroll', function() {
-            scrollTop =  $(window).scrollTop();
-            sideBar.css('top', 'calc(100vh - '+scrollTop +'px)')
-        })
+        var cart = sideBar.find('.cart')
+        var manvisionEleHeight = $('.card-manvision').height()
+        var ww = $(window).width()
+    
+        if (ww >= 580 ) {
+            $(window).on('scroll', function() {
+                scrollTop =  $(window).scrollTop();
+                if (scrollTop >= manvisionEleHeight) {
+                    sideBar.css({'top': '0', 'position': 'fixed'})
+                    cart.css({'position': 'fixed'})
+                    return
+                }
+                sideBar.css({'top': '100vh', 'position': 'absolute'})
+                cart.css({'position': 'relative'})
+    
+            })
+        }
+        
     
         function updateClasses({ $el, slides, activeIndex }) {
             slides.each(function(idx, slide) {
@@ -411,6 +461,7 @@
             loopAdditionalSlides: 5,
             freeMode: true,
             speed: 5000,
+            touchMoveStopPropagation: true,
             autoplay: {
                 delay: 0,
                 disableOnInteraction: true

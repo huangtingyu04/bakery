@@ -2,24 +2,36 @@
     header.card-header 
         .mobile 
             .burger 
-                img(src="./images/menu.png")
+                span.txt 
+                .site-header__menu-btn
+                    span.ll-at-background-prevent
+                    span.ll-at-background-prevent  
+                    span.ll-at-background-prevent  
+                    span.ll-at-background-prevent 
             a.mobile-logo(href="index.html") 
-                img(src="./images/mobile-logo.png")
+                .img
             a.cart(href="index.html") 
-                img(src="./images/cart-icon.png")
-                span.badge
-                    span.num 3
+                .img
+                //- span.badge
+                //-     span.num 3
         .sidebar
+            a#anchor(href="javascript:;")
             a.logo(href="index.html") 
-                .img(src="./images/sidebar_logo.png")
+                .img
             .logo-txt
-                .img(src="./images/sidebar-txt.png")
-            .burger 
-                img(src="./images/menu.png")
+                .img
+            a.burger(href="#anchor") 
+                span.txt 
+                .site-header__menu-btn
+                    span.ll-at-background-prevent
+                    span.ll-at-background-prevent  
+                    span.ll-at-background-prevent  
+                    span.ll-at-background-prevent 
+                //- img(src="./images/menu.png")
             a.cart(href="index.html") 
-                .img(src="./images/cart-icon.png")
-                span.badge
-                    span.num 3
+                .img
+                //- span.badge
+                //-     span.num 3
         .main-menu
             ul.menu-list 
                 li 
@@ -51,8 +63,30 @@
                     a(href="javascript:;") 
                         .social-icon.instagram-icon
 
+    script.
+        $(function() {
+            var burger = $('.burger')
 
+            burger.mouseenter(function () {
+                $(this).find('.site-header__menu-btn').addClass('hover')
+            }).mouseleave(function() {
+                $(this).find('.site-header__menu-btn').removeClass('hover')
+            })
 
-
-
+            burger.on('click', function() {
+                var hasClass =  $(this).find('.site-header__menu-btn').hasClass('open')
+                if (!hasClass) {
+                    $(this).find('.site-header__menu-btn').addClass('open')
+                    $('.main-menu, .sidebar, .mobile').addClass('open')
+                    $('body').css({ 'overflow-y': 'hidden' })
+                }
+                else {
+                    $(this).find('.site-header__menu-btn').removeClass('open')
+                    $('.main-menu, .sidebar, .mobile').removeClass('open')
+                    $('body').css({ 'overflow-y': '' })
+                }
+            })
+        });
         
+
+

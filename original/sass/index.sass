@@ -6,17 +6,6 @@
 
 @import partials/_base
 
-$sec: 's'
-
-@mixin slide($direction)
-    @for $i from 0 through 17 
-        &.slide#{$i} 
-            transition: $direction .7s ease 0s,opacity .7s ease #{$i*2/10}#{$sec}
-
-        &.slideT#{$i} 
-            transition: $direction .7s ease 0s,opacity .7s ease #{$i*2/20}#{$sec}
-        
-
 %bg-des-style
     content: ''
     position: absolute
@@ -62,29 +51,29 @@ a
         +breakpoint(mobile-landscape)  
             padding-bottom: 197.87%
 
-        &::before,
-        &::after
-            content: ''
-            position: absolute
-            background-repeat: no-repeat
-            background-size: contain
+        // &::before,
+        // &::after
+        //     content: ''
+        //     position: absolute
+        //     background-repeat: no-repeat
+        //     background-size: contain
 
-            +breakpoint(mobile-landscape)  
-                display: none
+        //     +breakpoint(mobile-landscape)  
+        //         display: none
             
-        &::before
-            background-image: url('../images/index/mask01.png')
-            top: 0 
-            left: 0
-            width: 37.3%
-            padding-bottom: calc(37.3% * 1.68)
+        // &::before
+        //     background-image: url('../images/index/mask01.png')
+        //     top: 0 
+        //     left: 0
+        //     width: 37.3%
+        //     padding-bottom: calc(37.3% * 1.68)
 
-        &::after
-            top: 144px
-            right: 30px
-            background-image: url('../images/index/mask02.png')
-            width: 33.33%
-            padding-bottom: calc(33.3% * 1.02)
+        // &::after
+        //     top: 144px
+        //     right: 30px
+        //     background-image: url('../images/index/mask02.png')
+        //     width: 33.33%
+        //     padding-bottom: calc(33.3% * 1.02)
 
         
         &.desktop
@@ -458,10 +447,16 @@ a
 
 // popular product start
 .card-popular-product
+    +breakpoint(mobile-landscape)  
+        overflow-x: hidden
+
     .product-item 
         display: flex
         flex-wrap: wrap
         padding-bottom: 160px
+
+        .product-main-title
+            padding-bottom: 80px
 
         &:nth-child(4n+1)
             .right
@@ -538,6 +533,9 @@ a
                 margin-right: auto
                 margin-left: calc(14.77% + 100px)
 
+                +breakpoint(pad-portrait-980)   
+                    margin-left: 30px
+
         &:nth-child(even)
             .left
                 width: 85.23%
@@ -590,6 +588,9 @@ a
             .more-link
                 margin-left: auto
                 margin-right: calc(14.77% + 100px)
+
+                +breakpoint(pad-portrait-980)  
+                    margin-right: 30px
 
         .left,
         .right
@@ -695,17 +696,6 @@ a
 
         .more-link 
             margin-top: 140px
-            font-family: Noto Sans
-            font-style: normal
-            font-weight: bold
-            font-size: 1.6rem
-            line-height: 22px
-            letter-spacing: 0.2em
-            color: #000000
-            border: 1px solid #000000
-            width: 260px
-            padding: 25px 0
-            text-align: center
             order: 2
 
             +breakpoint(zone-nb-small)
@@ -742,31 +732,6 @@ a
 // card-photo end
 
 
-
-.swiper-slide-inner
-    position: relative
-    opacity: 0
-    transition: opacity 1s ease
-
-    &.slideLeft
-        left: 45px
-
-    &.slideUp
-        top: 35px
-            
-[data-aos^=fade][data-aos^=fade].aos-animate
-    .swiper-slide-inner
-        opacity: 1
-
-        &.slideLeft
-            left: 0
-
-            +slide(left)
-
-        &.slideUp
-            top: 0
-
-            +slide(top)
 
 
 

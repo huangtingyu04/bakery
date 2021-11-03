@@ -55,4 +55,11 @@ script.
 
 		});
 
+		$('.js-block').on('mouseleave', function() {
+			$(this).attr('data-state', 'leave') 
+			
+			setTimeout(function() {
+				$('.js-block').attr('data-state', '')
+			}, 500)
+		})
 	});
