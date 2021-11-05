@@ -1,14 +1,11 @@
 @charset "utf-8"
 
-
 @import mixins/_rwd
 @import mixins/_font
 
 @import partials/_base
 
-
-
-.card-header 
+.card-header
     +breakpoint(mobile-landscape)
         position: fixed
         top: 0
@@ -26,10 +23,10 @@
 
         &.open
             .mobile-logo .img
-                background-image:  url('../images/sidebar_logo_hover.png')
-            
+                background-image: url('../images/mobile-logo-open.png')
+
             .cart .img
-                background-image:  url('../images/cart-icon-hover.png')
+                background-image: url('../images/cart-icon-hover.png')
 
         .img
             background-repeat: no-repeat
@@ -38,7 +35,7 @@
             margin: auto
 
             .img
-                background-image:  url('../images/mobile-logo.png')
+                background-image: url('../images/mobile-logo.png')
                 width: 90px
                 height: 90px
 
@@ -53,12 +50,12 @@
 
         .cart
             right: 20px
-            
+
             .img
                 width: 27px
                 height: 31px
                 background-size: contain
-                background-image:  url('../images/cart-icon.png')
+                background-image: url('../images/cart-icon.png')
 
             .badge
                 position: absolute
@@ -92,7 +89,7 @@
         pointer-events: all
         position: relative
         width: 4rem
-    
+
         &:hover,
         &.hover
             span
@@ -101,7 +98,7 @@
                     &:after
                         transform: translateX(0)
                         transition: transform .3s cubic-bezier(.34,.615,.4,.985)
-            
+
             span
                 &:first-of-type
                     &:after
@@ -117,7 +114,7 @@
             overflow: hidden
             position: absolute
             right: 0
-        
+
             &:before
                 background-color: #000000
                 bottom: 0
@@ -126,7 +123,7 @@
                 position: absolute
                 right: 0
                 top: 0
-            
+
             &:after
                 background-color: #cccccc
                 bottom: 0
@@ -135,49 +132,48 @@
                 position: absolute
                 right: 0
                 top: 0
-        
+
             &:first-of-type,
             &:nth-of-type(2)
                 transform: translateX(0)
                 transition: transform .75s cubic-bezier(.34,.615,.4,.985)
-            
+
                 &:before
                     transform: translateX(0) translateY(0)
                     transition: transform .3s cubic-bezier(.34,.615,.4,.985)
-            
+
                 &:after
                     transform: translateX(101%)
                     transition: transform .3s cubic-bezier(.65,.025,.67,.36)
-            
+
             &:first-of-type
                 top: .7rem
                 transition-delay: .8s
-                
+
                 &:before
                     transition-delay: .3s
-                    
+
                 &:after
                     transition-delay: .2s
-                
+
             &:nth-of-type(2)
                 top: 1.6rem
                 transition-delay: .9s
-                
+
                 &:before
                     transition-delay: .4s
-                
+
                 &:after
                     transition-delay: .1s
-                
-                
+
             &:nth-of-type(3),
             &:nth-of-type(4)
                 display: none
                 top: 1.4rem
-            
+
             &:nth-of-type(3)
                 transform: rotate(-45deg)
-            
+
             &:nth-of-type(4)
                 transform: rotate(45deg)
 
@@ -193,40 +189,40 @@
                         &:after
                             transform: translateX(0)
                             transition: transform .3s cubic-bezier(.34,.615,.4,.985)
-                
+
                     &:nth-of-type(3)
                         &:after
                             transition-delay: 0s
-                
+
                     &:nth-of-type(4)
                         &:after
                             transition-delay: .1s
-            
+
             span
                 &:first-of-type,
                 &:nth-of-type(2)
                     display: none
-                
+
                 &:nth-of-type(3),
                 &:nth-of-type(4)
                     display: block
-                
+
                     &:before
                         transform: translateX(0)
                         transition: transform .3s cubic-bezier(.34,.615,.4,.985)
-                    
+
                     &:after
                         transform: translateX(101%)
                         transition: transform .3s cubic-bezier(.65,.025,.67,.36)
-                    
+
             &:nth-of-type(3)
                 &:before
                     transition-delay: .5s
-            
+
             &:nth-of-type(4)
                 &:before
                     transition-delay: .6s
-                    
+
     .sidebar
         width: 140px
         position: fixed
@@ -235,14 +231,14 @@
         display: flex
         flex-direction: column
         align-items: center
-        padding-top: 21vh
+        padding-top: 17vh
         z-index: 1
         height: 100%
         transition: .2s
 
         &.open
-            .cart 
-                border-color:rgba(255, 255, 255, 0.3) !important
+            .cart
+                border-color: rgba(255, 255, 255, 0.3) !important
 
         +breakpoint(mobile-landscape)
             display: none
@@ -254,7 +250,7 @@
             .img
                 width: 120px
                 padding-bottom: 120px
-                background-image:  url('../images/sidebar_logo.png')
+                background-image: url('../images/sidebar_logo.png')
 
         .burger
             margin-bottom: 176px
@@ -265,17 +261,17 @@
             .img
                 width: 26px
                 padding-bottom: 133px
-                background-image:  url('../images/sidebar-txt.png')
+                background-image: url('../images/sidebar-txt.png')
 
         &.open
             .logo .img
-                background-image:  url('../images/sidebar_logo_hover.png')
-            
+                background-image: url('../images/sidebar_logo_hover.png')
+
             .logo-txt .img
-                background-image:  url('../images/sidebar-txt-hover.png')
+                background-image: url('../images/sidebar-txt-hover.png')
 
             .cart .img
-                background-image:  url('../images/cart-icon-hover.png')
+                background-image: url('../images/cart-icon-hover.png')
 
         .cart
             padding: 50px 0
@@ -298,7 +294,7 @@
                 width: 36px
                 padding-bottom: 41px
                 margin: auto
-                background-image:  url('../images/cart-icon.png')
+                background-image: url('../images/cart-icon.png')
 
     .sidebar,
     .mobile
@@ -360,7 +356,8 @@
         +breakpoint(mobile-landscape)
             width: 100%
             left: 0
-            border-left: none 
+            border-left: none
+
         .menu-list
             li
                 opacity: 0
@@ -368,7 +365,7 @@
 
                 &:first-child
                     transition-delay: .55s
-                    
+
                 &:nth-child(2)
                     transition-delay: .625s
 
@@ -378,8 +375,13 @@
                 &:nth-child(4)
                     transition-delay: .775s
 
+        .box
+            width: 100%
+            height: calc(100% - 141px)
+            display: flex
+            align-items: center
+
         .menu-list
-            padding-top: 300px
             display: flex
             justify-content: space-between
             width: 625px
@@ -387,11 +389,10 @@
 
             +breakpoint(pad-portrait-980)
                 display: block
-                padding-top: 21vh
                 width: 100%
 
             +breakpoint(mobile-landscape)
-                padding: 30px 0 5px
+                padding: 5px 0
 
             li
                 width: 157px
@@ -403,6 +404,10 @@
 
                 +breakpoint(mobile-landscape)
                     margin-bottom: 15px
+
+                &:last-child
+                    +breakpoint(pad-portrait-980)
+                        margin-bottom: 0
 
             a
                 display: flex
@@ -443,25 +448,25 @@
                             font-size: 1.8rem
 
         .menu-info
-            display: flex 
+            display: flex
             width: 100%
             position: absolute
             padding: 44px 52px 34px 100px
             bottom: 0
             border-top: 1px solid rgba(0, 0, 0, 0.3)
-            
+
             +breakpoint(pad-portrait)
                 padding: 44px 30px 34px 30px
 
             +breakpoint(mobile-landscape)
                 width: 100%
                 position: relative
-                padding: 20px 30px 
+                padding: 20px 30px
 
             +breakpoint(mobile)
                 display: block
 
-            .info-box 
+            .info-box
                 li
                     margin-bottom: 10px
                     font-family: Noto Sans
@@ -470,7 +475,7 @@
                     letter-spacing: 0.2em
                     color: #000000
 
-            .social-box 
+            .social-box
                 display: flex
                 margin-top: 20px
                 margin-left: auto
@@ -494,7 +499,7 @@
 
                 .social-icon
                     background-repeat: no-repeat
-                    
+
                     &.facebook-icon
                         width: 10px
                         height: 16px

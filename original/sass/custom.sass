@@ -1,31 +1,28 @@
 @charset "utf-8"
 
-
 @import mixins/_rwd
 @import mixins/_font
 
 @import partials/_base
 
-
 $sec: 's'
 
 @mixin slide($direction)
-    @for $i from 0 through 17 
-        &.slide#{$i} 
+    @for $i from 0 through 17
+        &.slide#{$i}
             transition: $direction .7s ease 0s,opacity .7s ease #{$i*2/10}#{$sec}
 
-        &.slideT#{$i} 
+        &.slideT#{$i}
             transition: $direction .7s ease 0s,opacity .7s ease #{$i*2/20}#{$sec}
-        
 
 // reset css
 body
-    padding: 0 !important 
+    padding: 0 !important
     margin: 0
     height: auto
 
     +breakpoint(mobile-landscape)
-        padding: 90px 0 0 0 !important 
+        padding: 90px 0 0 0 !important
 
 a
     text-decoration: none
@@ -62,7 +59,6 @@ ul, ol
 
         +breakpoint(mobile-landscape)
             display: none
-        
 
     &.wide-1440-limmited
         width: 1440px
@@ -101,7 +97,6 @@ ul, ol
                 width: 4px
                 height: 4px
                 transform: translateY(-4px)
-
 
         &::before
             margin-right: 12px
@@ -178,10 +173,10 @@ input[type=number]
         -webkit-appearance: none
         appearance: none
 
-.quantity 
-  position: relative
+.quantity
+    position: relative
 
-  input
+input
     width: 45px
     height: 42px
     float: left
@@ -193,11 +188,11 @@ input[type=number]
     &::focus
         outline: 0
 
-.quantity-nav 
+.quantity-nav
     float: left
     position: relative
 
-.quantity-button 
+.quantity-button
     position: absolute
     cursor: pointer
     user-select: none
@@ -206,12 +201,11 @@ input[type=number]
     background-repeat: no-repeat
     padding: 7px
 
-    &.quantity-up 
+    &.quantity-up
         background-image: url('../images/product/arrow_up.png')
 
-    &.quantity-down 
+    &.quantity-down
         background-image: url('../images/product/arrow_down.png')
-
 
 .swiper-slide-inner
     position: relative
@@ -223,7 +217,7 @@ input[type=number]
 
     &.slideUp
         top: 35px
-            
+
 [data-aos^=fade][data-aos^=fade].aos-animate
     .swiper-slide-inner
         opacity: 1
@@ -254,7 +248,7 @@ input[type=number]
 
     +breakpoint(mobile-landscape)
         min-width: 20rem
-    
+
     &:before
         content: ''
         background-image: url('../images/more-icon.png')
@@ -268,7 +262,7 @@ input[type=number]
         bottom: 3px
         margin: auto
         z-index: 2
-        
+
     &:after
         background-color: #000000
         bottom: 0
@@ -291,118 +285,117 @@ input[type=number]
         &::before
             animation: BgIcon .3s cubic-bezier(.34,.615,.4,.985) 1 forwards
             background-image: url('../images/more-icon-hover.png')
-            
+
         &:after
             transform: scaleY(1) translateY(0)
             transition: transform .43s cubic-bezier(.34,.615,.4,.985)
-    
-        > span 
+
+        > span
             z-index: 3
-        
+
             &:first-child
                 &:first-child
                     transition-delay: .015s
-            
+
                 &:nth-child(2)
                     transition-delay: .03s
-            
+
                 &:nth-child(3)
                     transition-delay: .045s
-                
+
                 &:nth-child(4)
                     transition-delay: .06s
-                
+
                 &:nth-child(5)
                     transition-delay: .075s
-                
+
                 &:nth-child(6)
                     transition-delay: .09s
-                
+
                 &:nth-child(7)
                     transition-delay: .105s
-                    
+
                 &:nth-child(8)
                     transition-delay: .12s
-                    
+
                 &:nth-child(9)
                     transition-delay: .135s
-                    
+
                 &:nth-child(10)
                     transition-delay: .15s
-                    
+
                 &:nth-child(11)
                     transition-delay: .165s
-                
+
                 &:nth-child(12)
                     transition-delay: .18s
-        
+
             > span
                 opacity: 1
                 transform: translateY(-2rem)
                 transition: opacity .3s cubic-bezier(.65,.025,.67,.36),transform .3s cubic-bezier(.65,.025,.67,.36)
-        
+
             &:last-child
                 > span
                     opacity: 1
                     transform: translateY(0)
                     transition: opacity .3s cubic-bezier(.34,.615,.4,.985),transform .3s cubic-bezier(.34,.615,.4,.985)
-            
+
                     &:first-child
                         transition-delay: .015s
-                
+
                     &:nth-child(2)
                         transition-delay: .03s
-                
+
                     &:nth-child(3)
                         transition-delay: .045s
-                    
+
                     &:nth-child(4)
                         transition-delay: .06s
-                    
+
                     &:nth-child(5)
                         transition-delay: .075s
-                    
+
                     &:nth-child(6)
                         transition-delay: .09s
-                    
+
                     &:nth-child(7)
                         transition-delay: .105s
-                        
+
                     &:nth-child(8)
                         transition-delay: .12s
-                        
+
                     &:nth-child(9)
                         transition-delay: .135s
-                        
+
                     &:nth-child(10)
                         transition-delay: .15s
-                        
+
                     &:nth-child(11)
                         transition-delay: .165s
-                    
+
                     &:nth-child(12)
                         transition-delay: .18s
-    
-              
+
     &[data-state="leave"]
         &:after
             transform: scaleY(1) translateY(-100%)
             transition: transform .2s cubic-bezier(.65,.025,.67,.36) 25ms
-        
+
         > span
             z-index: 3
-            
+
             &:first-child
                 > span
                     animation: firstButtonSpanIn .3s cubic-bezier(.34,.615,.4,.985) 1 forwards
                     opacity: 0
-            
+
                     &:first-child
                         animation-delay: .015s
-                
+
                     &:nth-child(2)
                         animation-delay: .03s
-                
+
                     &:nth-child(3)
                         animation-delay: .045s
 
@@ -432,14 +425,14 @@ input[type=number]
 
                     &:nth-child(12)
                         animation-delay: .18s
-                    
+
             &:last-child
                 > span
                     opacity: 0
                     transform: translateY(-2rem)
                     transition: opacity .17s cubic-bezier(.65,.025,.67,.36),transform .17s cubic-bezier(.65,.025,.67,.36)
                     transition-delay: 0s
-          
+
     > span
         left: 50%
         pointer-events: none
@@ -448,7 +441,7 @@ input[type=number]
         transform: translateX(-50%) translateY(-50%)
         white-space: nowrap
         z-index: 3
-        
+
         > span
             display: inline-block
             position: relative
@@ -456,21 +449,21 @@ input[type=number]
             font-size: 1.6rem
             line-height: 22px
             letter-spacing: 0.2em
-        
+
         &:first-child
             color: #000000
-    
-            > span 
+
+            > span
                 opacity: 1
                 transform: translateY(0)
-                
+
         &:last-child
             color: #ffffff
             left: 50%
             position: absolute
             top: 50%
             transform: translateX(-50%) translateY(-50%)
-        
+
             > span
                 opacity: 0
                 transform: translateY(2rem)
@@ -482,7 +475,7 @@ input[type=number]
     text-decoration: none
     text-transform: uppercase
     user-select: none
-  
+
 @keyframes firstButtonSpanIn
     0%
         opacity: 0
@@ -500,21 +493,18 @@ input[type=number]
     100%
         opacity: 1
         ransform: translateY(0)
-            
+
 // public css end
 
 body
     &.index
         .sidebar
             // padding-top: 240px
-            // padding-top: 21vh
+            // padding-top: 17vh
             // top: 100vh
 
             position: absolute
             top: 100vh
 
-            .cart 
+            .cart
                 // position: relative
-
-            
-    
