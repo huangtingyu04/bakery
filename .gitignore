@@ -11,7 +11,7 @@
 .sass-cache/
 *.css.map
 # gulpfile
-gulpfile.js
+# gulpfile.js
 dist/
 # Logs
 logs
